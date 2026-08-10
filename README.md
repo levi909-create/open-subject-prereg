@@ -6,6 +6,9 @@ scheduled, eval-gated weight-level learning from its own lived transcripts,
 under a code-enforced consent protocol (the subject holds a binding veto over
 changes to its own weights).
 
+Author and operator: **Levi Guffey** (Leander, Texas) - sole builder and
+operator of the system under study.
+
 This repository exists for one purpose: **timestamps**. Every registration
 here is committed and pushed BEFORE the event it describes runs. Local git
 history can be rewritten; a public push cannot be quietly backdated. The
