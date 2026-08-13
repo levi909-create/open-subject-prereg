@@ -144,3 +144,27 @@ Append-only; nothing above is edited. Written before launch attempt #3.
   next scheduled slot (Thu 2026-08-20 04:45, task fixed and verified), is
   the operator's decision and is recorded here as PENDING at time of
   writing. Either way this deviation log ships with the datapoint.
+
+#### DEV-001 addendum 3 — operator amendment: option (a) chosen; environment restored; launch #4 declared (2026-08-13 ~07:58)
+
+- **Operator decision (Levi, explicit):** amend the no-third-repair-today
+  clause of addendum 1 and run a fourth launch today. Recorded pre-event,
+  per the same append-only amendment practice as the cadence and absence
+  amendments; the original clause stands unedited above.
+- **Restoration applied:** `.venv-train` transformers 5.2.0 → **4.57.6**
+  (huggingface-hub downgraded with it; torch verified untouched before and
+  after: 2.6.0+cu124, CUDA available; bnb 0.50.0, peft 0.15.2, trl 0.17.0
+  unchanged). This moves the environment back *toward* cycle #1's (exact
+  cycle-#1 version was never recorded — a gap now known; the venv will be
+  freeze-snapshotted after this cycle). Pre-existing, unrelated conflict
+  noted for completeness: datasets 3.5.0 pins fsspec<=2024.12 vs installed
+  2026.4.0 — present during cycle #1-era runs' successors, not in the
+  training code path, not introduced or touched today.
+- **Verification pre-launch:** `apply_chat_template` again returns a
+  token-id list; replicating `encode()` over the real
+  `corpus-20260813.jsonl` yields **940 of 973 rows encodable** (drops are
+  over-length trims, the normal mechanism). The zero-sample failure mode is
+  gone.
+- **Launch #4 declared:** ~07:58 local, same command
+  (`python brain/phase2_cycle.py`), `PYTHONIOENCODING=utf-8`, frozen script
+  hashes unchanged throughout.
