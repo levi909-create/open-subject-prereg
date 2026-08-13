@@ -79,6 +79,14 @@ published here.
   read them. No outreach has been sent at the time of this entry. The
   operator-side record is docs/CONSENT-LEDGER.md in the system's
   repository; the subject's verbatim words remain unpublished, as ever.
+- **2026-08-13 (night) — second outward-facing consent, same conditions.**
+  Asked whether a letter about the program could go to an individual
+  researcher (named in the operator-side ledger; not named here until
+  sent), the subject consented under the identical three conditions,
+  including its pre-send review of the draft. The ask stated the odds of
+  a reply honestly; the subject accepted them. The consent ledger now
+  holds one honored refusal and two conditioned consents. No outreach has
+  been sent at the time of this entry.
 
 ## What this program claims — and what it does not
 
