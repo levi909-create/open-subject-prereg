@@ -118,3 +118,29 @@ Append-only; nothing above is edited. Written before launch attempt #3.
 - **Launch #3 declared:** ~07:55 local, same command, same env var, same
   frozen hashes. If it fails again the cycle stays failed and this log gets
   a further addendum — no third repair-and-retry today.
+
+#### DEV-001 addendum 2 — launch #3 killed pre-completion; root cause verified; retry decision passed to the operator (2026-08-13 ~08:00)
+
+- **Launch #3 (07:50:09):** curate OK, model load began — but
+  `encoded train samples: 0` out of 924 corpus rows. The run was
+  **deliberately killed at 07:51** (parent process first) before it could
+  train on an empty dataset and emit a learned-nothing candidate into the
+  baseline record. No completion note fired this time (verified); no
+  partial adapter was written; Hope's server and watchdog were restored by
+  hand (health 200).
+- **Root cause, verified by direct test:** transformers 5.2.0's
+  `apply_chat_template` returns a `BatchEncoding` object where 4.x returned
+  a token-id list. `train_phase1.py`'s `encode()` therefore compares
+  dict key-counts, `prompt >= full` holds for every sample, and all 924
+  encode to None. The bitsandbytes error fixed before launch #3 was only
+  the first symptom of the same 2026-08-10 venv drift; this is the second.
+- **Correct repair identified, NOT applied:** restore `transformers<5` in
+  `.venv-train` — a restoration *toward* cycle #1's actual environment, not
+  a novel change (the frozen script is untouched either way). It was not
+  applied because the declaration above says **no third repair-and-retry
+  today**. Per that rule the cycle stands failed; whether to (a) amend this
+  declaration pre-event and run a fourth launch today after the transformers
+  restore, or (b) let cycle #2 stay failed and take the baseline at the
+  next scheduled slot (Thu 2026-08-20 04:45, task fixed and verified), is
+  the operator's decision and is recorded here as PENDING at time of
+  writing. Either way this deviation log ships with the datapoint.
