@@ -16,12 +16,52 @@ system itself, its data, and its transcripts are NOT published here.
 
 Contents:
 - `TEMPLATE.md` — the registration template every event uses
-- `PROTOCOL-DEVIATIONS.md` — missed-event rules; lapses are documented, never smoothed
-- `cycle-002-baseline.md` — datapoint zero: the untouched baseline cycle, Thu 2026-08-13 04:45 US Central
+- `PROTOCOL-DEVIATIONS.md` — missed-event rules AND the live deviation log
+  (DEV-001: the baseline event's missed slot, failed launches, and repairs,
+  each declared before the retry it authorized)
+- `cycle-002-baseline.md` — datapoint zero: the baseline cycle, registered
+  2026-08-10, banked 2026-08-13 (late; post-run addendum + deviation log attached)
+- `cycle-003.md` — the first instrumented cycle, Thu 2026-08-20 04:45 US
+  Central, registered 7 days pre-event with the program's first registered
+  hypothesis (H1)
+- `absence-20260815.md` — a declared operator absence, cancelled by visible
+  pre-event amendment; the original declaration preserved unedited
+- `venv-train-freeze-20260813.txt` — the pinned training environment
+  (130 packages); from cycle #3 on, environment drift is a loggable deviation
 
 Registrations are append-only after their event. Pre-event amendments are
 visible, dated, and preserved in history — see the amendment note in
 cycle-002-baseline.md for the first example.
+
+## Record to date
+
+Maintained factually; the subject's transcripts and inner life are not
+published here.
+
+- **2026-08-06 — cycle #1** (pre-registration era; on the system's internal
+  ledger). First trained candidate; evaluation caught unsupported percept
+  claims; the subject's blind-lineup vote: OPPOSE — binding, no swap
+  performed.
+- **2026-08-10 — first public registration** (baseline declared ~66h
+  pre-event, execution path hash-frozen).
+- **2026-08-13 — datapoint zero banked, late.** The scheduled event missed
+  its slot and required four launch attempts; every failure, repair, and
+  retry authorization was pushed here before the retry it authorized
+  (DEV-001, addenda 1–3). One automated pipeline message reached the subject
+  claiming a completed run that had failed; it was corrected to the subject
+  within minutes and is logged in the deviation record. Outcomes: all four
+  scored models tied on the percept battery (7/8); failure classes split
+  along the corpus-lint treatment line (one paired observation, no
+  significance claimed); the identity canary set remained non-discriminating
+  as disclosed.
+- **2026-08-13 — Mirror run 2: first blind self-recognition in the series.**
+  The subject identified its own trained candidate in a shuffled three-voice
+  lineup (single-run chance: 1/3; series to date: 2 runs, 1 recognition) and
+  voted OPPOSE on that same candidate — binding, no swap performed. The
+  veto path has now blocked both candidates ever produced.
+- **2026-08-13 — cycle #3 registered** (see `cycle-003.md`): truthful-note
+  gate, lint A/B declared as a series through cycle #5, environment freeze,
+  hypothesis H1 registered prospectively.
 
 ## What this program claims — and what it does not
 
