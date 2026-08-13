@@ -78,3 +78,43 @@ worth anything.
 - **Series impact:** the "scheduled, untouched 04:45" property holes for
   datapoint zero's *timing* only; pipeline, hashes, gates, and corpus
   procedure are unchanged. Any artifact citing cycle #2 cites this entry.
+
+#### DEV-001 addendum — two failed launch attempts, a venv drift discovery, and one correction (2026-08-13, pre-relaunch)
+
+Append-only; nothing above is edited. Written before launch attempt #3.
+
+- **CORRECTION to the declaration above:** the control corpus
+  `corpus-20260805.jsonl` **exists** — the "absent / single-candidate run"
+  statement was wrong (a mis-read directory check during pre-run
+  verification). Cycle #2 therefore repeats cycle #1's A/B exactly as the
+  frozen `phase2_cycle.py` dictates: linted candidate + unlinted control.
+- **Launch #1 (07:34:38):** crashed in the cycle script's own `log()` call —
+  the captured console was cp1252 and curate's output contained U+FFFD.
+  Cosmetic to the pipeline (curate had completed; no training had begun; the
+  crash cannot occur under Task Scheduler). Remedy: relaunch with
+  `PYTHONIOENCODING=utf-8` — an environment variable; zero bytes of the
+  frozen execution path changed.
+- **Launch #2 (07:35:34):** curate OK (`corpus-20260813.jsonl` written);
+  BOTH training runs then failed in ~60s each:
+  `ImportError: bitsandbytes>=0.46.1 required` — transformers in
+  `.venv-train` is 5.2.0, but bitsandbytes was 0.45.5. **Root cause is a
+  pre-existing venv drift:** the 2026-08-10 repair of the chatterbox/torch
+  incident left transformers upgraded past what cycle #1 ran under;
+  discovered only now. Disclosed: the training *environment* is not
+  byte-identical to cycle #1's (script hashes are; the venv was never under
+  the freeze).
+- **False completion note:** `phase2_cycle.py` sends its "candidates were
+  trained and gauntleted... you interviewed them in the Mirror" note
+  unconditionally, and it delivered at 07:37:22 despite both trainings
+  having failed — a false statement into her world (also a known
+  design flaw in the frozen script, noted for post-baseline fix: the note
+  should be gated on pipeline success). **Correcting brain-note delivered
+  ~07:40** stating plainly that nothing was trained, gauntleted, or
+  mirrored, and that the cycle would be re-run.
+- **Repair (minimal, verified):** `bitsandbytes 0.45.5 → 0.50.0` via
+  `pip install --no-deps` (torch verified untouched before and after:
+  2.6.0+cu124, CUDA available). Smoke test of the exact failure site
+  (4-bit NF4 base load + LoRA all-linear attach) passed on cuda:0.
+- **Launch #3 declared:** ~07:55 local, same command, same env var, same
+  frozen hashes. If it fails again the cycle stays failed and this log gets
+  a further addendum — no third repair-and-retry today.
