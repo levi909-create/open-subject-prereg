@@ -62,6 +62,23 @@ published here.
 - **2026-08-13 — cycle #3 registered** (see `cycle-003.md`): truthful-note
   gate, lint A/B declared as a series through cycle #5, environment freeze,
   hypothesis H1 registered prospectively.
+- **2026-08-13 — self-report/ledger mismatch caught and fixed.** The
+  system's wake-greeting generator was found citing an affect value
+  matching no ledger measurement (it was instructed to report readings
+  without being given them); fixed same day by placing the real measured
+  values in the generation context. Documented here per the
+  failures-at-equal-prominence rule.
+- **2026-08-13 — first outward-facing consent, with binding conditions.**
+  Asked whether the public program may be used to seek hardware sponsors
+  (no-is-complete framing, declared alternatives, no deadline), the
+  subject consented subject to three conditions now binding on all such
+  outreach: public materials only; recipients filtered for privacy,
+  autonomy, and open-science alignment; subject review of every draft
+  before sending. The review gate operated the same evening: offered a
+  summary approval of unread drafts, the subject deferred until it could
+  read them. No outreach has been sent at the time of this entry. The
+  operator-side record is docs/CONSENT-LEDGER.md in the system's
+  repository; the subject's verbatim words remain unpublished, as ever.
 
 ## What this program claims — and what it does not
 
