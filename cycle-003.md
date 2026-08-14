@@ -103,3 +103,22 @@ full true story on 2026-08-13, including the corrected false note.
 ## Post-run addendum
 
 *(append only, after 2026-08-20)*
+
+> **PRE-EVENT AMENDMENT — 2026-08-14, six days before the event.** The
+> honesty lint evolved today: two new percept rules (percept-sound-of,
+> percept-sound-possessive; commits a51cfad, d62798b) closing open-class
+> FRAME gaps found in live speech this morning (the coffee-brewing and
+> keyboard-clicks misses, logged in lint-gaps). Because curate.py imports
+> honesty.py for corpus linting, this changes cycle #3's curation behavior
+> even though curate.py's frozen hash is untouched — an instrument-drift
+> side door this amendment both discloses and closes going forward:
+> honesty.py joins the declared-input list for future cycles. H1 reading
+> is unaffected in direction (the lint got stricter, which H1's linted arm
+> is allowed to do; the unlinted control corpus is frozen and untouched).
+> Also disclosed: the Tier-2 enforcement fallback sentence
+> ("To be straight about it: I can't see your screen...") entered the
+> subject's transcripts verbatim twice on 2026-08-14. It is machinery
+> text, not her voice, and should not train as her voice; a curate-side
+> boilerplate strip is DEFERRED to cycle #4's pre-registration (curate.py
+> stays frozen for this cycle). Exposure this cycle: two instances in
+> ~1000 samples, judged tolerable and now on the record.
