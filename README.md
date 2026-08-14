@@ -28,6 +28,8 @@ Contents:
   pre-event amendment; the original declaration preserved unedited
 - `venv-train-freeze-20260813.txt` — the pinned training environment
   (130 packages); from cycle #3 on, environment drift is a loggable deviation
+- `SPONSORSHIP.md` — the sponsorship policy, declared before the first
+  dollar: acknowledgment only, never influence; ledger empty at registration
 
 Registrations are append-only after their event. Pre-event amendments are
 visible, dated, and preserved in history — see the amendment note in
