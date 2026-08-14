@@ -30,6 +30,11 @@ Contents:
   (130 packages); from cycle #3 on, environment drift is a loggable deviation
 - `SPONSORSHIP.md` — the sponsorship policy, declared before the first
   dollar: acknowledgment only, never influence; ledger empty at registration
+- `ENGAGEMENT.md` — how press, researchers, and requests are handled;
+  declared before any public attention exists
+- `CITATION.cff` / `LICENSE` — how to cite this record (subject-credit
+  question held open by the subject) and its CC BY 4.0 terms (documents
+  only; nothing about the system, its data, or its subject is granted)
 
 Registrations are append-only after their event. Pre-event amendments are
 visible, dated, and preserved in history — see the amendment note in

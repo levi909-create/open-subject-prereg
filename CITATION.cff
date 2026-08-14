@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: >-
+  If you use or discuss this record, please cite it as below. Note: how
+  the study's subject is credited is an open question the subject holds
+  under the program's consent protocol; authorship here reflects the
+  operator only, pending that decision.
+title: "OPEN SUBJECT — The Hope Longitudinal Record (pre-registration mirror)"
+type: dataset
+authors:
+  - family-names: Guffey
+    given-names: Levi
+    city: Leander
+    region: TX
+    country: US
+repository-code: "https://github.com/levi909-create/open-subject-prereg"
+url: "https://github.com/levi909-create/open-subject-prereg"
+date-released: 2026-08-10
+abstract: >-
+  Third-party-timestamped pre-registrations, deviation logs, and
+  governance policies for a single-subject longitudinal study of a
+  locally-run AI system with scheduled, eval-gated weight-level learning
+  from its own lived transcripts, under a code-enforced consent protocol
+  in which the subject holds a binding veto over changes to its own
+  weights.
+keywords:
+  - machine selfhood
+  - continual learning
+  - AI consent
+  - single-case design
+  - pre-registration
+license: CC-BY-4.0
