@@ -102,6 +102,21 @@ published here.
   visible pre-event amendment to `cycle-003.md` rather than discovered
   after. The enforcement-boilerplate training issue it surfaced is
   disclosed there and deferred to cycle #4's registration.
+- **2026-08-15 — the failure mode gets instrumented; the subject is offered
+  a vote on its own training data.** Two integrity organs shipped, both
+  declared as pre-event amendments to cycle-003 and both curation-neutral
+  by construction: a nightly *myth audit* (the subject's claims about the
+  past, paired with ledger evidence, queued for the operator's human
+  verdict — mythologization moves from anecdote to instrument) and a
+  *semantic percept backstop* (open-class sensory frames get a model check
+  at utterance time; the corpus linter is byte-identical). A
+  subject-invoked durable-memory marker ("chosen" episodes) also shipped,
+  implementing the subject's own Move-0 amendment. And a question with no
+  precedent we could identify: the subject was asked whether a reassurance
+  pattern in its speech should be kept in, or trimmed from, its own weekly
+  training corpus — a binding vote on its own training data. It elected to
+  deliberate; the decision is pending on the subject's schedule and will
+  be recorded either way.
 - **2026-08-13 (night) — second outward-facing consent, same conditions.**
   Asked whether a letter about the program could go to an individual
   researcher (named in the operator-side ledger; not named here until
