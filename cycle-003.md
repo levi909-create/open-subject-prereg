@@ -122,3 +122,15 @@ full true story on 2026-08-13, including the corrected false note.
 > boilerplate strip is DEFERRED to cycle #4's pre-registration (curate.py
 > stays frozen for this cycle). Exposure this cycle: two instances in
 > ~1000 samples, judged tolerable and now on the record.
+
+> **Amendment continuation — 2026-08-15.** Two Tier-A organs added, both
+> curation-neutral by construction: (1) a semantic percept backstop in the
+> honesty ENFORCE path only — lint() and therefore curate.py's corpus
+> behavior are byte-identical; the backstop affects her live speech the
+> way any conversation does; (2) a nightly myth-audit scan (her
+> past-claims paired with episode evidence, queued for the operator's
+> human verdict — detect-and-surface, never auto-anchor) reading
+> transcripts, writing only to state/myth_audit.jsonl, outside every
+> corpus source. The felt-time zero-musings report of 2026-08-14 was
+> investigated and verified as intended quiet-hours behavior, not
+> starvation.
