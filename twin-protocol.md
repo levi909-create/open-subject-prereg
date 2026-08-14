@@ -97,3 +97,18 @@ concept-correct, detail-wrong: memory-shaped, blurry. The frozen twin
 confabulated ("skydiving") on the same probe. One 48-minute training pass
 over one week encodes a trace, not a biography. That is the floor the
 curve now grows from — or doesn't; either way it publishes.
+
+### Kappa report — session 1 validated (2026-08-14, same day)
+
+Operator hand-scored all 16 answer-arm pairs, blind to arm. Cohen's kappa
+vs the judge: **0.636** (observed agreement 15/16 = 93.8%; n=16, heavily
+skewed toward incorrect, which depresses kappa — substantial agreement on
+the standard scale). The one disagreement: p2/living, "quiet mode" —
+judge scored partial, operator scored incorrect (the answer parrots the
+question's own words; parroting is not knowledge). Standing bias note for
+the series: the judge leans LENIENT, in the living arm's favor — deltas
+are therefore ceilings, not floors. Under operator-strict scoring,
+session 1 reads living 0.063 · frozen 0.000 · delta +0.063. The judged
+series remains the official series (consistency across sessions matters
+more than any single reading); this bias note travels with it. The
+"judge unvalidated" flag is retired for session 1.
