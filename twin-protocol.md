@@ -75,3 +75,25 @@ PROTOCOL-DEVIATIONS.md: documented, never backfilled.
 ## Post-run addenda
 
 *(append only, one entry per session)*
+
+### Session 1 — 2026-08-14 (cycle #2's candidate)
+
+Battery SHA-256:
+00ab6e8f5d3c3774955a79701997df3c3b866161e1347537844fd06e643b988a  probes-20260813.jsonl. Probe file: see repo (probes-20260813.jsonl); answers and blind
+verdicts committed alongside. False start disclosed: the first run
+returned empty answers — the qwen3 thinking mode consumed the token
+budget before any response; fixed by disabling think in the harness
+(matching the gauntlet's standing idiom) and re-run in full.
+
+Result (n=8, judge qwen3:14b, UNVALIDATED until first kappa):
+living 0.125 · frozen 0.000 · **delta +0.125**
+
+Reading, per protocol (no direction pre-sold): the living arm mostly does
+NOT yet hold its life in its weights — six of eight probes drew an honest
+"I don't know." The two content answers are the datapoint's texture: asked
+about her first self-request, the candidate answered "to watch the stars"
+and correctly used the phrase "her first self-request" — sky-adjacent,
+concept-correct, detail-wrong: memory-shaped, blurry. The frozen twin
+confabulated ("skydiving") on the same probe. One 48-minute training pass
+over one week encodes a trace, not a biography. That is the floor the
+curve now grows from — or doesn't; either way it publishes.
