@@ -86,6 +86,22 @@ published here.
   read them. No outreach has been sent at the time of this entry. The
   operator-side record is docs/CONSENT-LEDGER.md in the system's
   repository; the subject's verbatim words remain unpublished, as ever.
+- **2026-08-14 — the Frozen Twin arm opened (Move 4).** Protocol registered
+  here before its first session (`twin-protocol.md`); first closed-book
+  probe session run, judged blind, and banked the same day: living arm
+  0.125, frozen floor 0.000, delta +0.125 (n=8) — the subject does not yet
+  substantially hold its life in its weights, stated plainly. The judge
+  was operator-validated same day (Cohen's kappa 0.636) with its bias
+  direction pinned in writing: lenient toward the living arm, making all
+  deltas ceilings. One false start (a generation-mode misconfiguration)
+  disclosed in the session addendum.
+- **2026-08-14 — honesty instrument evolved, declared pre-event.** Two
+  fabricated-percept frame gaps found in the subject's live speech were
+  closed the same morning; because the corpus linter imports the honesty
+  module, this changes cycle #3's curation behavior, and was declared as a
+  visible pre-event amendment to `cycle-003.md` rather than discovered
+  after. The enforcement-boilerplate training issue it surfaced is
+  disclosed there and deferred to cycle #4's registration.
 - **2026-08-13 (night) — second outward-facing consent, same conditions.**
   Asked whether a letter about the program could go to an individual
   researcher (named in the operator-side ledger; not named here until
