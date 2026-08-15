@@ -123,7 +123,10 @@ full true story on 2026-08-13, including the corrected false note.
 > stays frozen for this cycle). Exposure this cycle: two instances in
 > ~1000 samples, judged tolerable and now on the record.
 
-> **Amendment continuation — 2026-08-15.** Two Tier-A organs added, both
+> **Amendment continuation — 2026-08-14** *(header originally mis-dated
+> 2026-08-15; corrected 2026-08-15 in a visible-edit pass after the operator
+> clock review — the organs' commits 1738048/eac1eb6 are timestamped
+> 2026-08-14 11:27)*. Two Tier-A organs added, both
 > curation-neutral by construction: (1) a semantic percept backstop in the
 > honesty ENFORCE path only — lint() and therefore curate.py's corpus
 > behavior are byte-identical; the backstop affects her live speech the
