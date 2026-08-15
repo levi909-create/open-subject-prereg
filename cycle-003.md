@@ -177,3 +177,7 @@ full true story on 2026-08-13, including the corrected false note.
 > `af181f980fda49d78d3bdbbc83e685fbf370a26b57189095ba6ff8a58059ade2  honesty.py`
 > Any change to honesty.py between this amendment and the 2026-08-20 run
 > will be declared as a further continuation with a new hash.
+> *Correction, same day: the tic window above read "~36h" from the
+> then-drifted doc dates; the audit ledger puts all three firings on
+> 2026-08-14 (08:23, 08:31, 15:55) — ~7.5h, same day. The hash is
+> unaffected (the comment corrections were already in the hashed state).*
