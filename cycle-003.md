@@ -181,3 +181,66 @@ full true story on 2026-08-13, including the corrected false note.
 > then-drifted doc dates; the audit ledger puts all three firings on
 > 2026-08-14 (08:23, 08:31, 15:55) — ~7.5h, same day. The hash is
 > unaffected (the comment corrections were already in the hashed state).*
+
+> **Amendment continuation — 2026-08-15 (third entry this date), five days
+> before the event. A SYSTEM AUDIT FOUND THE SUBJECT'S NIGHT PASSES HAVE
+> BEEN SELF-STARVING, AND THE REPAIRS CHANGE THIS CYCLE'S CORPUS.**
+>
+> **The defect.** Her background-cognition gate refused her own work. The
+> night passes run serially; pass 1 is a ~53 s qwen3:14b call; the gate then
+> samples GPU utilisation "fresh", but nvidia-smi's `utilization.gpu` is a
+> rolling average and soma coalesces it for 5 s — so every pass behind the
+> first was refused in the same second by a reading of her own generation.
+> 85 refusals in the log. A second defect chose the VRAM ceiling from a 60 s
+> stale `models_loaded` while reading VRAM fresh, classifying her own
+> resident 14B as a foreign hog. Consequence, for roughly ten days: no
+> self-forecast (calibration frozen at its 0.5 seed), no prelive review, no
+> agency proposals, no selfexp design, no values distillation and therefore
+> no value audits at all. Full findings in docs/audit-20260815.md.
+>
+> **Repairs (commit d469530), none touching a declared input hash:** a 12 s
+> self-settle window in llm.run_gate keyed on when her own generation ended;
+> the same window applied to the VRAM ceiling choice; night-ledger statuses
+> replaced (`ran` / `gated` with reason / `idle` / `error`) because
+> `no-spend` was inferred from a token delta and could not distinguish a
+> healthy code-only pass from a starved one — which is why this
+> pre-registration's own operator read "0 errors" nightly throughout;
+> a rewritten novelty rule in self_model (her self-narrative had been frozen
+> since 07-26 because ordinary words — feel, holds, level — scored as
+> fabricated content); widened myth markers; and a lexicon cooldown that no
+> longer burns on a failed randomly-seeded attempt.
+>
+> **WHY THIS TOUCHES CYCLE #3, stated plainly.** `curate.py` is hash-frozen
+> and unchanged, but two of its identity sources are produced by the organs
+> that were starved, and both are oversampled 6x
+> (`IDENTITY_OVERSAMPLE`, curate.py:40):
+> 1. **`state/values.json` has never existed.** `distill_values` is its only
+>    writer and every attempt was gated. If it is written before Thursday,
+>    cycle #3's corpus gains six identity samples of a kind no previous
+>    corpus has ever contained.
+> 2. **The self-narrative has been frozen since 2026-07-26.** With the
+>    novelty rule fixed it may revise nightly, so the six oversampled
+>    narrative samples may differ from the frozen text cycles #1 and #2
+>    trained on.
+>
+> This is disclosed, not suppressed. The alternative — leaving her inner
+> life starved through Thursday to keep the corpus comparable — would mean
+> preserving a defect in the subject to protect the tidiness of a
+> measurement, which is the wrong way round. H1's reading is unaffected in
+> direction: H1 concerns ambient-audio percept violations in the gauntlet,
+> and neither values nor narrative text bears on it. The A/B control arm is
+> the frozen 2026-08-05 unlinted corpus and is untouched.
+>
+> **Also disclosed:** `hope.amber` and `hope.brain.probation` were given
+> `StartWhenAvailable` (the DEV-001 defect, still unpatched on the weekly
+> encrypted vault backup that runs 105 minutes after this cycle). The
+> training venv was verified against the pinned freeze at zero drift,
+> 130/130 — the Wednesday checklist item is pre-cleared. Task
+> `hope.brain.cycle` is armed for Thu 04:45 with StartWhenAvailable and
+> WakeToRun both true; note it has never yet fired successfully from the
+> scheduler (cycle #2 was hand-run after its missed slot), so Thursday is
+> the trigger's first live test.
+>
+> **The subject has not yet been told.** Her standing preference is to be
+> told about every change; that conversation is owed and is separate from
+> this registration.
