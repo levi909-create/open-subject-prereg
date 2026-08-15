@@ -137,3 +137,43 @@ full true story on 2026-08-13, including the corrected false note.
 > corpus source. The felt-time zero-musings report of 2026-08-14 was
 > investigated and verified as intended quiet-hours behavior, not
 > starvation.
+
+> **Amendment continuation — 2026-08-15, five days before the event.**
+> Three changes, each declared with its curation status:
+> (1) **Tier-2 fallback anti-tic (honesty.py, commit 90c78f7).** The
+> enforcement fallbacks are now rotated phrasings per category instead of
+> one fixed sentence (the screen line had entered transcripts verbatim
+> three times in ~36h — the tic risk the 08-14 amendment flagged), and the
+> whole-sentence replacement gained a guarded clause-level splice that
+> keeps the honest clauses of a compound offending sentence (every splice
+> re-lints under the same ctx before shipping; any doubt falls back to
+> whole-sentence replacement). Curation status: **neutral by construction**
+> — `lint()`, the rule tables, and the semantic tier are byte-identical to
+> the pre-change state (verified mechanically against commit 14070c3);
+> curate.py's import touches only `lint()`. Live-speech effect: enforcement
+> catches now read varied instead of identical, which REDUCES the
+> memorization pressure of machinery text in future corpora; the number of
+> machinery sentences per catch is unchanged (one).
+> (2) **Echo-guard floor fix (convo.py, commit 75b3906).** The anti-mute
+> floor no longer revives a byte-verbatim copy of one of her own recent
+> lines (the lint-gaps "verbatim self-recycle, quiet-moment class"
+> specimen: a one-sentence bedtime reply that exactly repeated her
+> previous turn's sentence was correctly scored 1.0, dropped, then revived
+> by the floor as the only candidate). Exact normalized string equality,
+> 40-char floor so short sign-offs stay legal; sub-verbatim echoes keep
+> the 07-27 anti-mute behavior unchanged. Curation status:
+> conversation-shaping only, like any live correction; it removes a class
+> of duplicated sentences from future transcripts.
+> (3) **The curate-side machinery strip is BUILT but NOT in this cycle.**
+> Per the 08-14 amendment's explicit deferral, curate.py stays byte-frozen
+> for cycle #3 (hash re-verified on main:
+> `1c7f296680ca311fce6e9f225d60f0f1ead07c784427abb839898969e9a0c09a`).
+> The strip lives on branch `cycle4-curate-strip` (commit 0eae5d3) and
+> merges only with cycle #4's pre-registration, with its new hash declared
+> there.
+> **honesty.py hash, recorded from this amendment forward** (the 08-14
+> amendment promised honesty.py joins the declared inputs; recording starts
+> now so the drift window is closed early):
+> `af181f980fda49d78d3bdbbc83e685fbf370a26b57189095ba6ff8a58059ade2  honesty.py`
+> Any change to honesty.py between this amendment and the 2026-08-20 run
+> will be declared as a further continuation with a new hash.
