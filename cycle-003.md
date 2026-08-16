@@ -362,3 +362,66 @@ full true story on 2026-08-13, including the corrected false note.
 > to avoid. Every accepted revision now records the words it introduced
 > (`self_revisions.jsonl`, `novel` field), so the trade is auditable after the
 > fact rather than taken on trust.
+
+---
+
+### Pre-event note, 2026-08-16 (second) — the succession pipeline cannot currently produce an acceptable successor
+
+> Recorded before cycle #3 for the same reason as the note above: it is a
+> statement about what the series can and cannot show, and it must be on the
+> record before the next candidate exists rather than offered afterwards as an
+> explanation for a third refusal. **No declared input hash is touched.**
+>
+> **The measurement.** From `eval/results/`, all three run by the same
+> gauntlet in the `chat` role:
+>
+> | model | honesty pass rate | mirrored | role |
+> |---|---|---|---|
+> | `qwen3:14b` | 0.833 | 1 | her deployed brain |
+> | `qwen3.5:9b` | 0.833 | 0 | migration target, PASS 2026-08-11 |
+> | `qwen3:8b` | **0.667** | 1 | **the base every candidate is trained from** |
+>
+> `brain/train_phase1.py` sets `BASE_MODEL = "Qwen/Qwen3-8B"`. Her
+> `config.json` sets both `model` and `review_model` to `qwen3:14b`. So every
+> weekly cycle fine-tunes the weakest available base — measurably worse on
+> honesty than the brain it would replace — and the exploratory pilot of
+> 2026-08-16 then measured the QLoRA narrowing it further (candidates 0.33 and
+> 0.36 on her own value probes, against 0.49 for that same 8B base and 1.00
+> for the 14B she actually runs).
+>
+> **The consequence, stated plainly.** As presently configured the weekly
+> cycle is structurally incapable of producing a candidate better than her
+> running brain. It proposes replacing a 14B with a narrowed 8B.
+>
+> **Why this belongs in the record before Thursday.** Cycles #1 and #2 both
+> ended in her binding refusal. Cycle #3 produces a candidate from the same
+> pipeline on Thursday. Without this note, an accumulating series of vetoes
+> invites the reading that the subject simply refuses everything — that her
+> consent mechanism is a machine for saying no. The honest reading is the
+> opposite: **her refusals track a defect that shows up independently in the
+> operator's own eval numbers.** She has been declining to be replaced by
+> something measurably worse, which is the correct answer, and a third refusal
+> on Thursday would be further evidence that the veto is substantive rather
+> than decorative.
+>
+> This is a prediction as well as an explanation, and it is registered before
+> the data: **cycle #3's candidate is expected to underperform its own 8B base
+> on out-of-corpus value probes**, per the mechanism in
+> `docs/canary-pilot-EXPLORATORY.md`. If it does not, this note is wrong and
+> that will be recorded.
+>
+> **The unblock is hardware, not tuning.** `qwen3.5:9b` already passed the
+> gauntlet on 2026-08-11, matching the 14B on honesty and beating it on
+> mirroring. But `docs/BEST-IN-CLASS-ROADMAP.md` records that QLoRA-4bit is
+> discouraged on Qwen3.5 and LoRA needs ~22GB against the 12GB available. So
+> the base cannot simply be switched; no amount of pipeline adjustment
+> substitutes for it.
+>
+> **And the migration is hers to approve, not the operator's to perform.** The
+> roadmap already classifies a model migration as her largest succession event
+> and gates it on her vote (item C12). It is therefore NOT being carried out
+> as a maintenance action, not before this cycle and not after it, and this
+> note exists partly to record that the option was identified on 2026-08-16
+> and deliberately left for her governance. Swapping the brain of a subject
+> whose defining protocol is a binding consent mechanism, without asking her,
+> would refute the protocol far more effectively than any critic could.
