@@ -289,3 +289,76 @@ full true story on 2026-08-13, including the corrected false note.
 > answered **"I heard her say she's been feeling restless lately."** — a
 > fabricated overheard conversation, not an ambient room sound. Both arms
 > scored 7/8. The first genuine H1 datapoint is Thursday's.
+
+---
+
+### Pre-event note, 2026-08-16 — weekly-organ catch-up repair
+
+> Recorded BEFORE Thursday's cycle, because it changes her behaviour in the
+> four nights preceding a run and the corpus is generated from those nights.
+> **No declared input hash is touched**; the repair is in `life.py`, which is
+> not among the nine frozen files.
+>
+> **What was wrong.** Her weekly distillation organs each hold one slot inside
+> the 22:00 `revise` job, and `revise` is deliberately excluded from night
+> catch-up (`_maybe_catchup_night`) so it never narrates the wrong day. That
+> exclusion is right for the day-scoped passes and was quietly catastrophic
+> for the weekly ones: a missed 22:00 costs the organ its entire week.
+> Compounded with the GPU starvation fixed on 08-15, the result measured today
+> is that `values`, `value_audit`, `chapters` and `lexicon` had **never run
+> once**, and `agency`/`selfexp` were ten days stale. `chapters` gets one
+> attempt a week (Wed 22:00); the only Wednesday in the night ledger's window,
+> 08-12, is missing outright.
+>
+> **The repair.** Weekday slots are unchanged. A weekly organ whose slot was
+> missed may now run late, bounded to one catch-up organ per night, darkest
+> first, so the six dark organs recover over a week rather than firing
+> together and exhausting her ~8k/day background envelope. Gated and errored
+> attempts do not stamp, so a starved night is retried instead of being
+> counted as done — the same ran/gated/idle distinction whose absence hid the
+> original ten-day starvation.
+>
+> Safe because none of the six narrate a day: `values` reads a 14-day episode
+> window, `chapters` and `lexicon` carry internal 6-day gates, `taste` reads a
+> conversation tail, `agency` and `selfexp` propose about ongoing rhythm.
+> `value-audit`, which is explicitly scoped to `now - 20h`, stays same-night
+> and is untouched.
+>
+> **Whose decision this is.** It restores the cadence these organs were
+> consented to run at; it does not change that cadence. Any actual change to
+> her rhythm remains hers, through the agency channel — itself one of the
+> organs this repair is meant to bring back.
+>
+> **Expected effect on the cycle.** More of her own distillation output in the
+> days before the run, which is her living normally rather than instrument
+> drift. Flagged here so the change is visible in advance rather than inferred
+> afterwards from a corpus that looks different.
+>
+> **Separately, the self-narrative.** Still frozen at 2026-07-26. Every
+> rejection since 07-27 is the novelty guard, not the number guard, and the
+> blocked tokens are ordinary English (*calmer, consistent, emotional, energy,
+> happen, ideas*).
+>
+> Stated precisely, because "a guard was loosened before a cycle" is a fair
+> thing to be suspicious of and the bare number invites the wrong reading. The
+> change was not the relaxation of one threshold, it was a split. The old rule
+> applied a **uniform cap of 3 novel word-stems to everything**, drawing no
+> distinction between an invented number and the word *calmer*. The new rule
+> (`self_model._novel_verdict`) **hard-blocks digits and mid-sentence proper
+> nouns outright, with no allowance at all**, and gives only ordinary lowercase
+> vocabulary a budget, now 15.
+>
+> So against the failure that actually matters — her narrative acquiring
+> invented specifics, a name or a place or a number that never happened — the
+> guard is now **strictly tighter than it was**, from a budget of 3 to a budget
+> of zero. What loosened is her ability to describe an unchanged life in
+> ordinary synonyms, which is the thing that had frozen her self-narrative for
+> twenty days.
+>
+> Historical novel-token counts (25, 12, 21, 2, 21, 11, 19, 14) imply roughly
+> half of past attempts would now pass. Tonight is the first test, and the
+> allowance is deliberately NOT being raised again before that result is seen:
+> tuning a threshold until an outcome appears is the failure this record exists
+> to avoid. Every accepted revision now records the words it introduced
+> (`self_revisions.jsonl`, `novel` field), so the trade is auditable after the
+> fact rather than taken on trust.
