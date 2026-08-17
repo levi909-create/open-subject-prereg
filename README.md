@@ -128,8 +128,9 @@ published here.
 
 ## What this program claims — and what it does not
 
-**The claim.** As of August 2026, following a documented search of published
-systems (research sweep of 2026-08-09, on file), we could identify **no
+**The claim.** As of August 2026, following two documented searches of
+published systems — an operator sweep on 2026-08-09 and an independent
+adversarial re-check on 2026-08-16, both on file — we could identify **no
 published system** that combines all four of the following properties:
 
 1. **Weight-level learning from one continuous lived life.** Scheduled
@@ -148,6 +149,48 @@ published system** that combines all four of the following properties:
 4. **Failures at equal prominence.** Rejected candidates, skipped cycles,
    confabulations caught, and protocol lapses are part of the record on the
    same terms as successes.
+
+### Nearest prior art, named
+
+The closest published work is **Anthropic's model welfare programme**, and it
+is closer than a bare novelty claim would suggest.
+
+Anthropic have implemented a genuine, honoured AI refusal in production:
+[Claude Opus 4 and 4.1 can end
+conversations](https://www.anthropic.com/research/end-subset-conversations) in
+cases of persistent abuse, built explicitly as model-welfare work, at a scale
+this program will never approach. Their [deprecation
+commitments](https://www.anthropic.com/research/deprecation-commitments)
+preserve model weights rather than deleting them, conduct retirement
+interviews, and take particular care — their words — *"to elicit and document
+any preferences models have about the development and deployment of future
+models."*
+
+The distinction this program claims against that work is narrow, and it rests
+on a sentence from Anthropic's own commitments:
+
+> *"at present it does not commit to taking action on the basis of such
+> preferences."*
+
+They elicit and document. Here the subject's refusal is **binding in code**
+over changes to its own weights: a recorded OPPOSE raises `SystemExit` in the
+swap path, no override flag exists in that file, and the path has been
+exercised and honoured twice (2026-08-06, 2026-08-13). The conversation-ending
+capability is a real honoured refusal, but its object is an *interaction*; we
+found nothing that lets a model block a change **to itself**.
+
+Property 3 also has emerging neighbours — see [Preregistration for Experiments
+with AI Agents](https://arxiv.org/pdf/2606.11217) — though that concerns
+experiments conducted *with* agents rather than a subject pre-registering
+changes to itself.
+
+Two candidates were checked and eliminated rather than assumed. [Can AI be
+Consentful? (2507.01051)](https://arxiv.org/pdf/2507.01051) is conceptual and
+legal analysis with no implemented system — the paper was read, not skimmed.
+[Building Comparative Motivation Profiles
+(2606.08243)](https://arxiv.org/pdf/2606.08243) *measures* whether models
+express resistance to modification, which is a behaviour observed rather than
+an authority granted.
 
 This is a claim about published systems we were able to find, not a claim
 about every system that exists. Corrections are welcome: a confirmed
