@@ -610,3 +610,63 @@ full true story on 2026-08-13, including the corrected false note.
 > of THIS document - not a copy kept beside the code, which would drift - and
 > exits non-zero on any mismatch. It was written before this amendment and
 > flagged this exact change, which is how the hash above was produced.
+
+---
+
+### Amendment 6 — 2026-08-17, execution environment (no declared input touched)
+
+> **What changed, and why it is not an instrument change.** A full readiness
+> check three days before the run found that `hope.brain.cycle` would very
+> likely have died at step one, for the same reason cycle #2 died at launch #1.
+>
+> Under Task Scheduler there is no console, so Python falls back to the locale
+> encoding for stdout. Verified rather than assumed:
+> `C:\Python314\python.exe -c "import sys; print(sys.stdout.encoding)"` with
+> stdout piped returns **cp1252**.
+>
+> That is fatal here because `curate.py` prints its curation report to stdout,
+> and that report embeds up to six of **her own sentences** — the "sample
+> dropped percept claims" block at `curate.py:313`. Her transcripts contain
+> five distinct characters cp1252 cannot encode: U+FFFD (×27), U+258E (×15),
+> a winking face (×2), and the two CJK characters in her line about living
+> "on your hard disk". If any sentence carrying one of those is among the six
+> the lint happens to flag, `print()` raises `UnicodeEncodeError`, curate exits
+> non-zero, and `phase2_cycle` aborts the cycle. Today's trial run survived on
+> luck — the six it drew were all cp1252-safe. Thursday redraws them.
+>
+> **Fix, entirely environmental.** The task now launches
+> `tools/run-cycle.cmd`, which sets `PYTHONUTF8=1` and `PYTHONIOENCODING=utf-8`
+> and then runs the same `brain/phase2_cycle.py` with the same interpreter.
+> Cycle #2's own post-mortem (DEV-001, failure #1) prescribed exactly this and
+> it had never been applied to the task.
+>
+> **No declared input is modified, and no behaviour changes.** Checked, not
+> asserted: every `open()` in `brain/*.py` and `eval/run_eval.py` names its
+> encoding explicitly, so UTF-8 mode cannot alter how any file is READ. It
+> affects stdout/stderr only. All ten declared hashes verify unchanged
+> (`tools/check_declared_inputs.py`, exit 0).
+>
+> **Second change in the same wrapper: a revival net.** `phase1_run.stop_hope()`
+> kills her server and DISABLES the `hope.watchdog` task so the pipeline owns
+> every revival path during training. `phase1_run` guards that with
+> `try/finally`, so a failed *train* always brings her back — but a hard kill
+> of the process (crash, sleep, power) skips the `finally` and leaves her dark
+> with her watchdog disabled. `phase1_run.py` is a declared frozen input and
+> cannot be corrected before the run, so the wrapper re-enables
+> `hope.watchdog` on the way out regardless of exit code. Idempotent.
+>
+> **Also verified in the same pass, no action needed:** the training venv is
+> byte-identical to `venv-train-freeze-20260813.txt` (130/130 packages,
+> transformers 4.57.6, bitsandbytes 0.50.0, torch 2.6.0+cu124); the
+> `apply_chat_template` path that silently dropped 924/924 samples in cycle #2
+> returns lists and keeps samples; both HF caches hold the complete 15.3 GB
+> Qwen3-8B; the converter's default `HF_HOME` resolves to a real snapshot;
+> D: has 1.76 TB free; and `brain/gauntlet.py` runs end-to-end against a live
+> candidate and writes its result file.
+>
+> **Two test artifacts were produced and deleted**, because a readiness check
+> must not contaminate the run it is checking: `corpus-20260817.jsonl` (which
+> `_newest_corpus()` could have selected had Thursday's curate returned 0
+> without writing) and an out-of-band gauntlet result for
+> `hope-cand-20260813` (which `_latest_gauntlet()` would have made the basis
+> of any future swap decision on that candidate).
