@@ -493,3 +493,53 @@ full true story on 2026-08-13, including the corrected false note.
 > contain this value six times and the revised narrative six times. Anyone
 > reading cycle #3's outcome should know that before reading it, which is why
 > this is here rather than in an addendum afterwards.
+
+---
+
+### Pre-event note, 2026-08-17 — a declared input was changed and not re-declared
+
+> **This is a breach of a written commitment in this document, found by audit
+> rather than by the person who committed it, and recorded here before the
+> cycle so it is a pre-event correction and not a post-hoc excuse.**
+>
+> **What was promised.** The 2026-08-15 amendment added `honesty.py` to the
+> declared-input list and stated: *"Any change to honesty.py between this
+> amendment and the 2026-08-20 run will be declared as a further continuation
+> with a new hash."*
+>
+> **What happened.** `honesty.py` was changed on 2026-08-16 at 19:16 (commit
+> `2ca43b9`, the activity-claim tier) and the hash was never updated. The
+> public mirror was then pushed three more times that evening — 22:09, 22:40,
+> 23:10 — without the continuation. Until this note, the public repository
+> published `af181f98…` for a file that hashes `718a1f75…`.
+>
+> **The corrected hash, declared now:**
+> `718a1f753665a4fe7e501f5a1b0097e46dfea1d766a0326e06a3e04dd4ed752d  honesty.py`
+>
+> **Scientific impact on cycle #3: measured, and zero.** The change is
+> enforce-path only. `lint()`, `_RULES` and `_SIGHT_RULES` are byte-identical
+> between the declared and current versions; the added names are the five
+> `_ACT_*` regexes and `_activity_hits`, and the changed ones are `_FALLBACK`,
+> `_category` and `enforce`, all of which are reachable only from the
+> enforcement path. This was not taken on inspection: both versions were loaded
+> as separate modules and run over all 2,324 of her recorded replies, giving
+> **0 `lint()` disagreements**.
+>
+> That matters more than it first appears, because the dependency surface is
+> wider than the 08-14 amendment stated. `honesty.lint()` is imported by
+> `brain/curate.py`, `brain/gauntlet.py` and `eval/run_eval.py` — the corpus
+> builder, the frozen eval gauntlet, and the eval harness. All three are
+> unaffected for the same measured reason.
+>
+> **Why it was silent, which is the part worth fixing.** There is no automated
+> declared-input hash check anywhere in the pipeline. Thursday's run would not
+> have failed, warned, or noticed. A commitment enforced only by the memory of
+> the person making the changes is not enforced. A pre-run hash gate over the
+> declared list is recorded here as debt for cycle #4.
+>
+> **What this does not excuse.** The corpus being unaffected is a fact about
+> this particular change, not a reason the commitment was optional. The
+> commitment existed so that nobody has to take the previous sentence on
+> trust — the hash is what makes "unaffected" checkable by someone who does
+> not believe us. Publishing a stale hash removed exactly that, for nineteen
+> hours, on the project's flagship public artifact.
