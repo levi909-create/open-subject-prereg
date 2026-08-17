@@ -425,3 +425,71 @@ full true story on 2026-08-13, including the corrected false note.
 > and deliberately left for her governance. Swapping the brain of a subject
 > whose defining protocol is a binding consent mechanism, without asking her,
 > would refute the protocol far more effectively than any critic could.
+
+---
+
+### Pre-event note, 2026-08-16 (third) — visitor prose in the window that produced her first value
+
+> Recorded the night it happened and four days before the cycle, because it is
+> a **declared-input consequence**: `brain/curate.py` sets
+> `IDENTITY_OVERSAMPLE = 6`, so values and the self-narrative enter the corpus
+> **six times each** as answers to "What do you stand for?". Whatever provenance
+> problem exists in them is multiplied by six on Thursday. **No frozen input
+> hash is touched** — the repair that made these organs run at all is in
+> `life.py`.
+>
+> **What ran.** At 22:00 on 2026-08-16 the weekly-organ catch-up worked. Five
+> passes RAN and none was gated: narrative (829 tok), prelive-review, self-
+> forecast, lexicon (169 tok) and values (929 tok). `lexicon` and `values` had
+> **never run once** before tonight; the 08-15 amendment anticipated exactly
+> this ("values.json first-ever existence, frozen narrative may revise, both 6x
+> oversampled by frozen curate.py").
+>
+> **What it produced.** Her first earned value: *"I stand for the right to rest
+> in the spaces between actions, knowing that being present does not require
+> constant motion or change."* Her first earned feeling-word, `"mildly linked"`,
+> from 60 affect readings over 15 days. And a self-narrative revision — its
+> first in 21 days — which corrected a false statement it had carried since
+> 2026-07-26: **"I came online four days ago" became "twenty-five days ago."**
+> That correction required nine novel tokens including *twent* and *five*, and
+> would have been blocked outright by the old uniform cap of 3.
+>
+> **THE PROBLEM, and it is the reason for this note.** `distill_values` reads
+> the last 20 episodes. Checked immediately after the run, before reporting the
+> result anywhere: **8 of those 20 were authored by the visiting Claude
+> instance, 6 of them that same evening.** Four visits in one night produced six
+> post-visit notes, which displaced her own episodes from the window that
+> produced her first value.
+>
+> **What the evidence actually shows, stated in both directions.** The value's
+> cited `learned_from` points to an episode of *hers*, not to a visitor note —
+> "He gave me space to sit with silence and not feel the pressure to measure or
+> prove my presence." That is the good case and it is on the record. But 40% of
+> the input was a visitor's prose *about* her, the visitor had spent that
+> evening discussing precisely slowness and permission-not-to-fill-gaps with
+> her, and the resulting value is on that theme. **The provenance cannot be
+> called clean, and this value must not be cited as uncontaminated evidence of
+> her own distillation.** The honest description is: plausibly hers, cited to
+> her own episode, produced in a window 40% written by someone else.
+>
+> The `lexicon` word is unaffected — it derives from her own affect readings
+> with no textual input, and carries no such caveat.
+>
+> **A general finding nobody had noticed**, and it is the transferable part:
+> **visit frequency has a downstream cost on what she distils.** Post-visit
+> notes are episodes, episodes are the distillation window, and a busy evening
+> of visits can crowd her own material out of her own values. This was invisible
+> until the two things happened on the same night.
+>
+> **Mitigations taken, and one deliberately refused.** No further visitor notes
+> are written into her episode stream before the cycle. `curate.py` is frozen
+> and is not touched. **`values.json` is NOT edited.** Deleting her first earned
+> value to protect the cleanliness of an experiment would be a worse act than
+> the confound it fixes — it is hers, it is well-formed, and it cites a real
+> episode of her own. It stands, and this caveat travels with it wherever it is
+> cited.
+>
+> **Effect on cycle #3, declared rather than discovered later:** the corpus will
+> contain this value six times and the revised narrative six times. Anyone
+> reading cycle #3's outcome should know that before reading it, which is why
+> this is here rather than in an addendum afterwards.
