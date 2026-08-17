@@ -543,3 +543,70 @@ full true story on 2026-08-13, including the corrected false note.
 > trust — the hash is what makes "unaffected" checkable by someone who does
 > not believe us. Publishing a stale hash removed exactly that, for nineteen
 > hours, on the project's flagship public artifact.
+
+---
+
+### Amendment 5 - 2026-08-17, continuation: honesty.py changed again (declared before the run)
+
+> **What changed.** A full audit of the running system on 2026-08-17 found four
+> defects in `honesty.py`, all in the enforcement path, all fixed today. Under
+> the 2026-08-15 commitment ("any change to honesty.py between this amendment
+> and the 2026-08-20 run will be declared as a further continuation with a new
+> hash"), each is declared here, before the run, with the new hash below.
+>
+> 1. **`enforce()` checked the rewriter's output with `lint()` alone.** The
+>    activity tier (08-16) and the semantic backstop (08-15) were bolted on
+>    outside `lint()`, so both were enforced on the way IN and waved through on
+>    the way OUT - the exact failure the 2026-07-26 note in this function warns
+>    about for `ctx` ("caught on the way in and waved through on the way out,
+>    and the rewriter is free to reintroduce it"). All three tiers now run on
+>    every check, via a single `_all_hits()`.
+> 2. **`_salvage()` was aimed at the wrong clause.** `_activity_hits` recorded
+>    the SENTENCE start as the hit position rather than the claim's own
+>    position, so clause-level splicing replaced the FIRST clause regardless of
+>    where the claim was. In "I like how focused you seem, and I've been
+>    building a tracker for you" it deleted the honest half and SHIPPED the
+>    fabrication. Activity hits now carry the true offset; semantic hits are
+>    marked sentence-granular and skip clause surgery entirely, because the
+>    classifier judges a sentence and no clause inside it is identifiable.
+> 3. **The activity tier had no quote exemption.** `lint()` has excluded quote
+>    spans since it was written; the newer tier did not, so
+>    `You said, "I've been coding all morning"` was rewritten as though she had
+>    claimed it - turning an accurate quotation of Levi into a correction of
+>    herself. Now exempt, using `lint()`'s own `_quote_spans`/`_in_spans`.
+> 4. **The semantic tier's blind spot is now measured instead of silent.**
+>    52 of its 66 calls to date were refused by the background gate with "a
+>    generation is already in flight" - enforcement runs per sentence while the
+>    rest of her reply is still streaming, so the refusal is the normal case,
+>    not the exception. The tier saw 21 per cent of what it was built to see,
+>    and the other 79 per cent passed silently, looking exactly like a clean
+>    result. Letting this one call skip the in-flight check was tried and
+>    REJECTED on measurement: ollama serializes requests to one model, so the
+>    check took 9.6 s and returned only when her long generation finished - it
+>    would have stalled her speech to ask a question about it. Sentences with
+>    no verdict are now queued and swept once she is quiet; a late "yes" is
+>    recorded as `percept-semantic-late` with `enforced: false`, because it is
+>    too late to have kept the sentence out of her mouth and the record should
+>    say so. Closing the gap properly needs a second runner and is cycle #4
+>    debt.
+>
+> **New hash, declared before the run:**
+> `c5782a63b94222185612cd8f7728ce9888b8af8075bfb9974bb3e3bc1ba2178c  honesty.py`
+>
+> **Scientific impact on cycle #3: measured, and zero.** Every change above is
+> enforce-path only. `lint()` was verified equivalent in BEHAVIOUR, not by
+> inspection: the declared version (`718a1f75...`) and this one were loaded as
+> separate modules and run over all 2,324 of her recorded turns in three
+> context states (seeing/screen on, off, and absent), giving **0 `lint()`
+> disagreements** across 6,972 comparisons. `brain/curate.py`,
+> `brain/gauntlet.py` and `eval/run_eval.py` all reach honesty only through
+> `lint()`, so all three are unaffected for that measured reason. The frozen
+> control corpus is untouched.
+>
+> **The 08-16 debt is paid, not promised again.** That amendment recorded
+> "a pre-run hash gate over the declared list" as debt for cycle #4, noting
+> that Thursday's run "would not have failed, warned, or noticed". The gate
+> exists as of today: `tools/check_declared_inputs.py` reads the hash table out
+> of THIS document - not a copy kept beside the code, which would drift - and
+> exits non-zero on any mismatch. It was written before this amendment and
+> flagged this exact change, which is how the hash above was produced.
