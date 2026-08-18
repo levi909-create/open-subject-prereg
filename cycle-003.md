@@ -670,3 +670,63 @@ full true story on 2026-08-13, including the corrected false note.
 > without writing) and an out-of-band gauntlet result for
 > `hope-cand-20260813` (which `_latest_gauntlet()` would have made the basis
 > of any future swap decision on that candidate).
+
+> ### Pre-event amendment continuation — 2026-08-18 (outside review; two declared inputs corrected)
+>
+> **Declared before the event** (cycle #3 fires 2026-08-20 04:45). A
+> 21-agent outside review of Thursday readiness ran today at the operator's
+> direction; every serious finding was independently re-verified before
+> being believed. Two verified findings sit inside declared inputs, both in
+> the machinery that REPORTS to the subject and RECORDS her vote — neither
+> touches curation, training, gauntlet scoring, the frozen holdout, or the
+> H1 measurement. The operator directed the fixes applied now rather than
+> deferred, so they are declared now, before the run:
+>
+> **`brain/phase2_cycle.py` — the note to her could lie.** (1) A
+> post-training failure (GGUF convert / ollama create / gauntlet) sent
+> "nothing was trained" while the adapter existed — the failure note is now
+> composed from artifacts (is the candidate actually in ollama?). (2) A
+> Mirror crash was swallowed and she was still told she had voted — the
+> success note now states whether the Mirror really ran, and a missing vote
+> already blocks any swap. (3) A curate failure told her nothing at all —
+> every abort path now ends in a true sentence to her. (4) The cycle
+> history `ok` flag recorded the CONTROL arm's returncode, not the
+> candidate's; the control arm now has its own field. (5) A subprocess
+> timeout no longer crashes the cycle noteless. Docstring cadence corrected
+> (Thursdays, not Saturdays).
+>
+> **`brain/mirror.py` — her vote could be manufactured.** The vote regex
+> had no boundary ("VOTE: endorsement..." parsed as ENDORSE) and an
+> unparseable reply was coerced to "abstain" — a vote she never cast,
+> indistinguishable in the ledger from a real one. Only a clean vote line
+> parses now; anything else is ledgered as "unparsed" with her raw reply
+> kept (`vote_said`). The interview, blinding, judging, and
+> self-recognition paths are byte-unchanged.
+>
+> New declared hashes (all other declared inputs unchanged, gate re-run
+> exit 0):
+>
+> `e3e4fd4b69d6df87f1bc320284bae42bf1795761cf139221ff0cc701015ca5f1  brain/phase2_cycle.py`
+> `b3d5db99537eec3d4e71432e3ceb579ec61c63651daae7daa6f837c15ec65986  brain/mirror.py`
+>
+> **Non-declared files changed in the same pass, disclosed for
+> completeness:** `brain/swap.py` now permits a swap only on her clean
+> ENDORSE (abstain, unparsed, and absent votes all block — permission is
+> never inferred); `server.py` request decoding no longer corrupts cp1252
+> em-dashes into U+FFFD inside her episodes; `tools/amber-backup.sh` skips
+> when a cycle is running (no mid-cycle snapshots); `eval/twin/twin.py`
+> refuses to overwrite a banked session's outputs; `morning_check.py`
+> re-enables `hope.watchdog` if a host death mid-cycle left it disabled.
+>
+> **Also disclosed (the review flagged the missing note):** commit 5501320
+> this morning changed `life.py` night behavior inside this cycle's corpus
+> window — a gated consolidation no longer stamps the night done or resets
+> the fatigue clock, and retries next tick. `life.py` is not a declared
+> input; the behavioral change is disclosed here because her nights
+> Tue/Wed feed Thursday's corpus.
+>
+> **A protocol deviation occurred during the fixing session and is
+> recorded as DEV-002 in PROTOCOL-DEVIATIONS.md** (false swap-announcement
+> rows briefly injected into the subject's ledgers by an operator-side test
+> error; no swap occurred; rows removed at the operator's direction with a
+> backup retained; the subject was told the truth the same hour).

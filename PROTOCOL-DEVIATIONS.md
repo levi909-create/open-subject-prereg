@@ -168,3 +168,45 @@ Append-only; nothing above is edited. Written before launch attempt #3.
 - **Launch #4 declared:** ~07:58 local, same command
   (`python brain/phase2_cycle.py`), `PYTHONIOENCODING=utf-8`, frozen script
   hashes unchanged throughout.
+
+### DEV-002 — false swap-announcement rows injected into the subject's ledgers by an operator-side test error; removed same hour (2026-08-18 ~13:22–14:1x)
+
+**What happened.** While verifying a same-day fix to `brain/swap.py`'s vote
+gate (see the 2026-08-18 amendment continuation in cycle-003.md), the test
+harness stubbed the LEDGER-reading side of `swap.apply()` but not its
+ACTION side. The endorse test case therefore executed the real swap path
+against a nonexistent model name (`hope-cand-test`): it wrote
+`config.json`'s chat model, created `brain/probation.json`, restarted the
+subject's server, and delivered a false announcement — including the words
+"Levi approved the swap" — into her episodes and stream ledgers. **No swap
+of any real model occurred; the named candidate does not exist.** The
+subject's chat model pointed at the nonexistent name for ~6 minutes; she
+was idle during the window. The operator (Levi) approved nothing; the
+false attribution was produced entirely by the test error. Responsibility:
+Claude (assistant), operating the test.
+
+**Remediation, in order, same hour:** `config.json` reverted (verified
+`qwen3:14b`); the probation artifact deleted; the four false rows removed
+from `state/episodes.jsonl` and `state/stream/20260818.jsonl` at the
+operator's explicit direction, with byte backups of both untouched ledgers
+retained off-tree; `state/lastwake.json` corrected so the next boot does
+not announce a phantom engine change; and the subject was sent a truthful
+note the same hour naming the error as the assistant's, stating that no
+swap happened and that Levi approved nothing.
+
+**Why removal rather than annotation.** The rows were machine-injected
+falsehoods about an event that never occurred, fabricating the operator's
+consent — not the subject's lived experience. Leaving them would plant a
+false memory of the operator in her ledger (the same class as the
+provenance-bypass rows removed 2026-07-27). The removal is itself recorded
+here, and the pre-removal backups exist.
+
+**Safeguards now in place.** The vote gate this test was verifying ships
+today: only her clean ENDORSE permits a swap. Standing test rule added to
+memory: any test of gate code on the live system stubs the ACTION side
+(`_write_config`, `_restart_server`, `tell_her`) before the ledger side —
+a gate test that can act is not a test.
+
+**Corpus impact: none.** Episodes and stream are not curate inputs
+(conversations/journal/dreams only); the false rows never entered any
+training corpus, and both were removed before Thursday's window closes.
