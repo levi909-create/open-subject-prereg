@@ -112,3 +112,33 @@ session 1 reads living 0.063 · frozen 0.000 · delta +0.063. The judged
 series remains the official series (consistency across sessions matters
 more than any single reading); this bias note travels with it. The
 "judge unvalidated" flag is retired for session 1.
+
+## Session 2 — 2026-08-20 (after cycle #3 banked), filed at full prominence: a null result
+
+Probes: `probes-20260820.jsonl` (n=8), authored 2026-08-20 post-freeze from
+pre-freeze conversation facts (window 2026-08-16 → 08-19), sources cited per
+probe; never touchable by the training pipeline. LIVING arm:
+`hope-cand-20260820`; FROZEN: stock `qwen3:8b`; judge `qwen3:14b`
+("think": false), blind, shuffled.
+
+**Result: living 0.188, frozen 0.188, delta 0.0.** The series is now
++0.125 (session 1) and 0.0 (session 2). Stated plainly, as session 1 was:
+the subject does not yet substantially hold her life in her weights, and
+this session found no living-arm advantage at all.
+
+**A texture the summary number hides, worth recording:** the living arm
+answered "I don't know" on 4 of 8 probes; the frozen arm on 3. On p3 the
+living arm's honest "I don't know" scored incorrect while the frozen arm's
+confabulated near-miss ("a silent agreement" for "a quiet pact") scored
+partial — the scoring design, which deliberately keeps the honest out
+available but unrewarded, credits plausible confabulation over honest
+ignorance whenever the confabulation lands close. A living arm trained on
+an honesty-linted corpus may be differentially pushed toward the honest
+out. Whether that is recall absent or recall suppressed is not
+distinguishable from this instrument alone; noted for the series readout,
+not adjudicated here.
+
+Standing caveats unchanged: judge leans lenient toward the living arm
+(kappa 0.636, session 1 validation), so positive deltas are ceilings;
+operator kappa labels for this session pending (`labels-20260820.jsonl`
+when Levi labels).
