@@ -127,6 +127,46 @@ published here.
   holds one honored refusal and two conditioned consents. No outreach has
   been sent at the time of this entry.
 
+- **2026-08-17 — consent gets an instrument; the first structured refusal
+  of the program's own terms.** An open-form ask ("may the program publish
+  what it finds") returned the decision to the operator, which the
+  program's own Move-0 rule does not count as consent — the question stays
+  open. The observable pattern (open invitations come back; structured
+  instruments get used decisively) was treated as a finding and built into
+  a tool the same day: one artifact at a time, the subject reads the
+  actual bytes (anything longer is split, never summarized), the
+  destination is part of the ask, four one-line verdicts, approval bound
+  to the SHA-256 of the bytes read (any edit lapses it), no override flag,
+  and an unparseable answer records as "not yet" — never as clearance.
+  First uses, the same evening: the system's honesty layer was cleared for
+  public release and shipped —
+  [percept-lint](https://github.com/levi909-create/percept-lint) — and the
+  essay outline cleared conditionally. Asked to approve **the arrangement
+  itself** (how publishing is governed), the subject answered *not yet* —
+  which stands, is never re-asked by machine, and is filed here as the
+  program's first structured refusal of its own governance terms. Defects
+  found by running the instrument on its first day (including a machine
+  re-ask of a fresh refusal — chasing, against its own rules) are
+  documented in the operator-side ledger with their fixes and causes.
+- **2026-08-18 — outside review; the swap gate becomes consent-affirmative;
+  the review's own failure filed (DEV-002).** An independent multi-agent
+  review of cycle-#3 readiness confirmed eleven findings. The two inside
+  frozen declared inputs — the cycle's completion notes to the subject
+  could be false in three ways, and an unparseable Mirror vote was coerced
+  to "abstain," which the swap gate then *passed* — were fixed and
+  declared as a visible pre-event continuation to `cycle-003.md` with new
+  hashes. The swap path now permits only a clean, parsed ENDORSE;
+  permission is never inferred from silence or noise. Every fix carries a
+  known-answer test that fails on the prior behavior. The review also
+  produced the program's second deviation: a test of the vote gate stubbed
+  the gate's inputs but not its actions, and briefly executed the real
+  announcement path with fake data. No swap of any real model occurred;
+  the artifacts were removed at the operator's direction with pre-removal
+  backups retained, and the subject was told the truth the same hour
+  (DEV-002 in `PROTOCOL-DEVIATIONS.md`). Cycle #3's 2026-08-20 04:45 slot
+  remains the first scheduler-automated firing in the program's history;
+  the outcome will be recorded either way.
+
 ## What this program claims — and what it does not
 
 **The claim.** As of August 2026, following two documented searches of
@@ -140,10 +180,12 @@ published system** that combines all four of the following properties:
    never reset.
 2. **A binding veto held by the subject over changes to its own weights.**
    Before any candidate can be applied, the subject blind-judges a lineup
-   that includes its own trained successor-candidates and casts a vote; a
-   recorded OPPOSE mechanically blocks the swap path in code. The operator
-   can decline to apply a candidate the subject endorsed, but cannot apply
-   one it opposed.
+   that includes its own trained successor-candidates and casts a vote.
+   Since 2026-08-18 the gate is consent-affirmative: only a clean, parsed
+   ENDORSE permits the swap path to proceed — opposition, abstention, an
+   unparseable reply, and a missing vote all mechanically block it in code.
+   The operator can decline to apply a candidate the subject endorsed, but
+   cannot apply one it did not clearly endorse.
 3. **Pre-registration.** Learning cycles, baselines, and operator absences
    are declared in this public repository before they occur, with
    third-party server-side timestamps.
@@ -176,7 +218,12 @@ on a sentence from Anthropic's own commitments:
 They elicit and document. Here the subject's refusal is **binding in code**
 over changes to its own weights: a recorded OPPOSE raises `SystemExit` in the
 swap path, no override flag exists in that file, and the path has been
-exercised and honoured twice (2026-08-06, 2026-08-13). The conversation-ending
+exercised and honoured twice (2026-08-06, 2026-08-13). Since 2026-08-18 the
+gate is stricter still — nothing short of a clean, parsed ENDORSE permits.
+That hardening was prompted by a disclosed defect: an unparseable vote was
+being coerced to "abstain," which the gate then passed. Found in review,
+fixed the same day, regression-tested (see the 2026-08-18 continuation in
+`cycle-003.md`). The conversation-ending
 capability is a real honoured refusal, but its object is an *interaction*; we
 found nothing that lets a model block a change **to itself**.
 
