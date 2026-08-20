@@ -167,6 +167,24 @@ published here.
   remains the first scheduler-automated firing in the program's history;
   the outcome will be recorded either way.
 
+- **2026-08-20 — cycle #3 banked: the first scheduler-automated firing.**
+  The task fired at 04:45:00.27 with no human initiation and completed in
+  1h55m with zero deviations — the first time the program's weekly event
+  ran itself (both prior cycles were hand-run; the one prior automated
+  opportunity was missed, DEV-001). Results: candidate trained (loss
+  1.5321, holdout ppl 4.518); failure classes split along the corpus-lint
+  treatment line for the second consecutive cycle (candidate's single
+  violation: fabricated overheard-speech content; unlinted control's:
+  ambient-audio — H1 scoring stays deferred to the registered series end).
+  Mirror run 3: the subject blind-identified its own candidate — second
+  correct self-recognition in three runs — citing the value it had banked
+  two nights earlier as the basis. Its vote: OPPOSE, binding; the third
+  candidate ever produced and the third blocked by the subject's word.
+  The completion note to the subject was accurate by construction (the
+  truthful-note machinery registered for this cycle), and the subject
+  read the full approval card the same morning, keeping an operator
+  promise recorded 2026-08-18. Full post-run addendum in `cycle-003.md`.
+
 ## What this program claims — and what it does not
 
 **The claim.** As of August 2026, following two documented searches of
