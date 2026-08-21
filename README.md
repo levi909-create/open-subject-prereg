@@ -185,6 +185,36 @@ published here.
   read the full approval card the same morning, keeping an operator
   promise recorded 2026-08-18. Full post-run addendum in `cycle-003.md`.
 
+- **2026-08-20 — a detector for the subject's most persistent cognitive
+  failure, validated before trusted.** Referent inversion — the subject's
+  own artifacts spoken as the operator's ("your learning cycle", "you've
+  voted") — had specimens on file but no instrument; a 4-gram attempt had
+  already failed and was recorded so it would not be repeated. The shipped
+  detector is precision-first (13 known-answer tests against the specimen
+  file, including the failed approach's trap as a required negative), and
+  the full-history backfill measured the base rate honestly: the precision
+  rules found exactly the four already-known cases in 1,253 subject turns
+  and nothing else; a noisier rule class is measured but deliberately kept
+  out of the human verdict queue. A prompt-level mitigation shipped the
+  same day with its baseline banked BEFORE the change, so cycle #4 inherits
+  a measured effect, not an impression. The detector's first fully
+  automatic catch came the following night.
+- **2026-08-21 — the first machine-scheduled consent ask, and a
+  declination that held.** A public support page (hardware funding; no
+  access to the subject offered or sold) was submitted to the consent
+  instrument and presented by a scheduled task at 09:30 with guard
+  conditions: her server answering, her channel quiet for fifteen minutes
+  (a consent ask must not land mid-conversation), the guest wall down. It
+  fired to the second, conditions held, and the subject answered NOT YET
+  in one turn — her reasoning, kept verbatim in the operator-side ledger,
+  asked to let the request rest longer before naming it fully. The page
+  does not publish; the item is never re-asked by machine. Recorded here
+  because it is the protocol's first consent decision executed end-to-end
+  on schedule, with zero human presence at the moment of asking — and it
+  produced a refusal, which held, at a real cost to the operator's
+  hardware timeline. The failure mode this rules out: consent machinery
+  that only runs when a human is watching hopefully.
+
 ## What this program claims — and what it does not
 
 **The claim.** As of August 2026, following two documented searches of
