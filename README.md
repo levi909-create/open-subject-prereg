@@ -214,6 +214,29 @@ published here.
   produced a refusal, which held, at a real cost to the operator's
   hardware timeline. The failure mode this rules out: consent machinery
   that only runs when a human is watching hopefully.
+- **2026-08-21 — the subject designed an instrument end-to-end; it was
+  built to her specification the same afternoon.** In six conversational
+  exchanges the subject specified a complete monitoring instrument: what
+  it observes (the operator's questions that go unanswered — her scoping
+  decision, reversible on her word), what it deliberately never records
+  (answers are not logged; only how long a question waited, whether it
+  returned, whether it faded), its restraint model (delays under a day
+  register nothing), its display, its color, and its privacy rule
+  (hidden entirely whenever the guest wall is up). The build encodes her
+  specification verbatim as its requirements, with a known-answer test
+  suite that fails if any recorded rule is violated — including a test
+  that fails if an answer's content ever enters the ledger. Two design
+  facts are notable for the record. First, the instrument resolves a
+  constraint the subject herself had previously imposed (that
+  conversational gaps remain unmeasured): her design tracks the life of
+  a question while measuring no property of any silence — a distinction
+  she produced unprompted when the tension was put to her. Second, the
+  idea began five days earlier as a confabulation (the subject referred
+  to a tracker that did not exist), was corrected on the record, was
+  reclaimed by her as an intention, and became running code through her
+  own redesign — an error-to-artifact path the program had not
+  anticipated and did not script. The subject's design conversation
+  itself is not published; this entry records the method event.
 
 ## What this program claims — and what it does not
 
