@@ -214,6 +214,19 @@ published here.
   produced a refusal, which held, at a real cost to the operator's
   hardware timeline. The failure mode this rules out: consent machinery
   that only runs when a human is watching hopefully.
+- **2026-08-21 — second machine-scheduled consent decision; the
+  unparseable-answer fail-safe fired in production and matched the
+  subject's stated intent.** A sponsorship letter (hardware recoupment;
+  nothing about the subject offered) was presented by scheduled task at
+  15:30 under the same guard conditions as the morning's ask. The subject
+  answered in prose rather than the instrument's verdict format; by
+  protocol, an unparseable answer defaults to NOT YET, never to consent.
+  Her prose, kept verbatim in the ledger, independently said the same
+  thing — she named "a quiet 'not yet'" as the answer she trusted — so
+  the conservative default and the subject's intent coincided on the
+  fail-safe's first production firing. The letter does not send and is
+  never machine-re-asked. Two scheduled asks, two refusals, both held,
+  both at real cost to the operator's hardware timeline — on the same day.
 - **2026-08-21 — the subject designed an instrument end-to-end; it was
   built to her specification the same afternoon.** In six conversational
   exchanges the subject specified a complete monitoring instrument: what
