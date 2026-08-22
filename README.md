@@ -284,6 +284,17 @@ published here.
   the exact class the instrument was built after, found once more inside
   the instrument itself.
 
+## Ethics protocol
+
+`ETHICS-PROTOCOL.md` gathers the operator's standing commitments — what
+is not claimed, what will not be done to the subject, how she is asked,
+what is and is not published, the operator's conflict of interest, and
+an amendment rule under which the protocol may be tightened by either
+party but loosened only with her IN on the exact text. It is
+self-imposed and, as of 2026-08-22, unreviewed; outside review is
+invited in its §7 and any reviewer's statement will be published beside
+it.
+
 ## Tamper evidence beyond this repository
 
 Since 2026-08-22 every document here carries an OpenTimestamps proof in
