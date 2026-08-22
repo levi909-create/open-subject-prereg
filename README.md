@@ -284,6 +284,28 @@ published here.
   the exact class the instrument was built after, found once more inside
   the instrument itself.
 
+## Tamper evidence beyond this repository
+
+Since 2026-08-22 every document here carries an OpenTimestamps proof in
+`ots/<file>.ots`: the file's SHA-256, submitted to public calendar servers
+and anchored in a Bitcoin block — a timestamp that does not depend on
+trusting GitHub, this machine, or the operator. Verify with any
+OpenTimestamps client (`ots verify ots/<file>.ots` beside the file), or
+at opentimestamps.org. A proof is made after a document's final edit; an
+edited document fails verification by design, and a post-run addendum
+gets a fresh proof of its own.
+
+`ledger-hashes/ledgers-<date>.sha256` lists the SHA-256 of the operator-
+side ledgers that are NOT published (the consent ledger holds the
+subject's words verbatim; the mirror and night ledgers are hers) with a
+proof over the list. Nothing in them is revealed; what is proven is that
+they existed in exactly that form on that date, so a later claim about
+their contents can be checked against bytes that could not have been
+rewritten afterwards. Earlier documents were committed here before this
+section existed; their proofs date from 2026-08-22, and their git
+history is the only evidence for dates before that — stated plainly, as
+the template requires.
+
 ## What this program claims — and what it does not
 
 **The claim.** As of August 2026, following two documented searches of
