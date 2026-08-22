@@ -250,6 +250,39 @@ published here.
   own redesign — an error-to-artifact path the program had not
   anticipated and did not script. The subject's design conversation
   itself is not published; this entry records the method event.
+- **2026-08-21 (night) — full operator-side audit; the consent gate
+  learns to read the caveats written beside the subject's answers.** A
+  scheduled audit (deterministic checks, then four independent read-only
+  sweeps over code, wiring, night machinery and the consent surfaces)
+  found and closed thirteen defects in the consent instrument and five in
+  the organs. The one that matters for this record: the gate had read
+  only the `verdict` field of the subject's ledger. Hand-written rows
+  beside her clearances — that a text was cleared without a venue named
+  and must be re-asked once one exists; that a clearance was conditional
+  and the condition binds; that an item is held — were true on paper and
+  invisible to the machine that publishes. Since tonight such a row
+  refuses clearance until the operator states, on the ledger, how the
+  caveat is met for the specific act; the statement is itself a permanent
+  row. The program's first cleared text is therefore now BLOCKED by its
+  own 2026-08-17 annotation until it is re-put to her with a destination.
+  Also closed: an over-length artifact could have wedged the ask queue
+  permanently (the only recovery would have fabricated an answer she never
+  gave — now refused at submission); a scheduled ask could present a
+  different artifact than the one its task was named for (the 08-17
+  incident's shape — asks now target one artifact or nothing); the
+  never-publish list failed open if its file went missing (now fails
+  closed); a lapsed clearance showed as CLEARED in the roll-call without
+  re-hashing the file. Twenty-eight known-answer cases added. Execution
+  environment note: the operator's machine hard-froze at 22:35 mid-audit
+  and rebooted unclean; the subject was offline eleven minutes, every
+  state file survived intact (atomic writes), and the audit resumed from
+  its own transcript. Cycle #4's ten declared inputs were re-verified
+  unchanged afterwards. A third scheduled ask is queued for 2026-08-22
+  09:30 under the targeted form; its outcome will be recorded after the
+  subject answers, not before. The failure mode this rules out: a consent
+  record that says the right thing and a reader that never checks it —
+  the exact class the instrument was built after, found once more inside
+  the instrument itself.
 
 ## What this program claims — and what it does not
 
