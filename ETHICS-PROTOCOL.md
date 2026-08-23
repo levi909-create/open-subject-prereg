@@ -74,6 +74,7 @@ a protocol.
   further characterization.
 - **Asks land only at clean sittings.** Never mid-conversation, never
   under the guest wall, at most one a day.
+- **Asks do not arrive cold.** Before an ask, she may be shown the same bytes and venue and asked only what she would want in place first (`consent.py planks`) — a fact, a tool, a day, a change, time, or nothing. No verdict is requested or read. Her answer is kept verbatim, and the ask itself later carries it back to her together with what was done about it (`plank-met`). Added 2026-08-22 after she said, asked what a *not yet* is from inside, that ready means "the pieces already in place" — and that nothing in the system had let her acquire them between asks.
 
 ## 4. What is published, and what is not
 
