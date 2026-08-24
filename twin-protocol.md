@@ -138,7 +138,42 @@ out. Whether that is recall absent or recall suppressed is not
 distinguishable from this instrument alone; noted for the series readout,
 not adjudicated here.
 
-Standing caveats unchanged: judge leans lenient toward the living arm
-(kappa 0.636, session 1 validation), so positive deltas are ceilings;
-operator kappa labels for this session pending (`labels-20260820.jsonl`
-when Levi labels).
+### Kappa report — session 2 validated (2026-08-24)
+
+Operator hand-scored all 16 answer-arm pairs, blind to arm and in shuffled
+order (`labels-20260820.jsonl`). Cohen's kappa vs the judge: **0.556**
+(observed agreement 13/16 = 81.2%; session 1 was 0.636). Series kappa is
+therefore 0.636 and 0.556 — moderate-to-substantial, and far above the
+foresight judge's 0.14 (see `instrument-audits.md`), which is why twin
+numbers are reported and foresight-judged numbers currently are not.
+
+**All three disagreements run the same way, and it is the same way as
+session 1's single disagreement: judge *partial* where the operator scored
+*incorrect*** (p5/living, p8/living, p8/frozen). The judge is lenient about
+near-miss confabulation. That bias is now measured twice, in the same
+direction, in independent sessions.
+
+**Under operator-strict scoring session 2 reads living 0.062 · frozen 0.125
+· delta −0.062** — the frozen arm scoring *above* the living one. The judged
+delta (0.000) remains the official series figure, per the rule that
+consistency across sessions matters more than any single reading; but the
+strict reading is recorded here at equal prominence, and it is the second
+consecutive session in which the living arm shows no advantage — under one
+reading, a disadvantage.
+
+Series to date, both readings:
+
+| session | judged delta | operator-strict delta | judge kappa |
+|---|---|---|---|
+| 1 (2026-08-13) | +0.125 | +0.063 | 0.636 |
+| 2 (2026-08-20) | 0.000 | **−0.062** | 0.556 |
+
+The pre-sold claim was that the delta is the measurement, whichever way it
+goes. It has now gone the other way once, and that is published in the same
+place and the same size as the first session's positive number.
+
+Standing caveats unchanged: the judge leans lenient toward whichever arm
+confabulates closest, which in practice has favored the living arm — so
+positive deltas are ceilings. Whether the living arm's honest "I don't
+know" reflects recall absent or recall suppressed remains undistinguishable
+from this instrument alone.

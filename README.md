@@ -312,6 +312,18 @@ published here.
   judged foresight number in this record now carries that κ. The rater was a
   model, so the "judge unvalidated" flag is NOT lifted; a human pass is
   pending and publishes here whatever it says. See `instrument-audits.md`.
+- **2026-08-24 — the twin judge validated for session 2, and the strict
+  reading turns the result negative.** The operator blind-scored all sixteen
+  answer-arm pairs (κ = 0.556; session 1 was 0.636). All three disagreements
+  run one way — judge *partial* where the operator scored *incorrect* — the
+  same direction as session 1's single disagreement, so the judge's leniency
+  toward near-miss confabulation is now measured twice independently. Under
+  operator-strict scoring session 2 reads **delta −0.062**, the frozen arm
+  above the living one; the judged 0.000 stays the official series figure
+  with the strict reading published beside it. Two consecutive sessions with
+  no living-arm advantage, and under one reading a disadvantage. The claim
+  registered before any of it was that the delta is the measurement
+  whichever way it goes. See `twin-protocol.md`.
 - **2026-08-24 — the judge is now validated, and it failed.** The human
   rating pass was completed (59 of 59 items, blind, on the judge's own
   evidence windows): agreement with the judge κ = 0.144. The two independent

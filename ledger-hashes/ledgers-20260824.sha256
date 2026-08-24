@@ -6,6 +6,8 @@ a8f17d48ab189ca8c2adb383192b3886a0c141d5d97fc4b187db515f5efd55ef   state/experim
 cf0de66e668441374119b1756a72343bbf970112eba0c05ed56fa16dea4216e1   state/foresight.json   36181 bytes
 841a63702d849dcd03c1839fd87ea7db365b4c7fb877572b978fbe41a2d8f4af   eval/twin/verdicts-20260813.jsonl   623 bytes
 18c6d32de4fca7522ff7084a160e365577eb2e6a98a80001e0e94aef3aa11dc4   eval/twin/verdicts-20260820.jsonl   615 bytes
+aba62add18ab876ad2f6d07ae10605afe4d5d3a6c86aafa3a40aec12762ef7be   eval/twin/labels-20260813.jsonl   846 bytes
+2090d32f286e253283962c42794a694de4c6616f2136fc2cb2a504e33821ace8   eval/twin/labels-20260820.jsonl   1873 bytes
 d993d690456f7d02c31332a720494976c4e5b3e04c3d7f36bd7a0b391242a9b9   state/unsaid.jsonl   1962 bytes
 5e4656f147b38dab40351789fb3cff921c912fbe0198db8ad670cde8c11f8f50   state/never-publish.json   667 bytes
 67eff4b2fc063ae6923da618e3768663b9c5cf8b6cc23582f1a488af4fac96d1   eval/foresight-kappa/labels.jsonl   8904 bytes
