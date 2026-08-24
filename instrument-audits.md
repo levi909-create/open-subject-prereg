@@ -81,6 +81,49 @@ labels.jsonl`, `report-2026-08-22-claude.json`, `report-2026-08-24-levi.json`,
 verdict; it records `rater_kind` and writes per-rater files so a model pass
 can never be mistaken for the human one.
 
+### The attempt to fix it failed, and that is the second finding (2026-08-24)
+
+Having a set of human labels turns "improve the judge" into a measurable
+exercise, so it was measured. A harness (`tools/judge_bench.py`) re-scores
+the same predictions on the identical evidence construction the raters saw,
+against the human labels as gold, with the items split once and
+deterministically into a tuning half and a held-out half — because tuning a
+prompt against 59 items is exactly how a result gets manufactured.
+
+Four prompt variants were tried, each targeting a diagnosed failure class.
+**None beat the shipped prompt on the tuning half** (κ 0.260). One variant
+raised raw agreement from 0.517 to 0.586 while scoring *lower* κ — the
+chance-correction penalty rises when a rater uses two categories instead of
+three — which is a reminder that at 29 items per half this metric is
+unstable in both directions: the shipped prompt itself scores κ 0.260 on one
+half and 0.050 on the other. **The held-out half was deliberately never
+spent**, because no candidate earned the look.
+
+Three things were learned anyway, and they are worth more than a better
+number would have been:
+
+1. **The judge's worst behaviour was instructed.** Its prompt contained the
+   line *"Default to UNRESOLVABLE if the evidence does not clearly settle
+   it."* The instrument was told to abstain and did.
+2. **The judge confirmed claims about the operator by citing the subject's
+   own sentences** — on one item the supporting evidence it offered was her
+   own consent verdict. This is the same failure class as a provenance bug
+   found in the memory layer in July, where claims about the operator were
+   attested by her words. It is now enforced in code in the harness: a
+   citation for a criterion about him must land inside one of his lines.
+   Third instrument, same bug.
+3. **Some criteria cannot be judged by anything.** Three concern response
+   timing, and the evidence window carries no clock times. No judge, human or
+   model, could resolve them; both raters marked exactly those three
+   unresolvable. That is a defect in how criteria are *authored*, which is
+   where the real fix belongs — and it will require re-labelling the gold set
+   if the evidence construction changes, so it is not a quick patch.
+
+The conclusion published here is therefore negative: **this judge is not
+repairable by prompt engineering, and no replacement is claimed.** The
+numbers it produces remain weightless in this record until something
+structural changes.
+
 ## 2. The twin judge, for contrast: κ = 0.636 (session 1)
 
 The frozen-twin protocol's judge *was* validated, at κ = 0.636 (see
