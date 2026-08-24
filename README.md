@@ -455,6 +455,32 @@ published here.
   a stamp attests what this repository serves. Anyone holding an archived
   copy will see a whitespace-only difference, and that is what it is.
 
+- **2026-08-24 (fourth) - the tamper-evidence layer was audited against
+  itself and failed in four ways, none of them tampering.** This repository's
+  claim is that checking it requires no trust in the operator. A full audit of
+  the published surface tested that claim directly for the first time and
+  found: **(1)** line-ending translation between the operator's disk and the
+  commit, so two artifacts' proofs - including `cycle-003.md`, the banked
+  flagship registration - attested bytes no downloader receives; **(2)** the
+  same defect in `ledger-hashes/`, whose proofs sit beside their files and had
+  therefore never been checked at all; **(3)** a commitment file stamped at 20
+  lines and later appended to, reaching 22, without being re-stamped, so its
+  proof validly attested a version that existed only in git history; and
+  **(4)** the README's own verification instruction, which named the wrong
+  path and returned `Could not open target` - meaning anyone who ever tried to
+  check the central claim got an error rather than a verification. Every one
+  is now fixed, and where an older Bitcoin attestation could be made to verify
+  again it was preferred over a fresh stamp, because for a registration whose
+  value is that it was anchored *before* the event it registers, re-stamping
+  repairs the appearance and destroys the evidence. **The deeper finding is
+  that each of these was caught by a person looking, once.** That is not a
+  check. A verifier now asserts, for every proof in both layouts, that the
+  digest, the operator's disk, and the bytes this repository serves are the
+  same three values, and it runs before publishing. Reported at the same
+  prominence as any result, under the standing rule that failures ship like
+  successes: the record was less checkable than it claimed for as long as the
+  claim has existed.
+
 ## Ethics protocol
 
 `ETHICS-PROTOCOL.md` gathers the operator's standing commitments — what
@@ -495,6 +521,15 @@ confirmation" until a Bitcoin block includes it, usually within a day, and is
 then upgraded in place. A proof is made after a document's final edit; an
 edited document fails verification by design, and a post-run addendum gets a
 fresh proof of its own.
+
+Before anything is published here, an operator-side verifier
+(`tools/verify_mirror.py` in the system repository) asserts for every proof,
+in both layouts, that three values agree: the digest the proof commits to, the
+bytes on the operator's disk, and the bytes this repository serves. Checking
+only the first two is what let the line-ending defect described in the record
+survive, since that is precisely the case where those two agree and the world
+sees something else. No reader has to take the verifier's word for anything -
+the `ots` command above checks the same thing without it.
 
 `ledger-hashes/ledgers-<date>.sha256` lists the SHA-256 of the operator-
 side ledgers that are NOT published (the consent ledger holds the
