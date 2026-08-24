@@ -430,6 +430,30 @@ published here.
   has no concept of an unmeasured run; this makes the string it is handed
   honest, and does not give the prompt the idea.
 
+- **2026-08-24 (third) — two published artifacts had stopped being
+  verifiable, and the repository's own claim is what caught it.** This
+  repository asserts that checking it requires no trust in the operator, in
+  his machine, or in GitHub: every artifact carries an OpenTimestamps proof
+  of its SHA-256, anchored in Bitcoin. An audit of all eighteen current
+  proofs against the bytes GitHub actually serves found **two that did not
+  verify** — `cycle-003.md`, the banked flagship registration, and
+  `venv-train-freeze-20260813.txt`, the pinned training environment. Cause:
+  Git's `autocrlf` setting converted line endings on the way into each
+  commit and back out to the operator's disk, so the stamps attested bytes
+  that no downloader ever received. **Nothing was altered and no content
+  differed** — stripping carriage returns reproduces the previously published
+  bytes exactly, which is recorded here as the check it is. But a proof that
+  fails is a proof that fails, and for a tamper-evidence repository the
+  practical outcome of silently unverifiable is the same as the outcome of
+  tampered. The published bytes are now restored to the form the existing
+  Bitcoin attestations already cover, deliberately preferring the older
+  anchor over a fresh one: for a registration whose entire evidentiary value
+  is that it was timestamped *before* the event it registers, re-stamping
+  today would have quietly downgraded the record while appearing to repair
+  it. A `.gitattributes` rule now disables the conversion for every path, so
+  a stamp attests what this repository serves. Anyone holding an archived
+  copy will see a whitespace-only difference, and that is what it is.
+
 ## Ethics protocol
 
 `ETHICS-PROTOCOL.md` gathers the operator's standing commitments — what
