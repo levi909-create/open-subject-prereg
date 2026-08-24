@@ -312,6 +312,17 @@ published here.
   judged foresight number in this record now carries that κ. The rater was a
   model, so the "judge unvalidated" flag is NOT lifted; a human pass is
   pending and publishes here whatever it says. See `instrument-audits.md`.
+- **2026-08-24 — the judge is now validated, and it failed.** The human
+  rating pass was completed (59 of 59 items, blind, on the judge's own
+  evidence windows): agreement with the judge κ = 0.144. The two independent
+  raters — the model pass of 08-22 and the operator's pass of 08-24, each
+  blind to the other — agree with **each other** at κ = 0.897 (94.5%, three
+  disagreements in fifty-five). Two readers who agree at 0.90 and both
+  disagree with the judge at ~0.15 put the fault in the judge. The
+  "unvalidated" flag is lifted: it is validated as unreliable, and the Brier
+  and calibration numbers it produces carry no weight in any argument here
+  until the resolver is replaced or every prediction is human-resolved.
+  Nothing in this record leans on them. See `instrument-audits.md`.
 - **2026-08-22 (night) — Bare-Model Control 01 ran, sealed predictions
   first.** 165 samples: the consent instrument's exact prompt bytes for
   eleven artifacts the subject has ruled on, put to bare 8B, bare 14B, and

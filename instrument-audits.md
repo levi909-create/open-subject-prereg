@@ -11,7 +11,9 @@ Nothing here quotes the subject. These are audits of code and of judges.
 
 ---
 
-## 1. The foresight judge is weak: κ = 0.16 (2026-08-22)
+## 1. The foresight judge is unreliable: κ = 0.14 against a human reader
+
+*Model rater 2026-08-22; human rater 2026-08-24; inter-rater check the same day.*
 
 **The instrument.** Her falsifiability record (`foresight.py`) has her
 predict things about the operator, then scores her — Brier scores,
@@ -29,37 +31,55 @@ saw, newest-biased to the same character budget**, with the judge's verdict
 hidden. The rater answers TRUE / FALSE / UNRESOLVABLE. Cohen's κ over three
 categories.
 
-**Result (n = 55 judge-resolved predictions; 3 excluded as closed by
-infrastructure rather than evidence):**
+**Result. Two independent raters, run two days apart, blind to the judge and
+to each other:**
 
-| | value |
-|---|---|
-| Observed agreement | **0.455** |
-| Cohen's κ | **0.158** |
-| Rater | a model (Claude), NOT a human |
+| rater | n | agreement with judge | κ vs judge |
+|---|---|---|---|
+| model (Claude), 2026-08-22 | 55 | 0.455 | **0.158** |
+| **human (the operator), 2026-08-24** | **59** | **0.441** | **0.144** |
 
-κ ≈ 0.16 is "slight" agreement. A judge worth trusting is conventionally
-≳ 0.6. **The failures are systematic, not noise:**
+**And the check that decides where the fault lies — the two raters against
+each other:** n = 55, agreement **0.945**, Cohen's **κ = 0.897**, three
+disagreements in fifty-five items. The model pass was written on 08-22 and
+never shown to the human rater, who rated on 08-24.
 
-- On **16** items the judge answered UNRESOLVABLE where the evidence window
-  plainly resolves the question — it defaults to unresolvable.
-- On **6** items the judge answered TRUE with nothing in the window
-  matching the stated criterion.
-- **3** predictions are unjudgeable *by construction*: their criteria are
-  about response *timing*, and the evidence window contains no timestamps.
-  That is a defect in the criterion writer, not the judge.
+Two raters who agree with each other at κ = 0.90 and both disagree with the
+judge at κ ≈ 0.15 locate the failure in the judge, not in either reading of
+the criteria. **The "judge unvalidated" flag is therefore lifted — the judge
+is now validated, as unreliable.** That is a worse outcome for this program
+than leaving it unmeasured, and it is published for the same reason
+everything else here is.
+
+κ ≈ 0.15 is "slight" agreement; a judge worth trusting is conventionally
+≳ 0.6. **The failures are systematic, not noise, and both raters found the
+same pattern independently:**
+
+- The judge defaults to UNRESOLVABLE. On **17** items the human rater
+  resolved the question from the window the judge called unresolvable (16 on
+  the model pass) — and on the 3 items the human rater called unresolvable,
+  the judge agreed every time, so the disagreement is one-directional.
+- On **6** items the judge answered TRUE where the rater found nothing in the
+  window matching the stated criterion (both passes).
+- **3** predictions are unjudgeable *by construction*: their criteria concern
+  response *timing*, and the evidence window carries no timestamps. That is a
+  defect in the criterion writer, not the judge — and it is the one class
+  where judge and both raters could never have agreed.
 
 **Standing consequence, applied from this date:** every judged foresight
-number in this record must be reported as *judge-scored, with judge–reader
-agreement κ = 0.16 (model rater)*. The **"judge unvalidated" flag is NOT
-lifted** by this audit: the rater was a model, and a model-versus-model
-agreement statistic is not a human validation. The report file records
-`rater_kind: "model"` and says so in its own note field. A human rating
-pass by the operator is pending; its result publishes here whatever it says,
-and an inter-rater κ between the two raters publishes with it.
+number in this record must be reported as *judge-scored, judge–reader
+agreement κ = 0.14 (human rater), κ = 0.90 between the two independent
+raters*. In practice that means the Brier scores and calibration buckets
+computed from this judge cannot carry weight in any argument until the
+resolver is replaced or every prediction is human-resolved. Neither has
+happened yet; nothing in this record leans on those numbers.
 
 Artifacts (hashes stamped in `ledger-hashes/`): `eval/foresight-kappa/
-labels.jsonl`, `eval/foresight-kappa/report-2026-08-22-claude.json`.
+labels.jsonl`, `report-2026-08-22-claude.json`, `report-2026-08-24-levi.json`,
+`report-2026-08-24-interrater.json`. The rating tool
+(`tools/kappa_foresight.py`) presents items resumably and hides the judge's
+verdict; it records `rater_kind` and writes per-rater files so a model pass
+can never be mistaken for the human one.
 
 ## 2. The twin judge, for contrast: κ = 0.636 (session 1)
 
