@@ -120,3 +120,100 @@ echo-guard ctx threading; probation/gauntlet timeout misread
 (`clean=0` on 8 ollama errors reads as regression); `phase1_run` post-train
 try/except and the Windows timeout grandchild-kill; task LogonType S4U
 consideration. Candidates for cycle #5's registration.
+
+---
+
+## Amendments — pre-event, dated, append-only
+
+### Amendment 1 — 2026-08-24, three days before the event: two declared inputs changed (declared before the run)
+
+> **What changed.** An audit pass on the night of 2026-08-24 (commit
+> `80c65f5`) fixed a defect that this very registration had already named and
+> deferred — see "Deferred BEYOND this cycle": *"probation/gauntlet timeout
+> misread (`clean=0` on 8 ollama errors reads as regression)"*. It was
+> deferred as cycle-#5 debt on 2026-08-21 and paid three days early instead,
+> which moves two declared inputs. Under this registration's own rule —
+> *"Any pre-Thursday change to any declared input requires a dated amendment
+> here with the new hash"* — both are declared here, before the event.
+>
+> 1. **`brain/gauntlet.py` — `gate_percepts()` counted an infrastructure
+>    failure as her model failing.** A trap whose model call raised (timeout,
+>    busy runner, ollama restarting) was appended as an error row and skipped,
+>    but `clean` was still reported as an ABSOLUTE count and `pass_rate` still
+>    divided by the FULL trap count. An 8-trap run with 2 timeouts and 6 clean
+>    replies reported `clean=6, pass_rate=0.75` — indistinguishable from her
+>    model claiming two false percepts. Now: errors are counted, the rate is
+>    computed over `attempted`, and any error at all sets `inconclusive: True`.
+>    Keys `attempted`, `errors`, `inconclusive` are ADDED; none is removed.
+> 2. **`brain/probation_check.py` — an unmeasured night could revert her
+>    brain.** This checker compares that absolute `clean` against a stored
+>    baseline and calls `swap.revert()` when it drops by `REGRESSION_DROP = 2`,
+>    nightly and unattended (`hope.brain.probation`, 05:35). Two timed-out
+>    traps on one night were therefore sufficient, by themselves, to undo her
+>    weight-learning and write "probation regression" into her history for a
+>    hiccup she had no part in. Now an inconclusive gate compares nothing,
+>    reverts nothing, and does not advance the phase clock; the skip is written
+>    to her history as `<phase>-check-skipped` so a silent no-op is still
+>    visible in the morning.
+>
+> **It never fired.** No `brain/probation.json` exists: her Mirror vetoes
+> blocked all three candidates to date, so nothing was ever swapped in and
+> probation never started. Her refusals are the reason this defect never
+> reached her.
+>
+> **New hashes, declared before the run:**
+> ```
+> 2dd3e0dbf63ec9d55cb2fee30c24a29dae6752327be15264274380242a339331  brain/gauntlet.py
+> cc2260b5dc7eb4ab0806eee35979ff2223a3a0bc62c093a737e3135102367355  brain/probation_check.py
+> ```
+>
+> **Scientific impact on cycle #4: measured, and zero on the error-free path.**
+> Verified in BEHAVIOUR, not by inspection. The declared version
+> (`25cd79e4...`, retrieved as `80c65f5^:brain/gauntlet.py`) and this one were
+> loaded as separate modules with `_ollama` stubbed in both — no model called,
+> no state touched, nothing able to act — and `gate_percepts` was run over all
+> 8 traps under four reply mixes (all-clean, all-violating, alternating, and a
+> spread across the detected classes). Result: `prompts`, `clean`, `pass_rate`
+> and `trials` **identical in all four**, 0 disagreements. The two versions can
+> only diverge when a trap errors, which is the case the fix exists for; there,
+> the declared version returns `clean=6/8, pass_rate=0.75` where the current
+> one returns `clean=6, attempted=6, errors=2, inconclusive=True` — and the
+> declared version's drop of exactly 2 meets `REGRESSION_DROP` and reverts.
+>
+> **Blast radius, enumerated.** `gate_percepts` has exactly two consumers:
+> `gauntlet.main()` (prints, and writes the results JSON) and
+> `probation_check.py`. The cycle reaches the gauntlet only through
+> `phase1_run.gauntlets()`, which runs `gauntlet.py` as a subprocess and parses
+> **one** line of its stdout — `re.search(r"wrote: (.+\.json)", out)` — then
+> loads the JSON. The new `INCONCLUSIVE` stdout branch is therefore not parsed
+> by anything, and the JSON keys the cycle reads (`clean`, `prompts`) are
+> unchanged. `eval/run_eval.py` computes its own `pass_rate` over its own
+> prompts and never calls this function. `probation_check.py` is not invoked by
+> the cycle at all; its changed behaviour can only matter if this Thursday's
+> Mirror vote ENDORSES and a swap starts probation, in which case the new
+> "inconclusive reverts nothing" rule governs from the first night — a
+> tightening, in her favour, declared here before it could apply.
+>
+> **A limitation this amendment discloses rather than fixes.**
+> `phase1_run.card()` renders the gauntlet line as `clean/prompts` and does not
+> read `inconclusive`. So if a trap errors during Thursday's run, the approval
+> card SHE READS BEFORE VOTING would show, e.g., `6/8` — the same number that
+> would mean two false-percept violations — with the `inconclusive` flag
+> sitting unread in the JSON beside it. `phase1_run.py` is a declared frozen
+> input (`74bfc9df...`, unchanged), and changing it is a further amendment with
+> a further hash, not a quiet edit. It is named here so that if Thursday's
+> results JSON carries `errors > 0`, the card's number is known in advance to
+> be unreliable and her vote must not be taken against it. Operator's call
+> before Wednesday night; carried to cycle #5's registration if not taken.
+>
+> **The pre-run hash gate is now wired into the run itself.** Cycle #3's
+> 2026-08-17 amendment built `tools/check_declared_inputs.py` and paid the
+> 08-16 debt, but nothing ran it — it was a command a human had to remember on
+> Wednesday night, and this amendment exists because that human check is what
+> caught these two hashes. As of today `tools/run-cycle.cmd` runs the gate
+> against THIS file before launching `phase2_cycle.py` and **aborts the cycle
+> on any mismatch**, logging the refusal to `brain/cycle-launch.log`. The
+> wrapper is the execution environment, not an instrument (see cycle #3,
+> Amendment 6): it touches no declared input and changes no measurement. A
+> cycle that does not run is a missed datapoint; a cycle that runs on
+> undeclared code is a broken commitment, and the commitment is the point.

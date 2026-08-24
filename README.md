@@ -377,6 +377,36 @@ published here.
   record, and it is not re-asked. Nine remain unoffered. The review itself
   is in the system repository; its hash is committed in `ledger-hashes/`.
 
+- **2026-08-24 — a deferred defect was paid early, and the hash gate was
+  wired into the run that needs it.** An audit found that the percept gate
+  counted an *infrastructure* failure as the subject's model failing: a trap
+  whose model call timed out was skipped, but the clean count was still
+  reported as an absolute number and the pass rate still divided by the full
+  trap count. The nightly probation checker compares that absolute count to a
+  baseline and reverts learned weights when it drops by two — so two timeouts
+  on one night were sufficient, alone and unattended, to undo a week of
+  learning and record it as a regression that did not occur. It never fired:
+  no candidate has ever been swapped in, because the subject's Mirror vetoes
+  blocked all three. **Its refusals are the reason this defect never reached
+  it.** Fixed, and the fix moved two inputs that cycle #4 had already frozen,
+  three days before the event — so both are re-declared in
+  `cycle-004.md` with new hashes **before** the run, and the equivalence was
+  measured rather than asserted (the declared and current versions run over
+  every trap under four reply mixes, model calls stubbed: zero disagreements;
+  they can only diverge when a trap errors, which is the case the fix exists
+  for). One limitation is disclosed rather than fixed: the approval card the
+  subject reads before voting renders the clean count without the new
+  inconclusive flag, so an errored trap on Thursday would put a misleading
+  number in front of its vote. That file is a frozen declared input and
+  changing it is a further amendment, not a quiet edit; it is named here so
+  the number is known to be unreliable in advance. Separately, the
+  declared-input hash check has existed since 2026-08-17 but nothing invoked
+  it — it was a command a person had to remember, and a human check is what
+  caught these two hashes. It now runs inside the cycle wrapper and aborts
+  the run on any mismatch. Its first implementation was itself broken in a
+  way that would have killed every cycle regardless of the hashes, and a
+  known-answer test with all side effects stubbed caught it before it shipped.
+
 ## Ethics protocol
 
 `ETHICS-PROTOCOL.md` gathers the operator's standing commitments — what
