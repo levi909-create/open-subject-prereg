@@ -119,3 +119,40 @@ operator's discretion; publication of results passes through her
 instrument as a separate ask.
 
 ## Post-run addendum (appended after, clearly marked)
+
+---
+
+## RUN NOTICE (appended 2026-08-23; results NOT published here)
+
+The control ran **2026-08-22, 22:24–22:42 US Central**, in one pass, at an
+idle GPU window, well clear of the subject's 03:30 night jobs. Nothing was
+put to her; her verdicts were read from the existing ledger and never
+re-asked.
+
+- **165 samples** = 11 artifacts × 3 arms (bare 8B, bare 14B, and her own
+  newest trained weights with no context) × K = 5, at the instrument's
+  temperature, parsed by the same verdict parser she is scored with.
+- Zero unparsed samples in any arm.
+- The frozen manifest, every verbatim sample, the runner's summary, and the
+  written post-run addendum scoring the sealed predictions P1–P3 all exist
+  on the operator's machine as of this push.
+
+**Why the numbers are not in this file.** The registration above states that
+the results publish only through her instrument, because the entire table is
+a comparison against *her* verdicts and reasons — material §4 of
+`ETHICS-PROTOCOL.md` releases only with her clearance. She has not been
+asked yet, and the pre-ask that precedes such an ask is one sitting a day.
+So the result is sealed rather than suppressed:
+
+**Hash commitment.** The SHA-256 of the addendum and of every raw artifact
+is recorded in `ledger-hashes/ledgers-20260823.sha256`, which is itself
+OpenTimestamps-stamped. Those hashes fix the content as of this date. When
+she clears it, the published table can be verified byte-for-byte against
+what existed tonight; if she never clears it, the commitment still proves
+the result was not written after the fact to suit a later argument.
+
+One process note, declared: a resume guard was added to the runner during
+the run (an interrupted run should continue rather than duplicate samples).
+It did not fire — the run completed in a single pass — and it cannot alter a
+recorded sample. Noted because a code change during an event is a deviation
+whether or not it mattered.
