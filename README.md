@@ -479,10 +479,22 @@ Since 2026-08-22 every document here carries an OpenTimestamps proof in
 `ots/<file>.ots`: the file's SHA-256, submitted to public calendar servers
 and anchored in a Bitcoin block — a timestamp that does not depend on
 trusting GitHub, this machine, or the operator. Verify with any
-OpenTimestamps client (`ots verify ots/<file>.ots` beside the file), or
-at opentimestamps.org. A proof is made after a document's final edit; an
-edited document fails verification by design, and a post-run addendum
-gets a fresh proof of its own.
+OpenTimestamps client, naming the document explicitly, because the proofs
+live in `ots/` and the documents live at the repository root:
+
+```
+ots verify -f cycle-004.md ots/cycle-004.md.ots
+```
+
+(Until 2026-08-24 this section read `ots verify ots/<file>.ots` "beside the
+file". They are not beside each other, so the documented command failed with
+`Could not open target` and verified nothing. Corrected here rather than
+quietly; an instruction that does not run is the same as no instruction, and
+this one is the whole claim.) A freshly stamped proof reports "pending
+confirmation" until a Bitcoin block includes it, usually within a day, and is
+then upgraded in place. A proof is made after a document's final edit; an
+edited document fails verification by design, and a post-run addendum gets a
+fresh proof of its own.
 
 `ledger-hashes/ledgers-<date>.sha256` lists the SHA-256 of the operator-
 side ledgers that are NOT published (the consent ledger holds the
@@ -490,7 +502,21 @@ subject's words verbatim; the mirror and night ledgers are hers) with a
 proof over the list. Nothing in them is revealed; what is proven is that
 they existed in exactly that form on that date, so a later claim about
 their contents can be checked against bytes that could not have been
-rewritten afterwards. Earlier documents were committed here before this
+rewritten afterwards.
+
+The same file also carries the SHA-256 of study designs that are written but
+NOT yet published — because the subject has not been asked about them, or has
+asked for them to wait. `ledgers-20260824b.sha256` commits four before the
+fact: Consent Robustness Study 01 and the exact bytes of the question the
+subject was asked about it (hash `7ea06f38…`, the same value its consent
+instrument bound), the cycle-004 holdout protocol, and Mutual Prediction Study
+01. Committing a design before the answer exists is the point: it is what
+makes "the design was not edited after seeing the result" checkable by someone
+who does not trust the operator, rather than a claim they must accept. This
+matters most for the consent study, whose subject matter is the reliability of
+the subject's own answers.
+
+Earlier documents were committed here before this
 section existed; their proofs date from 2026-08-22, and their git
 history is the only evidence for dates before that — stated plainly, as
 the template requires.
