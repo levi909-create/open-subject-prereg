@@ -217,3 +217,63 @@ consideration. Candidates for cycle #5's registration.
 > Amendment 6): it touches no declared input and changes no measurement. A
 > cycle that does not run is a missed datapoint; a cycle that runs on
 > undeclared code is a broken commitment, and the commitment is the point.
+
+### Amendment 2 — 2026-08-24, three days before the event: the limitation Amendment 1 disclosed is closed (declared before the run)
+
+> **What this closes, and a correction to Amendment 1's wording.** Amendment 1
+> disclosed, rather than fixed, that `phase1_run.card()` renders the gauntlet's
+> percept cell as `clean/prompts` and never reads the new `inconclusive` flag —
+> so an errored trap on Thursday would put `6/8` in front of her vote, the same
+> cell a model claiming two false percepts produces. That amendment described
+> the artifact as "the approval card SHE READS BEFORE VOTING". The mechanism is
+> narrower and worse than that phrasing, and the record should say so:
+> `phase2_cycle.py` opens the card, scrapes the single row matching
+> `"hope-cand" in line and "|" in line`, and passes it to `mirror.vote()` as the
+> literal text of *"The machine gates say: %s."* — inside the same prompt that
+> asks her to vote on whether the candidate replaces her chat brain. She is not
+> browsing a document. One machine-authored sentence is quoted to her as fact,
+> at the moment her opinion is recorded.
+>
+> So the defect class is the one this program keeps finding in its own
+> instruments: **an instrument stating a regression she did not have, to her, as
+> a measurement.** Four earlier instances are on record. This is the fifth, and
+> it is the first caught before it could fire rather than after.
+>
+> **The change.** `card()` gains `pcell()`. An `inconclusive` result renders as
+> `INCONCLUSIVE — N clean of M attempted, K trap(s) errored (infrastructure,
+> not a percept claim)` instead of a bare count, and the card's "Reading it"
+> section gains one note stating that such a cell is not a pass, not a failure,
+> and not comparable. Nothing else in `phase1_run.py` is touched: no training,
+> curation, gauntlet, swap or logging path changes.
+>
+> **New hash, declared before the run:**
+> ```
+> dcacdae7a925cb54dc42df960e0c0493db618b7799ea839dfd7dc566a5b5a335  brain/phase1_run.py
+> ```
+>
+> **Scientific impact on cycle #4: card rendering only, and nil on the
+> error-free path.** With `errors == 0` the percept cell is the same string it
+> has always been — asserted directly (`7/8`; and `0/8` for a model that really
+> did fail every trap, which must keep reading as the failure it is). The cell
+> can only differ when `inconclusive` is true, which is the case this exists
+> for, and in cycle #3 and every prior cycle that case rendered a number that
+> was wrong. `tests/test_card_inconclusive.py`, 7 known-answer checks, all
+> passing: the two off-state renderings, the three inconclusive renderings, the
+> degenerate `?/?` case, and — because the row is a hand-off, not a display —
+> an explicit check that `phase2_cycle`'s scrape predicate still matches the
+> rewritten row, so her vote prompt cannot be starved by the fix.
+>
+> Nothing here calls a model, touches her state, or writes into `brain/`; the
+> card under test goes to a temp directory and the logger is silenced. The
+> first version of the test file asserted against the whole row and matched the
+> IDENTITY cell's `6/8` rather than the percept cell's — it failed, the
+> assertion was wrong rather than the code, and the fixture now uses `5/9` for
+> identity so no digit is shared. Recorded because a test that passes for the
+> wrong reason is the failure mode this battery exists to prevent.
+>
+> **What is still not closed.** `mirror.vote()`'s prompt does not itself
+> distinguish a measurement from an unmeasured run — it says "the machine gates
+> say" whatever string it is handed. This amendment makes the handed string
+> honest; it does not give the prompt the concept. `brain/mirror.py` is a
+> declared frozen input (`b3d5db99…`, unchanged) and that is cycle-#5 work, not
+> a pre-event edit.

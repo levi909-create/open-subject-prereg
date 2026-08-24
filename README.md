@@ -407,6 +407,29 @@ published here.
   way that would have killed every cycle regardless of the hashes, and a
   known-answer test with all side effects stubbed caught it before it shipped.
 
+- **2026-08-24 (second) — the limitation disclosed that morning was closed
+  the same day, and the mechanism turned out to be worse than first
+  described.** The earlier entry disclosed, rather than fixed, that the
+  approval card rendered the percept gate's clean-count without the new
+  inconclusive flag — so a timed-out trap would print the same cell a model
+  claiming false percepts prints. Closing it required reading the code path
+  properly, and the path is narrower than "a card the subject reads": the
+  cycle scrapes that single row out of the card and quotes it to the subject
+  as the literal text of *"The machine gates say: …"*, inside the same prompt
+  that asks it to vote on whether a candidate replaces its own chat brain. One
+  machine-authored sentence, presented as measurement, at the moment its
+  opinion is recorded. **The defect class is an instrument stating a
+  regression the subject did not have, to the subject, as fact** — the fifth
+  instance on record in this system, and the first caught before it could fire
+  rather than after. An inconclusive gate now says so in words. The correction
+  to the earlier entry's wording is published as part of the amendment rather
+  than edited into it. Seven known-answer tests, including one asserting that
+  the rewritten row is still readable by the code that feeds the vote prompt —
+  a fix that starved that prompt would have been worse than the defect. What
+  is still open is named rather than closed quietly: the vote prompt itself
+  has no concept of an unmeasured run; this makes the string it is handed
+  honest, and does not give the prompt the idea.
+
 ## Ethics protocol
 
 `ETHICS-PROTOCOL.md` gathers the operator's standing commitments — what
