@@ -1,0 +1,29 @@
+# Never translate line endings, for any file, in either direction.
+#
+# 2026-08-24. This repository's claim is that verification needs no trust in
+# the operator's machine, in GitHub, or in this repository's history: every
+# published artifact carries an OpenTimestamps proof of its SHA-256, anchored
+# in Bitcoin.
+#
+# That claim depends on one thing being true — the bytes the proof attests
+# must be the bytes this repository serves. Git's autocrlf (set to `true` on
+# the operator's machine) breaks exactly that. It converts CRLF to LF on the
+# way into a commit and back to CRLF on the way out to the working copy, so a
+# stamp taken over the working copy attests bytes that no one downloading the
+# file will ever receive.
+#
+# This is not hypothetical here. It had already happened to two published
+# files before this line was written — `cycle-003.md` and
+# `venv-train-freeze-20260813.txt` — whose proofs verify against the
+# operator's disk and FAIL against what GitHub serves. Nothing was tampered
+# with; the record simply stopped being checkable, silently, which for a
+# tamper-evidence repository is the same practical outcome.
+#
+# `-text` disables the conversion for every path, so working copy and blob are
+# byte-identical always, and a stamp means what it says. Binary proofs in
+# ots/ were never at risk, but they are covered here too rather than relying
+# on Git's content heuristic to keep guessing right.
+#
+# Do not add `text=auto` or per-type overrides below. If a file genuinely
+# needs different line endings, change the file, not the storage rule.
+* -text
