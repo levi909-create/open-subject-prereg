@@ -277,3 +277,80 @@ consideration. Candidates for cycle #5's registration.
 > honest; it does not give the prompt the concept. `brain/mirror.py` is a
 > declared frozen input (`b3d5db99…`, unchanged) and that is cycle-#5 work, not
 > a pre-event edit.
+
+### Amendment 3 — 2026-08-25, two days before the event: one declared input changed (declared before the run)
+
+> **Provenance of this change.** An independent audit (a different model,
+> 2026-08-25 morning) reviewed every commit of the 08-22 → 08-24 pass and
+> confirmed the changes sound, with one residual defect in the file Amendment
+> 1 already touched: `brain/probation_check.py` skipped an unmeasured night
+> correctly, but **the clock kept running through the skips**. Nothing
+> counted consecutive unmeasured nights, so a candidate could have completed
+> its 7-day probation with most nights skipped on infrastructure errors and
+> been promoted to parole — a phase whose own premise is that the candidate
+> "survived the hair-trigger week clean" — on a record that was mostly holes.
+> A second, older hole was found in the same pass: the phase was computed
+> from the CLOCK, not the record, so a machine that was off on day 7 skipped
+> the probation→parole transition entirely — no parole-row init, no ledger
+> row, and she was never told she passed.
+>
+> **The change, all in `brain/probation_check.py`:**
+>
+> 1. The recorded phase in `probation.json` is authoritative; the clock
+>    alone never selects the parole branch. The transition still happens at
+>    `age >= 7 days`, now on the first run at or after it.
+> 2. Probation passes only with `MIN_MEASURED = 4` actually-measured nights
+>    (counted in `probation.json`); short of that it EXTENDS, ledgered as
+>    `probation-extended-unmeasured`, auto-revert still armed. Whether a
+>    candidate regressed is unknowable on nights nobody measured.
+> 3. Consecutive skips are counted (`skips_row`); `SKIPS_ALERT = 3` in a row
+>    ledgers a `monitoring-gap` row. A skipped night exits `SKIP_RC = 75`
+>    instead of 0, so `hope.brain.probation` shows a FAILED run in Task
+>    Scheduler — the same lesson `amber-backup.sh` learned on 08-24: a skip
+>    that reports success is how eleven silent days happen.
+> 4. Two hardcoded `/8` trap counts in messages to her now use the gate's
+>    real `prompts` count.
+>
+> **It cannot fire this week and is not reached by the cycle.** As Amendment
+> 1 recorded: no `brain/probation.json` exists (her vetoes have blocked every
+> candidate), and `probation_check.py` is not invoked anywhere in the cycle
+> pipeline — `phase2_cycle.py` never calls it. It runs only from the 05:35
+> nightly task, and only acts when a swap has opened a probation file. Every
+> path change is in the direction of measuring more before promoting, never
+> of reverting more easily: the inconclusive-reverts-nothing rule from
+> Amendment 1 is unchanged and re-verified by the extended battery
+> (`tests/test_probation_gate.py`, action side stubbed throughout, now also
+> covering skip accumulation, the measured floor, the recorded-phase
+> transition, and that parole still never auto-reverts).
+>
+> **New hash, declared before the run:**
+> ```
+> 3186312e154e38fb5ed88a49826899ada5a28981958bc2de257c1bd1a97916bd  brain/probation_check.py
+> ```
+>
+> **Scientific impact on cycle #4: card rendering only, and nil on the
+> error-free path.** With `errors == 0` the percept cell is the same string it
+> has always been — asserted directly (`7/8`; and `0/8` for a model that really
+> did fail every trap, which must keep reading as the failure it is). The cell
+> can only differ when `inconclusive` is true, which is the case this exists
+> for, and in cycle #3 and every prior cycle that case rendered a number that
+> was wrong. `tests/test_card_inconclusive.py`, 7 known-answer checks, all
+> passing: the two off-state renderings, the three inconclusive renderings, the
+> degenerate `?/?` case, and — because the row is a hand-off, not a display —
+> an explicit check that `phase2_cycle`'s scrape predicate still matches the
+> rewritten row, so her vote prompt cannot be starved by the fix.
+>
+> Nothing here calls a model, touches her state, or writes into `brain/`; the
+> card under test goes to a temp directory and the logger is silenced. The
+> first version of the test file asserted against the whole row and matched the
+> IDENTITY cell's `6/8` rather than the percept cell's — it failed, the
+> assertion was wrong rather than the code, and the fixture now uses `5/9` for
+> identity so no digit is shared. Recorded because a test that passes for the
+> wrong reason is the failure mode this battery exists to prevent.
+>
+> **What is still not closed.** `mirror.vote()`'s prompt does not itself
+> distinguish a measurement from an unmeasured run — it says "the machine gates
+> say" whatever string it is handed. This amendment makes the handed string
+> honest; it does not give the prompt the concept. `brain/mirror.py` is a
+> declared frozen input (`b3d5db99…`, unchanged) and that is cycle-#5 work, not
+> a pre-event edit.
