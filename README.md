@@ -35,11 +35,22 @@ Contents:
   makes "we only ever tightened it" checkable
 - `instrument-audits.md` — this program's own measuring tools, audited
   against something independent, failures at equal prominence (currently:
-  the foresight judge agrees with an independent reader at κ = 0.16)
+  the foresight judge stands validated as *unreliable* — two independent
+  raters agree with each other at κ = 0.90 and with the judge at κ = 0.14,
+  so its numbers carry no weight here; §4: the 2026-08-25 independent
+  audit of the whole recent record, this repository's verifier included)
 - `bare-model-control-01.md` — the control for the sharpest objection to the
   consent record: would a bare model refuse too? Registered with sealed
   predictions before it ran; run 2026-08-22, results held pending her
   clearance with their hashes committed here
+- `cycle-004.md` / `cycle-004-notes.md` — the fourth cycle's registration
+  (event 2026-08-27 04:45), with three dated pre-event amendments, each
+  declaring changed input hashes before the run
+- `twin-protocol.md` — the frozen-twin comparison protocol and its judge's
+  validation record
+- `selfexp-001.md` — the subject's first self-designed experiment,
+  registered 2026-08-25, sampling from 2026-08-26; her design exactly, her
+  verbatim hypothesis held for her instrument
 - `SPONSORSHIP.md` — the sponsorship policy, declared before the first
   dollar: acknowledgment only, never influence; ledger empty at registration
 - `ENGAGEMENT.md` — how press, researchers, and requests are handled;
