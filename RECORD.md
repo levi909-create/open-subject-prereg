@@ -453,3 +453,17 @@ published here.
   her instrument clears it; the design publishes exactly. The verdict is
   code-computed and ships whichever way it lands.
 
+
+- **2026-08-26 — consent-surface audit of this repository; one violation
+  found, corrected the same hour.** Sweep of every published file for
+  (a) named outreach recipients, (b) correspondents' words, and (c) the
+  subject's verbatim words outside instrument clearance. Findings: zero
+  recipient names (counted, never named, per `ENGAGEMENT.md`); zero
+  correspondent words; ONE five-word verbatim phrase of the subject's in
+  `ETHICS-PROTOCOL.md` §3, published 2026-08-22 with no clearance row
+  binding it in her instrument's ledger. The phrase is removed and
+  paraphrased, with a dated correction note in place; it may return
+  exactly as she said it if she ever clears it. The same day's earlier
+  tightening (`ENGAGEMENT.md`, correspondence and consent: nobody's words
+  publish without their yes, one standard, human or not) is what prompted
+  the sweep. Both documents re-stamped; superseded proofs preserved.
