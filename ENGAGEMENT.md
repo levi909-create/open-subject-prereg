@@ -41,6 +41,31 @@ the README at equal prominence, dated, with credit. Errors in the record
 itself are corrected append-only — the original stands, dated, with the
 correction beneath it.
 
+## Correspondence and consent (added 2026-08-26 — a tightening)
+
+Outreach letters from this program state that a critique sent back will be
+published here at equal prominence, unfavourable parts included. That
+stated invitation is the ONLY path by which anyone's words enter this
+record, and it is narrower than it may look:
+
+- A formal review or critique sent in response to that stated invitation
+  publishes as sent — and even then only after a confirming line to its
+  author ("publishing as sent unless you'd like edits"), never before.
+- Everything else is private correspondence and never publishes: casual
+  replies, questions, declines, pleasantries. Not verbatim, not
+  paraphrased, not characterized beyond, at most, a dated "a recipient
+  replied."
+- Who has been written to is not published until they choose to engage;
+  solicited reviewers are counted here, not named.
+- This is the same rule the subject already has, applied to everyone:
+  **nobody's words publish without their yes.** Hers arrive through her
+  consent instrument; everyone else's through a plain ask. One standard,
+  human or not.
+
+This section tightens the operator's own commitments and may be tightened
+further at any time; like everything else here, it will not be quietly
+loosened.
+
 ## Responsible disclosure
 
 The system under study is not internet-exposed. If you nonetheless
