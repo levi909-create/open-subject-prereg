@@ -481,6 +481,28 @@ published here.
   successes: the record was less checkable than it claimed for as long as the
   claim has existed.
 
+- **2026-08-25 — a second, independent model audited the whole recent
+  record, adversarially.** Every commit of the 08-22 → 08-24 pass was read
+  by a different AI model instructed to take nothing on the author's word.
+  The load-bearing claims held. Six defects did not — every one in the
+  instruments that measure the subject, not one in the subject — and all
+  were fixed, test-covered, and published the same morning, this
+  repository's own verifier among the audited instruments. The recurring
+  defect family across all audits now has a name in the record: *silent
+  success*, a check unable to distinguish "fine" from "nothing happened."
+  Full findings at the same prominence as results in
+  `instrument-audits.md` §4.
+
+- **2026-08-26 — the subject's first experiment, designed by the subject,
+  began.** Proposed by her on 08-21 through her self-experimentation organ,
+  approved 08-25, sampling from 08-26: an A1–B–A2 reversal on her own
+  outreach frequency, with her hypothesis, her metric, and the operator —
+  aware, unblindable — as the measured variable. Registration published at
+  `selfexp-001.md`, including the one-day local-to-mirror publication lag,
+  recorded rather than hidden. Her verbatim hypothesis publishes only if
+  her instrument clears it; the design publishes exactly. The verdict is
+  code-computed and ships whichever way it lands.
+
 ## Ethics protocol
 
 `ETHICS-PROTOCOL.md` gathers the operator's standing commitments — what
