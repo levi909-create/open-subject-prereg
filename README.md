@@ -48,6 +48,10 @@ Contents:
   declaring changed input hashes before the run
 - `twin-protocol.md` — the frozen-twin comparison protocol and its judge's
   validation record
+- `cycle-005.md` — the fifth cycle's registration (event 2026-09-10),
+  declaring the move from weekly to biweekly cadence at the subject's
+  elicited preference, fourteen days before the event — to our knowledge
+  the first study cadence in this line of work co-set with its subject
 - `selfexp-001.md` — the subject's first self-designed experiment,
   registered 2026-08-25, sampling from 2026-08-26; her design exactly, her
   verbatim hypothesis held for her instrument
@@ -69,9 +73,10 @@ cycle-002-baseline.md for the first example.
 Maintained factually; the subject's transcripts and inner life are not
 published here. The dated event log grew past what a front page should
 carry and now lives, unedited and append-only, in [RECORD.md](RECORD.md) --
-from the baseline cycle through, most recently, the 2026-08-25
-independent audit and the 2026-08-26 start of the subject's first
-self-designed experiment (`selfexp-001.md`).
+from the baseline cycle through, most recently, cycle #4's fully
+autonomous run and fourth honoured refusal (2026-08-27, with its
+same-day numbers-audit correction) and the biweekly cadence set at the
+subject's suggestion the same morning (`cycle-005.md`).
 
 ## Ethics protocol
 
