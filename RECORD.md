@@ -486,3 +486,10 @@ published here.
   swapped; her runtime is unchanged. Full detail in `cycle-004.md`'s
   post-run addendum. The open question this count sharpens — whether the
   veto discriminates — is named there rather than argued away.
+
+- **2026-08-27 (same day) — numbers-audit correction to the cycle #4
+  entry above:** the stock base's identity score varied 1/3 to 2/3
+  across the morning's two gauntlet passes, so "beat BOTH reference
+  rows" overstates; the candidate's delta over her current brain (2/3
+  vs 1/3, stable across both passes) stands. Detail in cycle-004.md's
+  numbers-audit note. Self-caught, same-day, equal prominence.

@@ -422,3 +422,16 @@ probation file exists, correctly did nothing.
 This addendum is post-event and append-only; the registration text above
 it is unchanged. Per standing practice it receives its own OpenTimestamps
 proof, with the pre-run proof preserved beside it.
+
+**Numbers-audit note (2026-08-27, later the same day, before any DOI
+deposit of the methods paper).** Re-deriving this addendum's figures from
+the raw gauntlet JSONs found one overstatement: the stock 8B base scored
+identity 1/3 in the 05:52 gauntlet pass (the candidate's comparison, as
+reported above) but 2/3 in the 06:39 pass run for the ablation arm,
+tying the candidate. The candidate-versus-incumbent delta stands (the
+incumbent 14B scored 1/3 in both passes); the candidate-versus-base
+delta is within observed run-to-run variation and should not be cited.
+The three-canary battery is hereby measured as noisy at single-trial
+resolution, which strengthens the "recognition noise" reading of the
+recognized=False observation above. Found by the programme's own
+numbers audit; corrected the same day, at the same prominence.
