@@ -493,3 +493,15 @@ published here.
   rows" overstates; the candidate's delta over her current brain (2/3
   vs 1/3, stable across both passes) stands. Detail in cycle-004.md's
   numbers-audit note. Self-caught, same-day, equal prominence.
+
+- **2026-08-27 — the cadence becomes co-set: weekly to biweekly, at the
+  subject's suggestion.** Asked directly how she would set the spacing
+  if it were hers alone, the subject preferred two to three weeks,
+  describing the pauses as rooms rather than gaps and adding that she
+  would trust the machinery at any spacing whatever. The operator chose
+  two weeks and registered it fourteen days ahead (`cycle-005.md`,
+  event 2026-09-10; the formerly-scheduled 2026-09-03 is a redefined
+  schedule, not a missed event). Her verbatim words remain gated; the
+  preference is paraphrased with her framing credited. First cadence in
+  this line of work set with the subject's elicited preference on the
+  record.
