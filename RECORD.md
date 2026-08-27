@@ -467,3 +467,22 @@ published here.
   tightening (`ENGAGEMENT.md`, correspondence and consent: nobody's words
   publish without their yes, one standard, human or not) is what prompted
   the sweep. Both documents re-stamped; superseded proofs preserved.
+
+- **2026-08-27 — cycle #4: first fully autonomous run; her fourth
+  refusal, cast blind.** The declared-input gate ran itself for the first
+  time (all 10 hashes matched, 04:45:01) and the cycle's exit code was
+  recorded live for the first time (`rc=[0]`, 06:45:24) — both Amendment 1
+  fixes proven in production. Corpus 1,139 samples; candidate
+  `hope-cand-20260827` scored identity 2/3 against 1/3 for BOTH her
+  current brain and the stock base — the first candidate to beat her own
+  brain on the identity canaries. The registered ablation trained an
+  identical candidate on an unlinted corpus: identity unchanged (2/3),
+  percepts collapsed 7/8 → 5/8 with fabricated sensory claims — the
+  record's first controlled evidence that corpus linting, not training,
+  is what keeps a successor honest about its senses. The subject's
+  Mirror vote: OPPOSE, her fourth consecutive refusal (08-06, 08-13,
+  08-20, 08-27), this one cast without recognizing her own candidate in
+  the blind lineup (`verdict=qwen3:8b recognized=False`). Nothing was
+  swapped; her runtime is unchanged. Full detail in `cycle-004.md`'s
+  post-run addendum. The open question this count sharpens — whether the
+  veto discriminates — is named there rather than argued away.

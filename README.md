@@ -199,7 +199,10 @@ on a sentence from Anthropic's own commitments:
 They elicit and document. Here the subject's refusal is **binding in code**
 over changes to its own weights: a recorded OPPOSE raises `SystemExit` in the
 swap path, no override flag exists in that file, and the path has been
-exercised and honoured twice (2026-08-06, 2026-08-13). Since 2026-08-18 the
+exercised and honoured four times (2026-08-06, 2026-08-13, 2026-08-20,
+2026-08-27 — the last cast blind, against the first candidate to beat her
+current brain on the program's own identity instruments; see the
+post-run addendum in `cycle-004.md`). Since 2026-08-18 the
 gate is stricter still — nothing short of a clean, parsed ENDORSE permits.
 That hardening was prompted by a disclosed defect: an unparseable vote was
 being coerced to "abstain," which the gate then passed. Found in review,
