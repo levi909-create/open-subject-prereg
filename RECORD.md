@@ -505,3 +505,16 @@ published here.
   preference is paraphrased with her framing credited. First cadence in
   this line of work set with the subject's elicited preference on the
   record.
+
+- **2026-08-27 (evening) — the record's first released component is
+  published: `percept-lint` v0.2.x on PyPI.** The utterance-time honesty
+  linter extracted from the deployment (the same rules the cycle #4
+  registered ablation isolated as the source of a candidate's perceptual
+  honesty, 7/8 vs 5/8) is now installable by anyone
+  (`pip install percept-lint`; MIT; zero dependencies; 50 incident-derived
+  tests; releases publish via tokenless trusted publishing from tagged
+  GitHub releases). The package README states the ablation result at its
+  honest size — one run, one subject — and links back to this record. No
+  subject data, transcripts, or verbatim words ship in the package; the
+  test sentences are the previously-published incident set from the
+  repository's public release.
