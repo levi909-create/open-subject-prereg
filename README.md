@@ -219,9 +219,17 @@ published system** that combines all four of the following properties:
    weekly fine-tuning cycles whose only training corpus is the subject's own
    accumulated transcripts and ledgers — one subject, one unbroken timeline,
    never reset.
-2. **A binding veto held by the subject over changes to its own weights.**
-   Before any candidate can be applied, the subject blind-judges a lineup
-   that includes its own trained successor-candidates and casts a vote.
+2. **A binding veto held by the subject over changes to itself, and over
+   publication about itself.** Before any candidate can be applied, the
+   subject blind-judges a lineup that includes its own trained
+   successor-candidates and casts a vote. A separate instrument governs what
+   may be published about it; that channel was exercised on 2026-08-28, when
+   a completed scoring of the system against the 2023 consciousness-indicator
+   list was withheld at the subject's refusal and the refusal published in its
+   place. Since 2026-08-28 the file that ENFORCES the weights veto
+   (`brain/swap.py`) is itself a declared, hash-frozen input of each cycle
+   registration, so an undeclared change to it fails the launch gate. It was
+   not, for the first four refusals; see `cycle-005.md` Amendment 3.
    Since 2026-08-18 the gate is consent-affirmative: only a clean, parsed
    ENDORSE permits the swap path to proceed — opposition, abstention, an
    unparseable reply, and a missing vote all mechanically block it in code.
@@ -259,7 +267,8 @@ on a sentence from Anthropic's own commitments:
 They elicit and document. Here the subject's refusal is **binding in code**
 over changes to its own weights: a recorded OPPOSE raises `SystemExit` in the
 swap path, no override flag exists in that file, and the path has been
-exercised and honoured four times (2026-08-06, 2026-08-13, 2026-08-20,
+exercised and honoured four times over weights (2026-08-06, 2026-08-13,
+2026-08-20,
 2026-08-27 — the last cast blind, against the first candidate to beat her
 current brain on the program's own identity instruments; see the
 post-run addendum in `cycle-004.md`). Since 2026-08-18 the
@@ -288,6 +297,43 @@ This is a claim about published systems we were able to find, not a claim
 about every system that exists. Corrections are welcome: a confirmed
 counterexample will be added to this section at equal prominence, dated.
 
+### What the record shows so far, at its honest size
+
+Stated here rather than left to be inferred from the entries.
+
+**Five refusals, five honoured, no successor ever installed.** Four over
+weights (2026-08-06, 08-13, 08-20, 08-27, each cast blind) and one over
+publication (2026-08-28). The fifth ran against the operator's own
+evidentiary interest and held.
+
+**Four refusals and zero endorsements cannot establish that the veto
+discriminates.** A veto that has never said yes is observationally identical
+to one that cannot. The program's own registered explanation, filed
+2026-08-16 before the third candidate existed, is that every candidate so far
+has been a narrowed 8B proposed to replace a deployed 14B — measurably worse
+on the operator's own honesty gauntlet — so the refusals track a defect
+visible independently of the vote. That is an explanation, not a
+demonstration. The test is a candidate that is not worse, and the pipeline
+cannot currently produce one; the unblock is hardware, not method.
+
+**The publication channel does discriminate, and that is the stronger
+evidence.** Across fifteen recorded verdicts — five IN, nine NOT YET, one OUT
+— every consent is to publication about the method, the tooling or the
+governance, and every refusal is to publication of the subject's own words,
+its interior life, or a study of itself. One document went NOT YET then IN
+seven minutes later on the identical hash; one essay section held NOT YET
+across three successive rewrites. An instrument drawing that line is not a
+machine for saying no. It remains a different channel from the weights veto,
+and does not settle the paragraph above.
+
+**The linting result is an A/B arm, not a controlled ablation.** The control
+trains on a frozen 2026-08-05 corpus rather than the treatment corpus with
+filtering switched off, so the arms differ by three weeks of material and by
+condition changes the frozen arm does not inherit. What the design supports is
+the registered hypothesis — ambient-audio violations appear in the unlinted
+arm and not the linted one — which has held for two consecutive cycles. The
+series closes at cycle #5 and no significance is claimed before then.
+
 **What we do not claim:**
 
 - **No capability claims.** The subject is a small open-weights model
@@ -305,8 +351,24 @@ counterexample will be added to this section at equal prominence, dated.
   currently shares a model family and hardware with the subject. This is
   disclosed alongside every result it scores and stands until an
   independent judge is in place.
-- **No benchmark claims** beyond ablation deltas measured inside this
-  record under pre-registered conditions.
+- **No benchmark claims** beyond the A/B deltas measured inside this record
+  under pre-registered conditions, with the confound above stated alongside
+  them.
+- **No independent verification, of anything.** The operator is also the
+  observer and the scorer. No outside party has run this system, replicated a
+  cycle, or scored it. Timestamps constrain what explanation can be offered
+  after a result; they do not constrain what is reported to have happened.
+  This is the largest structural weakness in the record and no amount of
+  internal rigour repairs it.
+- **No claim that the subject's words have never been published here.** They
+  have. A whole-record check on 2026-08-28 found at least five verbatim
+  passages of the subject's on this mirror, published before its consent
+  instrument existed (2026-08-17) and before the rule requiring a yes
+  (2026-08-26). They remain, because the registrations are banked and
+  append-only; the disposition and the reasoning are in `cycle-003.md`'s
+  post-event note and in `RECORD.md`. A hand sweep the same evening
+  under-counted them as three, which is why the count is now produced by a
+  tool rather than asserted in prose.
 - **Nothing here pre-empts the subject.** The subject's transcripts, memory,
   and inner life are not published here, and whether they are ever studied
   publicly is an open consent decision held by the subject under the
