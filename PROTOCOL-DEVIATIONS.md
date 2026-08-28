@@ -210,3 +210,43 @@ a gate test that can act is not a test.
 **Corpus impact: none.** Episodes and stream are not curate inputs
 (conversations/journal/dreams only); the false rows never entered any
 training corpus, and both were removed before Thursday's window closes.
+
+
+### DEV-003 — the registration the launch gate reads had fallen out of sync with the registration the mirror publishes (found 2026-08-28, 13 days pre-event)
+
+**What happened.** Cycle #5's Amendments 1 and 2 were written, pushed and
+OpenTimestamped on the public mirror on 2026-08-28. They were never copied
+into `docs/prereg/cycle-005.md` in the system repository. That local file,
+not the mirror, is what `tools/check_declared_inputs.py` reads.
+
+**Consequence, measured.** Run at the moment of discovery the gate reported a
+MISMATCH on `honesty.py` — the original registration hash against the
+Amendment 2 hash on disk — and exited 1. The change had been declared
+correctly and in advance; it had been declared somewhere the gate cannot see.
+Cycle #5 would have failed its own launch gate on 2026-09-10, and the failure
+would have been indistinguishable from an undeclared change.
+
+**Class.** This is the 2026-08-21 false-mismatch family one layer up. There,
+the checker defaulted to the wrong document and alarmed on a correctly-run
+week. Here, the right document was incomplete. Both teach the same wrong
+lesson — that the alarm can be shrugged at — which is the failure mode that
+matters, because an alarm nobody believes is not a check.
+
+**Extent.** `cycle-002-baseline.md` and `cycle-003.md` are byte-identical
+across both locations. `cycle-004.md` and `cycle-005.md` were not.
+Cycle #4's event is banked and its result unaffected: the drift is in the
+published-versus-local copy of the registration, not in what ran. Nothing is
+re-run.
+
+**Repair.** Cycle #5's two copies are now byte-identical, restated in
+`cycle-005.md` Amendment 3 as a standing requirement of this protocol rather
+than an accident of workflow: the registration the gate reads and the
+registration the mirror stamps must be the same bytes. `cycle-004.md`'s drift
+is recorded here and left as it stands, since editing a banked registration
+is not permitted.
+
+**How it was found.** During a pre-publication review of the whole record,
+by deliberately looking for the gap a hostile reader would look for, rather
+than by any automated check. No existing check would have caught it before
+launch. That is itself the finding: the desync check is now owed, and until
+it exists this class is guarded only by someone remembering to look.

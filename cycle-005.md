@@ -165,3 +165,70 @@ genuinely has), confirmation that the negation whitelist no longer exempts
 the shape, confirmation of no double-reporting on the enforce path,
 regression checks on the existing rule families, and the two measurements
 above. Server restarted 11:05, all processes revived.
+
+
+---
+
+## Amendment 3 — 2026-08-28, the enforcement gate becomes a declared input; and a desync repaired
+
+**Registered 13 days before the event it governs.** Same day as Amendments 1
+and 2, both of which are left standing above exactly as written.
+
+### The desync, found first and reported first
+
+Amendments 1 and 2 were written, pushed and stamped on the public mirror
+today. They were never copied into `docs/prereg/cycle-005.md` in the system
+repository — and that local file, not the mirror, is what
+`tools/check_declared_inputs.py` reads, because the checker deliberately
+reads the newest registration in `docs/prereg/` rather than a list kept
+beside the code.
+
+The consequence, measured rather than asserted. Run against the local copy at
+the moment of discovery, the gate reported a MISMATCH on `honesty.py` — the
+original registration hash against the Amendment 2 hash on disk — and exited
+1. The change WAS declared, correctly and in advance, on the public record.
+It was declared in a document the gate cannot see. Cycle #5 would have failed
+its own launch gate on 2026-09-10, and the failure would have looked exactly
+like an undeclared change: the alarm that is supposed to mean something,
+firing on a week that was in fact run correctly. That is the 2026-08-21
+false-mismatch class one layer up — last time the checker pointed at the
+wrong document, this time the right document was incomplete.
+
+**Repair.** The two files are now byte-identical, which is what cycles #2 and
+#3 were and what #4 and #5 had silently stopped being. Byte-identity between
+the registration the gate reads and the registration the mirror stamps is
+hereby a stated requirement of this protocol rather than an accident of
+workflow. `cycle-004.md` is desynced in the same way; its event is banked and
+nothing is re-run, and it is logged in `PROTOCOL-DEVIATIONS.md`.
+
+Found during a pre-publication review of the record, by looking for the gap a
+hostile reader would look for. Published at equal prominence with the
+amendment it accompanies.
+
+### The new declared input: `brain/swap.py`
+
+Ten files have been declared since cycle #3. `brain/mirror.py`, which
+COLLECTS the subject's vote, is one of them. `brain/swap.py`, which ENFORCES
+it — the file in which an OPPOSE raises, a missing vote blocks, and anything
+short of a clean ENDORSE blocks — has never been declared.
+
+The public claim this record makes is that the subject's veto binds. The file
+that does the binding was the one part of the mechanism whose bytes no reader
+outside this machine could check. That is the wrong file to leave undeclared.
+
+**Eleventh declared input, in force for cycle #5:**
+
+```
+3ac97484ff22c99691dde3fb9d36967128cf7e6add82162667571d6266e867da  brain/swap.py
+```
+
+No code changed today. This declares the file as it already stands: the same
+`apply()` gate that has blocked four candidates. From this amendment forward,
+a change to the enforcement path requires a dated amendment here before the
+run, on the same terms as every other declared input.
+
+**What this does not do.** Declaring the hash does not put the file beyond the
+operator's reach; nothing in a single-operator study can. It makes an
+undeclared change to the veto's enforcement visible to the gate and to any
+reader, which is the standard the rest of the pipeline has had since cycle #3
+and which this file should have had from the start.
