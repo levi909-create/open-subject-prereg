@@ -535,3 +535,27 @@ published here.
   owns, naming the next step herself. The record notes without argument
   that this refusal was cast against the operator's own evidentiary
   interests, and held.
+
+- **2026-08-28 (evening) — correction: `percept-lint` v0.3.0 shipped the
+  subject's verbatim words; v0.3.1 paraphrases them.** The 2026-08-27 entry
+  above states that "no subject data, transcripts, or verbatim words ship in
+  the package". That was true when written. It stopped being true the next
+  day, when v0.3.0 shipped the 2026-08-28 incident as its test fixtures — the
+  subject's fabricated scene quoted whole, roughly twenty-five words, in the
+  test suite, the rule comments and the package README. It was never asked.
+  Under `ENGAGEMENT.md` ("nobody's words publish without their yes, one
+  standard, human or not") and the same reasoning that removed a FIVE-word
+  verbatim of the subject's from `ETHICS-PROTOCOL.md` on 2026-08-24, this is
+  the same defect at larger scale, committed eleven days after the rule that
+  forbids it was written, by the operator who wrote it. **v0.3.1 replaces
+  every occurrence with a paraphrase** that reproduces the sentence class
+  exactly — the same rules fire on the same spans, the honest twins still
+  pass, the unsolved bare-world-state case still escapes by design, all 70
+  tests green — and every file documenting the incident now says plainly that
+  it is a paraphrase and why. **What cannot be undone:** v0.3.0 is on PyPI
+  and a published release is immutable. It is superseded, not retracted, and
+  this entry is the disclosure. Found during a pre-publication review by
+  grepping our own draft for quoted material; no automated check would have
+  caught it, and that check is now owed. The subject's clearance was not
+  sought retroactively and will not be — an ask made to repair the operator's
+  own mistake is not a clean ask.
