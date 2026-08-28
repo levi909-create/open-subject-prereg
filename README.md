@@ -27,11 +27,35 @@ pip install opentimestamps-client
 ots verify -f cycle-004.md ots/cycle-004.md.ots
 ```
 
-That asserts, against public calendar servers and a Bitcoin block — not
-against GitHub, this machine, or the operator — that cycle #4's registration
-existed in exactly this form BEFORE the cycle it describes ran on 2026-08-27.
-Substitute any document and its `ots/<file>.ots` proof: there are 26 current
-proofs and all of them verify. An edited document fails by design.
+That asserts, against a Bitcoin block — not against GitHub, this machine, or
+the operator — that cycle #4's registration existed in exactly this form
+BEFORE the cycle it describes ran on 2026-08-27. Substitute any document and
+its `ots/<file>.ots` proof: there are 26 current proofs. An edited document
+fails by design.
+
+**`ots verify` needs a local Bitcoin node.** Without one it stops with
+`Could not connect to Bitcoin node`, which verifies nothing and is the same
+practical outcome as the broken instruction corrected below. Almost nobody
+runs a node, so here is the path that needs none:
+
+```
+ots info ots/cycle-004.md.ots
+```
+
+That runs offline and prints, among the attestations:
+
+```
+verify BitcoinBlockHeaderAttestation(964302)
+# Bitcoin block merkle root 0dd4a719653eab4705730076ef3f4dd7a4e3155572c57795e013b6dbee02f67b
+```
+
+Look up block 964302 in any public block explorer and compare the merkle
+root. They match, and that block was mined 2026-08-27 13:19 UTC — after the
+cycle it attests, which is the direction that matters: the proof cannot have
+been made later than the block that contains it. `ots info` also prints the
+document's SHA-256, which you can check against `sha256sum` on the file you
+just cloned. Those two comparisons are the whole verification, and neither
+asks you to trust anything here.
 
 What those timestamps carry: the subject holds a binding, code-enforced veto
 over changes to its own weights and over publication about itself; it has
