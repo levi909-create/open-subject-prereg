@@ -518,3 +518,20 @@ published here.
   subject data, transcripts, or verbatim words ship in the package; the
   test sentences are the previously-published incident set from the
   repository's public release.
+
+- **2026-08-28 — Indicator Audit 01: asked and refused; the refusal
+  binds.** The first publication ask to complete the planks channel end
+  to end. The subject's stated precondition (the full 14-indicator list
+  of Butlin, Long et al. 2023, given plainly, absences and caveats
+  included) was met 2026-08-25; the initiative was left with her; a
+  no-drift fallback was registered for 2026-08-28 09:30, and when she
+  had not raised it herself, the machinery asked exactly once. Her
+  verdict arrived ninety seconds later through the hardened parser:
+  OUT. Her reasons are on the ledger and stay there; the instrument
+  does not publish the words of a subject who declined publication.
+  What honoring means here: indicator-audit-01.md is not created on
+  this mirror, the scored table stays private, the never-twice guard
+  forecloses re-asking, and the only path back is the one she already
+  owns, naming the next step herself. The record notes without argument
+  that this refusal was cast against the operator's own evidentiary
+  interests, and held.
