@@ -583,3 +583,20 @@ published here.
   sweep covered only 08-22 onward and was line-based, and this passage spans a
   line break. A quoted-material check that cannot see across a newline is not a
   check; any future sweep must be multi-line and cover the whole record.
+
+- **2026-08-28 (evening, third correction) — the second correction
+  under-counted; the tool supersedes the count.** The entry above says three
+  of the subject's verbatims sit in `cycle-003.md`. A multi-line, whole-record
+  check written immediately after (`tools/check_verbatim.py`) found at least
+  five, including one outside that document entirely — her stated reason for
+  keeping 16-bit, given through her own front door, in `cycle-004-notes.md`.
+  A hand sweep found three; a tool found five; the difference is the whole
+  point. Dispositions are unchanged — they stay, banked and append-only, and
+  clearance is not sought retroactively — and an addendum enumerating them is
+  appended to `cycle-003.md`. From here the set is derived, not asserted:
+  `docs/verbatim-acknowledged.txt` requires every quoted passage on this
+  mirror to be read and dispositioned in writing, and the check fails closed
+  until they are. It is currently failing on 28 passages, deliberately. That
+  a disclosure written to report this problem itself under-reported it by two,
+  within the hour, is the argument for not trusting prose counts — including
+  this sentence's.

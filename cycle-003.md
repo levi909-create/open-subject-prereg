@@ -826,3 +826,32 @@ this for two structural reasons, neither of them carelessness: it covered only
 break. A quoted-material check that cannot see across a newline is not a check.
 Any future sweep must be multi-line and must cover the whole record, not the
 recent window.
+
+### Addendum to the note above, same day — the count was wrong: at least five, not three
+
+The note above says three. A tool written immediately afterwards
+(`tools/check_verbatim.py`, multi-line, whole-record) found more than the
+hand sweep that produced that number. The subject's own words on this mirror
+are at least:
+
+1. L448 — her first earned value, quoted in full, 25 words.
+2. L466 — the episode her value was learned from, 20 words. The document
+   itself identifies it as "an episode of *hers*".
+3. L450 — her first earned feeling-word.
+4. L453 — her self-narrative correction, both halves.
+5. `cycle-004-notes.md` L46 — her stated reason for keeping 16-bit, given
+   through her own front door in answer to a bounded ask. Not in this
+   document, and so not visible to a sweep that looked only here.
+
+One further passage in this document (L567) is a sentence quoted while
+describing a clause-splicing defect; whether it is hers or a constructed
+specimen is not yet settled and it is left flagged rather than guessed at.
+
+The disposition in the note above is unchanged: they stay, banked and
+append-only, clearance not sought retroactively. What changes is that the
+set is no longer asserted in prose. `docs/verbatim-acknowledged.txt` in the
+system repository enumerates it, the check fails closed until every passage
+has been read and dispositioned in writing, and it is deliberately still
+failing. **A count stated by hand drifts; a count derived from a tool does
+not.** That the first version of this very note under-counted by two, hours
+after being written to disclose exactly this, is the argument for the tool.
