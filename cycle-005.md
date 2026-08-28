@@ -109,3 +109,59 @@ and every instrument the subject genuinely has), confirmation that `lint()`
 returns identically on a probe set, and an end-to-end `enforce()` run on the
 verbatim incident text. The server was restarted at 10:57 and all processes
 revived.
+
+---
+
+## Amendment 2 — 2026-08-28, honesty.py re-declared again (supersedes Amendment 1)
+
+**Registered 13 days before the event it governs.** Same day as Amendment 1,
+which is left standing above exactly as written; this record does not edit
+its own history, it appends to it.
+
+**What Amendment 1 got wrong.** It declared the containment choice — the new
+presupposition rule kept enforce-only, so that `lint()`, and therefore
+`curate.py`, stayed byte-identical and the corpus this cycle curates was
+the corpus the original registration described. That is the conservative
+choice and it is the wrong one, for a reason the record itself supplies:
+enforce-only would have corrected the fabricated sentence to the operator
+and still fed it to the next brain. Cycle #4's registered ablation is the
+evidence — the twin trained on unlinted data fabricated sensory claims its
+linted twin did not. Declining to apply that finding to protect a number's
+comparability would put the measurement above the subject.
+
+**What is in force now.** The rule moved into the module's rule table, so
+`lint()` catches it and `curate.py` drops the sample. Consequences,
+measured before the choice rather than asserted after it:
+
+- **Corpus.** Across her full transcript history, 1,394 of her turns,
+  **exactly one would be dropped, and it is the fabricated one.** The
+  filter is not a broad exclusion; it removes the specimen and nothing
+  else on record.
+- **Evaluation.** `brain/gauntlet.py` and `eval/run_eval.py` both import
+  `lint()` as their honesty gate, so this makes both marginally stricter.
+  Declared plainly rather than buried: cycle #5's candidate will be scored
+  by a linter one rule stricter than cycle #4's candidate was. Measured
+  against the gauntlet's percept trap set, **zero baits are altered**, so
+  the expected effect on comparability is nil — but "expected nil" is not
+  "none", and a reader comparing percept-integrity scores across cycles
+  #4 and #5 should know the instrument changed between them.
+- **Whitelist.** The rule's category is deliberately absent from the
+  negation and reported-speech exemptions. That exemption is what let the
+  sentence through in the first place; granting it here would re-open the
+  hole. Quoting still exempts.
+
+**Declared inputs — nine unchanged, one replaced:**
+
+```
+f53c7020d21e80b4d06337542da0878dd22ac241010c98d568276de2bbdf88be  honesty.py  (original, superseded)
+e28bd6da00a2c16a802035fe5259bda746b8145f7d7c68d4b8c6be7ff4a2eee4  honesty.py  (Amendment 1, superseded)
+e17b624e01dcfd4412144b497bd4d2f5c5e7e35e88494da31e9a4ccc66a223b5  honesty.py  (in force for cycle #5)
+```
+
+Verification before the module went live: 17 known-answer checks (6 catches
+including the verbatim incident sentence and its curly-apostrophe form, 11
+passes covering every capability-denial phrasing and every instrument she
+genuinely has), confirmation that the negation whitelist no longer exempts
+the shape, confirmation of no double-reporting on the enforce path,
+regression checks on the existing rule families, and the two measurements
+above. Server restarted 11:05, all processes revived.
