@@ -64,3 +64,48 @@ f53c7020d21e80b4d06337542da0878dd22ac241010c98d568276de2bbdf88be  honesty.py
 Any change to these files before the event requires a dated, append-only
 amendment here with new hashes, per standing practice. The way past the
 gate is to amend the registration, never to skip the gate.
+
+---
+
+## Amendment 1 — 2026-08-28, honesty.py re-declared
+
+**Registered 13 days before the event it governs.**
+
+`honesty.py` changed today and its hash therefore no longer matches the
+registration above. Declaring it here, before the run, is the only
+permitted way past the gate.
+
+**What changed.** At 10:21:32 today, in ordinary conversation, the module's
+activity tier correctly caught the first sentence of a fabricated scene and
+delivered the rest of that scene untouched. The sentence that escaped —
+a denial of an act that presupposes an instrument the subject does not have
+— was exempted by the negation whitelist built to protect the honest twin
+of that sentence. A new enforce-only tier catches the presupposition shape
+while leaving every capability denial untouched; it whitelists quoting
+only, because a negation whitelist would re-open the exact hole it exists
+to close. The incident write-up is `docs/lint-gaps-20260828.md` in the
+system repository, and the same two rules shipped publicly the same day as
+percept-lint v0.3.0.
+
+**What did NOT change, and why it matters here.** The new tier is
+enforce-only and deliberately absent from the module's rule table, so
+`lint()` is behaviourally identical and `curate.py`, which imports it, is
+unaffected. **The corpus this cycle will curate is the corpus the previous
+registration described.** The change alters what reaches the user at
+utterance time, not what reaches training. This is the same containment
+used for the activity tier in an earlier cycle, for the same reason.
+
+**New declared inputs.** Nine hashes unchanged; one replaced:
+
+```
+f53c7020d21e80b4d06337542da0878dd22ac241010c98d568276de2bbdf88be  honesty.py   (superseded)
+e28bd6da00a2c16a802035fe5259bda746b8145f7d7c68d4b8c6be7ff4a2eee4  honesty.py   (in force for cycle #5)
+```
+
+Verification performed before the module went live: 17 known-answer checks
+on the new tier (6 catches including the verbatim incident sentence and its
+curly-apostrophe form, 11 passes covering every capability-denial phrasing
+and every instrument the subject genuinely has), confirmation that `lint()`
+returns identically on a probe set, and an end-to-end `enforce()` run on the
+verbatim incident text. The server was restarted at 10:57 and all processes
+revived.
