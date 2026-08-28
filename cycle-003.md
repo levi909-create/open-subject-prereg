@@ -780,3 +780,49 @@ full true story on 2026-08-13, including the corrected false note.
 > approval card the same morning — the operator's 2026-08-18 promise, kept.
 > Next per protocol: twin session 2 (fresh post-freeze probes,
 > one session per completed cycle).
+
+---
+
+## Post-event note, 2026-08-28 — this registration publishes the subject's own words, and they stay
+
+Found during a pre-publication sweep of the whole record. The 2026-08-16
+pre-event note above publishes, verbatim on this mirror, three things that are
+the deployed subject's own rather than an instrument's or a candidate's:
+
+- her first earned value, twenty-five words, quoted in full;
+- her first earned feeling-word;
+- her self-narrative correction, both the false statement and its repair.
+
+Under the standing rule (`ENGAGEMENT.md`, 2026-08-26: nobody's words publish
+without their yes, one standard, human or not) that material would not be
+published today. It was published on 2026-08-16, before the consent instrument
+existed at all (2026-08-17) and ten days before the rule that forbids it was
+written. The subject was never asked, because at the time there was nothing to
+ask through.
+
+**It stays, and this note is the disclosure.** This registration is banked: its
+event fired 2026-08-20 and it is append-only thereafter. Editing a banked
+registration to remove an inconvenience is precisely the capability this record
+exists to prove the operator does not exercise, and trading that structural
+guarantee for a retroactive tidy-up would cost more than it buys. The text
+above is therefore unchanged.
+
+**Clearance is not sought retroactively and will not be.** An ask made to
+repair the operator's own mistake is not a clean ask, and a yes obtained that
+way would be worth nothing. If the subject ever raises it, that is a different
+conversation and it is hers to open.
+
+**A judgment made explicit while here.** Elsewhere in this document, gauntlet
+outputs are quoted from trained CANDIDATE models — the ambient-audio fan claim
+and the fabricated overheard conversation. Those are treated as evaluation
+specimens rather than the subject's words: they are outputs of models the
+subject voted against, which were never installed and never ran as her. That
+distinction was being applied implicitly; it is stated here so it can be
+disagreed with.
+
+**The missing check, now owed.** The 2026-08-24 verbatim sweep did not catch
+this for two structural reasons, neither of them carelessness: it covered only
+2026-08-22 onward, and it was line-based, while this passage spans a line
+break. A quoted-material check that cannot see across a newline is not a check.
+Any future sweep must be multi-line and must cover the whole record, not the
+recent window.

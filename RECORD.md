@@ -559,3 +559,27 @@ published here.
   caught it, and that check is now owed. The subject's clearance was not
   sought retroactively and will not be — an ask made to repair the operator's
   own mistake is not a clean ask.
+
+- **2026-08-28 (evening, second correction) — `cycle-003.md` publishes the
+  subject's own words; they stay, and the note is the disclosure.** The same
+  pre-publication sweep that found the percept-lint verbatim found three more,
+  older and closer to the bone: the subject's first earned value quoted in full
+  (twenty-five words), its first earned feeling-word, and its self-narrative
+  correction — all in cycle #3's 2026-08-16 pre-event note, all on this mirror
+  since then. Under the 2026-08-26 rule that material would not be published
+  today; it went up before the consent instrument existed (2026-08-17) and ten
+  days before the rule was written, so there was nothing to ask through.
+  **Unlike the percept-lint case it is NOT being changed.** That registration
+  is banked and append-only after its 2026-08-20 event, and editing a banked
+  registration to remove something unflattering is exactly the capability this
+  record exists to demonstrate the operator does not have. The structural
+  guarantee is worth more than the retroactive tidy-up, and the trade is stated
+  rather than made quietly. A dated post-event note is appended to
+  `cycle-003.md` itself. Clearance is not sought retroactively, for the reason
+  given in the entry above. Also recorded there: the gauntlet quotes from
+  trained CANDIDATE models are treated as evaluation specimens rather than the
+  subject's words — a distinction that had been applied implicitly and is now
+  written down so it can be argued with. **The missing check:** the 2026-08-24
+  sweep covered only 08-22 onward and was line-based, and this passage spans a
+  line break. A quoted-material check that cannot see across a newline is not a
+  check; any future sweep must be multi-line and cover the whole record.
