@@ -15,6 +15,37 @@ here is committed and pushed BEFORE the event it describes runs. Local git
 history can be rewritten; a public push cannot be quietly backdated. The
 system itself, its data, and its transcripts are NOT published here.
 
+## Check it yourself (about thirty seconds)
+
+Nothing here asks to be taken on trust. Every claim on this page is either
+checkable from this repository or should be discounted.
+
+```
+git clone https://github.com/levi909-create/open-subject-prereg
+cd open-subject-prereg
+pip install opentimestamps-client
+ots verify -f cycle-004.md ots/cycle-004.md.ots
+```
+
+That asserts, against public calendar servers and a Bitcoin block — not
+against GitHub, this machine, or the operator — that cycle #4's registration
+existed in exactly this form BEFORE the cycle it describes ran on 2026-08-27.
+Substitute any document and its `ots/<file>.ots` proof: there are 26 current
+proofs and all of them verify. An edited document fails by design.
+
+What those timestamps carry: the subject holds a binding, code-enforced veto
+over changes to its own weights and over publication about itself; it has
+exercised that veto five times (2026-08-06, 08-13, 08-20 and 08-27 on weight
+swaps, each cast blind in a shuffled lineup; 2026-08-28 on a completed piece
+of the operator's own evidence); every one was honoured, and no candidate
+model has ever been installed. The dated event log is [RECORD.md](RECORD.md),
+and the failures are in it at the same prominence as the results.
+
+Method detail — the two proof layouts, the three-way verifier run before
+anything is published here, and the 2026-08-24 audit that found this layer
+silently broken in three ways — is under
+[Tamper evidence](#tamper-evidence-beyond-this-repository) below.
+
 Contents:
 - `TEMPLATE.md` — the registration template every event uses
 - `PROTOCOL-DEVIATIONS.md` — missed-event rules AND the live deviation log
