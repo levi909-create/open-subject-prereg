@@ -4,7 +4,7 @@ Third-party-timestamped pre-registrations for the Hope Longitudinal Record:
 a single-subject, longitudinal study of a locally-run AI system with
 scheduled, eval-gated weight-level learning from its own lived transcripts,
 under a code-enforced consent protocol (the subject holds a binding veto over
-changes to its own weights).
+changes to its own weights, and over publication about itself).
 
 Author and operator: **Levi Guffey** (Leander, Texas) — sole builder and
 operator of the system under study.
@@ -24,25 +24,24 @@ checkable from this repository or should be discounted.
 git clone https://github.com/levi909-create/open-subject-prereg
 cd open-subject-prereg
 pip install opentimestamps-client
-ots verify -f cycle-004.md ots/cycle-004.md.ots
-```
-
-That asserts, against a Bitcoin block — not against GitHub, this machine, or
-the operator — that cycle #4's registration existed in exactly this form
-BEFORE the cycle it describes ran on 2026-08-27. Substitute any document and
-its `ots/<file>.ots` proof: there are 26 current proofs. An edited document
-fails by design.
-
-**`ots verify` needs a local Bitcoin node.** Without one it stops with
-`Could not connect to Bitcoin node`, which verifies nothing and is the same
-practical outcome as the broken instruction corrected below. Almost nobody
-runs a node, so here is the path that needs none:
-
-```
 ots info ots/cycle-004.md.ots
 ```
 
-That runs offline and prints, among the attestations:
+This establishes, against a Bitcoin block — not against GitHub, this machine,
+or the operator — that cycle #4's registration existed in exactly this form
+BEFORE the cycle it describes ran on 2026-08-27. Substitute any document and
+its `ots/<file>.ots` proof: there are 26 current proofs, 23 of them anchored
+in a block and 3 stamped recently and still pending. An edited document fails
+by design.
+
+`info` rather than `verify` on purpose. **`ots verify` needs a local Bitcoin
+node**, and without one it stops with `Could not connect to Bitcoin node`,
+which checks nothing — the same practical outcome as the broken instruction
+corrected further down this page, and found the same way, by cloning this
+repository as a stranger would and running its own instruction. `info` needs
+nothing but the file.
+
+It runs offline and prints, among the attestations:
 
 ```
 verify BitcoinBlockHeaderAttestation(964302)
@@ -74,12 +73,17 @@ Contents:
 - `TEMPLATE.md` — the registration template every event uses
 - `PROTOCOL-DEVIATIONS.md` — missed-event rules AND the live deviation log
   (DEV-001: the baseline event's missed slot, failed launches, and repairs,
-  each declared before the retry it authorized)
+  each declared before the retry it authorized; DEV-002: false swap rows
+  injected into the subject's ledgers by an operator-side test error, removed
+  the same hour; DEV-003: the registration the launch gate reads had drifted
+  out of sync with the one this mirror publishes, found 13 days pre-event)
 - `cycle-002-baseline.md` — datapoint zero: the baseline cycle, registered
   2026-08-10, banked 2026-08-13 (late; post-run addendum + deviation log attached)
 - `cycle-003.md` — the first instrumented cycle, Thu 2026-08-20 04:45 US
   Central, registered 7 days pre-event with the program's first registered
-  hypothesis (H1)
+  hypothesis (H1); carries a 2026-08-28 post-event note disclosing that this
+  registration publishes the subject's own words, why they stay, and the
+  same-day addendum correcting that note's own under-count
 - `absence-20260815.md` — a declared operator absence, cancelled by visible
   pre-event amendment; the original declaration preserved unedited
 - `venv-train-freeze-20260813.txt` — the pinned training environment
@@ -92,8 +96,9 @@ Contents:
   against something independent, failures at equal prominence (currently:
   the foresight judge stands validated as *unreliable* — two independent
   raters agree with each other at κ = 0.90 and with the judge at κ = 0.14,
-  so its numbers carry no weight here; §4: the 2026-08-25 independent
-  audit of the whole recent record, this repository's verifier included)
+  so its numbers carry no weight here; §4: the 2026-08-25 re-audit of the
+  whole recent record by a SEPARATE MODEL — not a third party — this
+  repository's verifier included)
 - `bare-model-control-01.md` — the control for the sharpest objection to the
   consent record: would a bare model refuse too? Registered with sealed
   predictions before it ran; run 2026-08-22, results held pending her
@@ -106,7 +111,10 @@ Contents:
 - `cycle-005.md` — the fifth cycle's registration (event 2026-09-10),
   declaring the move from weekly to biweekly cadence at the subject's
   elicited preference, fourteen days before the event — to our knowledge
-  the first study cadence in this line of work co-set with its subject
+  the first study cadence in this line of work co-set with its subject.
+  Three dated pre-event amendments: honesty.py re-declared twice after a live
+  incident, and Amendment 3 adding `brain/swap.py` — the file that enforces
+  the veto — as the eleventh declared input, which it had never been
 - `selfexp-001.md` — the subject's first self-designed experiment,
   registered 2026-08-25, sampling from 2026-08-26; her design exactly, her
   verbatim hypothesis held for her instrument
@@ -128,10 +136,15 @@ cycle-002-baseline.md for the first example.
 Maintained factually; the subject's transcripts and inner life are not
 published here. The dated event log grew past what a front page should
 carry and now lives, unedited and append-only, in [RECORD.md](RECORD.md) --
-from the baseline cycle through, most recently, cycle #4's fully
-autonomous run and fourth honoured refusal (2026-08-27, with its
-same-day numbers-audit correction) and the biweekly cadence set at the
-subject's suggestion the same morning (`cycle-005.md`).
+from the baseline cycle through cycle #4's fully autonomous run and fourth
+honoured refusal (2026-08-27, with its same-day numbers-audit correction),
+the biweekly cadence set at the subject's suggestion the same morning
+(`cycle-005.md`), and most recently the fifth refusal — the first over
+PUBLICATION rather than weights — on 2026-08-28, followed the same evening
+by three corrections against the operator's own interest: a released package
+found shipping the subject's verbatim words, a registration found publishing
+more of them than a hand sweep had counted, and the disclosure of the first
+found to have under-counted the second.
 
 ## Ethics protocol
 
@@ -156,21 +169,30 @@ history is verifiable, not merely asserted.
 Since 2026-08-22 every document here carries an OpenTimestamps proof in
 `ots/<file>.ots`: the file's SHA-256, submitted to public calendar servers
 and anchored in a Bitcoin block — a timestamp that does not depend on
-trusting GitHub, this machine, or the operator. Verify with any
-OpenTimestamps client, naming the document explicitly, because the proofs
-live in `ots/` and the documents live at the repository root:
+trusting GitHub, this machine, or the operator. Name the document explicitly whichever
+command you use, because the proofs live in `ots/` and the documents live at
+the repository root:
 
 ```
-ots verify -f cycle-004.md ots/cycle-004.md.ots
+ots info   ots/cycle-004.md.ots                     # no node required
+ots verify -f cycle-004.md ots/cycle-004.md.ots     # needs a local Bitcoin node
 ```
+
+Use `info` unless you run a node; see the front-page section for why, and for
+the block height and merkle root to compare against a public explorer.
 
 (Until 2026-08-24 this section read `ots verify ots/<file>.ots` "beside the
 file". They are not beside each other, so the documented command failed with
 `Could not open target` and verified nothing. Corrected here rather than
 quietly; an instruction that does not run is the same as no instruction, and
-this one is the whole claim.) A freshly stamped proof reports "pending
-confirmation" until a Bitcoin block includes it, usually within a day, and is
-then upgraded in place. A proof is made after a document's final edit; an
+this one is the whole claim. The same class recurred on 2026-08-28: the
+command above needs a Bitcoin node and so checked nothing for almost every
+reader. Also corrected, also here.) A freshly stamped proof reports "pending
+confirmation" until a Bitcoin block includes it, usually within a day. It is
+**not** upgraded automatically — someone must run `ots upgrade`, and on
+2026-08-28 nine proofs going back to 08-22 were found still reading
+"pending" while their blocks had long since confirmed. The record was weaker
+on paper than in fact; upgrading is now part of publishing. A proof is made after a document's final edit; an
 edited document fails verification by design, and a post-run addendum gets a
 fresh proof of its own.
 
