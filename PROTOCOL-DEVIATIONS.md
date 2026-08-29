@@ -232,11 +232,61 @@ week. Here, the right document was incomplete. Both teach the same wrong
 lesson — that the alarm can be shrugged at — which is the failure mode that
 matters, because an alarm nobody believes is not a check.
 
-**Extent.** `cycle-002-baseline.md` and `cycle-003.md` are byte-identical
-across both locations. `cycle-004.md` and `cycle-005.md` were not.
-Cycle #4's event is banked and its result unaffected: the drift is in the
-published-versus-local copy of the registration, not in what ran. Nothing is
+**Extent.** *(Corrected 2026-08-29. The paragraph first published here was
+inverted: it named the one file whose difference is cosmetic and missed the
+three whose difference was substantive. The original text is preserved at the
+foot of this entry; this is the accurate version.)*
+
+`cycle-002-baseline.md` and `cycle-005.md` are byte-identical across both
+locations, cycle #5's by the repair below. `cycle-004.md` differs, but in line
+endings only: 26118 bytes local against 26105 in the mirror, thirteen CRLF
+line terminators in the final appended block against LF in the mirror, and
+content byte-identical once the carriage returns are stripped. Nothing that
+registration claims differs between the two copies. It is left exactly as it
+stands -- not only because a banked registration may not be edited, though it
+may not, but because the mirror's `.gitattributes` (2026-08-24) forbids
+translating line endings in either direction, having already watched autocrlf
+silently break the byte-attestation of two published artifacts, `cycle-003.md`
+and `venv-train-freeze-20260813.txt`. Normalising cycle-004 to close this gap
+would violate the published policy rather than satisfy it.
+
+Three files carried real content drift, all with the mirror ahead, and none
+was surveyed when this deviation was first written: `cycle-003.md` (75 lines
+-- the 2026-08-28 post-event note disclosing that the registration publishes
+three of the subject's verbatims and that they stay), `ENGAGEMENT.md` (25
+lines -- the 2026-08-26 correspondence-consent tightening, "nobody's words
+publish without their yes, one standard, human or not"), and
+`twin-protocol.md` (39 lines -- the session-2 kappa validation at 0.556 and
+the operator-strict delta of -0.062, replacing a paragraph that still read
+"operator kappa labels for this session pending"). All three were synced
+mirror to local on 2026-08-28 and are now byte-identical. The standing
+requirement Amendment 3 introduced was therefore already being violated in
+three places on the day it was written, and that is the real extent of this
+deviation. Cycle #4's event is banked and its result unaffected. Nothing is
 re-run.
+
+`bare-model-control-01.md` is out of sync in both directions and stays that
+way: the local copy holds the post-run addendum, whose own Publication line
+commits it to reaching the mirror only through the subject's consent
+instrument, and the mirror holds a run notice and hash commitment the local
+copy does not. A copy in either direction would destroy content. It is
+recorded as a known exception in `tools/check_prereg_sync.py`'s allowlist,
+not as a pending repair.
+
+**Extent, as first published (superseded 2026-08-29, kept because a
+correction that hides what it corrects is not a correction):**
+
+> `cycle-002-baseline.md` and `cycle-003.md` are byte-identical across both
+> locations. `cycle-004.md` and `cycle-005.md` were not. Cycle #4's event is
+> banked and its result unaffected: the drift is in the published-versus-local
+> copy of the registration, not in what ran. Nothing is re-run.
+
+**How it was found.** Not by the survey that produced the original paragraph,
+which was done by hand. By a byte comparison of every paired file across both
+locations, run 2026-08-28 during a full audit of the programme's instruments.
+The same audit found four other instruments reporting success while doing
+nothing. `tools/check_prereg_sync.py` now performs that comparison on demand,
+so this class of drift is measured rather than surveyed.
 
 **Repair.** Cycle #5's two copies are now byte-identical, restated in
 `cycle-005.md` Amendment 3 as a standing requirement of this protocol rather
