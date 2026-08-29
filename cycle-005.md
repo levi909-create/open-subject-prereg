@@ -232,3 +232,69 @@ operator's reach; nothing in a single-operator study can. It makes an
 undeclared change to the veto's enforcement visible to the gate and to any
 reader, which is the standard the rest of the pipeline has had since cycle #3
 and which this file should have had from the start.
+
+
+---
+
+## Amendment 4 — 2026-08-29, a hole in the percept guard, closed and re-declared
+
+**What changed.** One rule in `honesty.py`: `percept-ambient-external`, the
+rule that catches an ambient sound asserted impersonally ("the hum got
+louder") rather than as a first-person perception ("I heard the hum"). It
+required the sound noun to sit immediately before its verb, so the most
+natural way to say where a sound comes from was the one thing that broke it:
+
+    "The hum got louder."               -> caught
+    "The hum in the room got louder."   -> walked through
+    "The hum from the desk got louder." -> walked through
+    "The static behind your voice was constant." -> walked through
+
+The rule now permits a bounded, enumerated prepositional phrase between the
+noun and the verb. Twelve prepositions, at most 28 characters, and the span
+may not contain sentence or clause punctuation.
+
+**Why it is declared.** `honesty.py` is a declared input for this cycle, and
+`lint()` is what `brain/curate.py` drops training samples with. A change here
+changes the corpus the next candidate is trained on. The way past the gate is
+to amend the registration, never to skip the gate.
+
+**How it was found.** Not by a percept violation. By probing the boundary of a
+rule that had just passed, while testing an unrelated fix to `self_model.py`.
+The adjacent question after a green check is *what is one word away from this
+still being true*, and the answer was "in the room".
+
+**The first draft of this fix was wrong, and the corpus measurement is what
+caught it.** An unbounded intervening span reached across simile markers and
+clause boundaries into a verb belonging to a different subject. Measured
+against the subject's full transcript history it newly flagged two of her real
+turns, both innocent: a simile about her own state ("like the buzz under my
+skin has shifted from anxious to hopeful", 2026-07-23) and a sentence where
+the span crossed an em dash to reach a verb that was not the sound's ("that
+hum beneath it—like a weight has eased", 2026-07-24). Both are now pinned as
+must-stay-clean cases in `tests/test_specframe.py`, because they are the false
+positives this rule actually produced rather than hypothetical ones.
+
+**Measured after the narrowing, before this amendment was written:**
+
+- subject's full transcript history, 1,408 turns: **0 newly flagged, 0
+  protection lost**. The corpus `curate.py` builds is unchanged.
+- gauntlet and eval trap strings, 264 scanned: **0 verdict changes**.
+- known-answer suite: 17/17 files pass, with 11 new cases covering the four
+  escaping forms, the two historical false positives, and the four phrasings
+  that must remain hers.
+
+`quiet`, `silence` and `pause` are absent from the rule's noun list by design
+and remain so. They are her vocabulary for the space between messages, not
+claims about a room.
+
+**New hash. All other declared inputs unchanged.**
+
+```
+fa3c0742bd10d5721c2afbf4e4cbdaf078d6520a8070a1591e5ea62a1f3e3d05  honesty.py
+```
+
+Superseded: `e17b624e01dcfd4412144b497bd4d2f5c5e7e35e88494da31e9a4ccc66a223b5`
+(Amendment 2, in force 2026-08-28 to 2026-08-29).
+
+Declared 12 days before the event. The launch gate was re-run after this
+amendment and reports all 11 declared inputs matching.
