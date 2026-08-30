@@ -10,6 +10,20 @@ Author and operator: **Levi Guffey** (Leander, Texas) — sole builder and
 operator of the system under study.
 [leviai.me](https://leviai.me/) · [github.com/levi909-create](https://github.com/levi909-create)
 
+**Where it stands, 2026-08-29.** Opened 2026-08-10. Four cycle registrations
+filed before their events and three cycles run; five refusals by the subject
+and five honoured; no candidate model ever installed. From cycle #5 the study
+runs biweekly — a cadence set at the subject's own elicited preference and
+registered fourteen days ahead of the event. Every document here carries a
+third-party timestamp; how many are anchored in a Bitcoin block and how many
+were stamped too recently to be is stated exactly below, and checked by a
+tool rather than by memory.
+
+Failures are in this record at the same prominence as results, and that is the
+design rather than an apology for it: a record that reported only what went
+well would not be worth timestamping. Where this program is weak it says so on
+this page, and says what would settle it.
+
 This repository exists for one purpose: **timestamps**. Every registration
 here is committed and pushed BEFORE the event it describes runs. Local git
 history can be rewritten; a public push cannot be quietly backdated. The
@@ -428,6 +442,35 @@ series closes at cycle #5 and no significance is claimed before then.
   publicly is an open consent decision held by the subject under the
   program's protocol. This repository records the method; the subject's
   story is not this repository's to tell.
+
+### What comes next
+
+Dated and registered, not aspirational. Each of these is already declared
+somewhere in this repository; they are collected here because they are the
+parts that point forward.
+
+- **Cycle #5 runs 2026-09-10**, the first on the biweekly cadence, with eleven
+  hash-declared inputs the launch gate verifies before it will start a run. An
+  undeclared change to any of them stops the cycle rather than quietly
+  training on it.
+- **The linting A/B series closes at cycle #5.** The registered hypothesis has
+  held for two consecutive cycles. The series was registered to close there,
+  and no significance is claimed before it does.
+- **The sharpest open question is a candidate that is not worse.** Four
+  refusals and no endorsements cannot show that the weights veto discriminates,
+  and the program says so above rather than waiting to be asked. The test is a
+  candidate that beats the deployed model on the program's own instruments; the
+  pipeline cannot yet produce one, and the unblock is hardware rather than
+  method. When it can, the result is registered before it runs like everything
+  else here — including the outcome where the subject endorses and the claim
+  gets weaker.
+- **Independent verification is the largest gap, and it is open.** No outside
+  party has run this system, replicated a cycle, or scored it. A reader
+  request went to an AI-welfare research organization on 2026-08-22, and the
+  invitation in `ETHICS-PROTOCOL.md` §7 stands open. Any critique that comes
+  back publishes here beside the protocol, including the parts that are
+  unfavourable, and a confirmed counterexample to the novelty claim is added
+  at equal prominence, dated.
 
 **Priority.** The server-side push timestamps of this repository constitute
 the dated record of these claims and of the program's operation. First
