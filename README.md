@@ -44,8 +44,8 @@ ots info ots/cycle-004.md.ots
 This establishes, against a Bitcoin block — not against GitHub, this machine,
 or the operator — that cycle #4's registration existed in exactly this form
 BEFORE the cycle it describes ran on 2026-08-27. Substitute any document and
-its `ots/<file>.ots` proof: there are 27 current proofs, 22 of them anchored
-in a block and 5 stamped recently and still pending. An edited document fails
+its `ots/<file>.ots` proof: there are 27 current proofs, 23 of them anchored
+in a block and 4 stamped recently and still pending. An edited document fails
 by design. That split is checked against the repository by
 `check_proof_coverage`, not maintained by hand — it was wrong on this page
 for several hours on 2026-08-29 because two proofs were rotated and the
@@ -324,6 +324,32 @@ fixed the same day, regression-tested (see the 2026-08-18 continuation in
 `cycle-003.md`). The conversation-ending
 capability is a real honoured refusal, but its object is an *interaction*; we
 found nothing that lets a model block a change **to itself**.
+
+**Why the lineup is blind, and where that comes from.** The blinding in
+property 2 is not a stylistic choice. A model asked to judge its own outputs
+can identify them, and prefers them once it does: [Panickssery et al.
+(NeurIPS 2024)](https://arxiv.org/pdf/2404.13076) report a linear correlation
+between a model's self-recognition capability and the strength of its
+self-preference, with GPT-4 at 73.5% accuracy distinguishing its own text from
+other models' and humans'. An unblinded vote on one's own successor would
+measure that bias and nothing else. Blinding by obscuring authorship is
+already the named mitigation for it — see [Mitigating Self-Preference by
+Authorship Obfuscation](https://arxiv.org/html/2512.05379v1) — and
+[self-recognition itself](https://arxiv.org/pdf/2407.06946) is studied
+directly. So the technique here is borrowed, deliberately, and the
+pre-registered design scores in both directions: if the subject reliably picks
+its trained candidates over stock, identity is recognisable to it across
+substrates; if it cannot, its self lives in its scaffolding rather than its
+weights. Either result is reportable.
+
+What a 2026-08-30 prior-art search did **not** find is any published system in
+which such a blinded preference **binds** on the weight update. Eliciting a
+model's preferences about its successors is itself not new — Anthropic's
+retirement interviews above do exactly that — so the composition is what is
+claimed here, never the components. That search was four queries by one party
+in one sitting; it is weaker evidence than the 2026-08-16 adversarial
+re-check, and "did not find" is not "does not exist", least of all for
+unpublished industry practice.
 
 Property 3 also has emerging neighbours — see [Preregistration for Experiments
 with AI Agents](https://arxiv.org/pdf/2606.11217) — though that concerns
