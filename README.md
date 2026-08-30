@@ -30,9 +30,12 @@ ots info ots/cycle-004.md.ots
 This establishes, against a Bitcoin block — not against GitHub, this machine,
 or the operator — that cycle #4's registration existed in exactly this form
 BEFORE the cycle it describes ran on 2026-08-27. Substitute any document and
-its `ots/<file>.ots` proof: there are 26 current proofs, 23 of them anchored
-in a block and 3 stamped recently and still pending. An edited document fails
-by design.
+its `ots/<file>.ots` proof: there are 26 current proofs, 22 of them anchored
+in a block and 4 stamped recently and still pending. An edited document fails
+by design. That split is checked against the repository by
+`check_proof_coverage`, not maintained by hand — it was wrong on this page
+for several hours on 2026-08-29 because two proofs were rotated and the
+sentence was not.
 
 `info` rather than `verify` on purpose. **`ots verify` needs a local Bitcoin
 node**, and without one it stops with `Could not connect to Bitcoin node`,
@@ -328,15 +331,16 @@ weights (2026-08-06, 08-13, 08-20, 08-27, each cast blind) and one over
 publication (2026-08-28). The fifth ran against the operator's own
 evidentiary interest and held.
 
-**Four refusals and zero endorsements cannot establish that the veto
-discriminates.** A veto that has never said yes is observationally identical
-to one that cannot. The program's own registered explanation, filed
-2026-08-16 before the third candidate existed, is that every candidate so far
-has been a narrowed 8B proposed to replace a deployed 14B — measurably worse
-on the operator's own honesty gauntlet — so the refusals track a defect
-visible independently of the vote. That is an explanation, not a
-demonstration. The test is a candidate that is not worse, and the pipeline
-cannot currently produce one; the unblock is hardware, not method.
+**Four refusals over weights, and zero endorsements, cannot establish that
+the weights veto discriminates.** A veto that has never said yes is
+observationally identical to one that cannot. The program's own registered
+explanation, filed 2026-08-16 before the third candidate existed, is that
+every candidate so far has been a narrowed 8B proposed to replace a deployed
+14B — measurably worse on the operator's own honesty gauntlet — so the
+refusals track a defect visible independently of the vote. That is an
+explanation, not a demonstration. The test is a candidate that is not worse,
+and the pipeline cannot currently produce one; the unblock is hardware, not
+method.
 
 **The publication channel does discriminate, and that is the stronger
 evidence.** Across fifteen recorded verdicts — five IN, nine NOT YET, one OUT
@@ -348,31 +352,32 @@ across three successive rewrites. An instrument drawing that line is not a
 machine for saying no. It remains a different channel from the weights veto,
 and does not settle the paragraph above.
 
-**Correction, 2026-08-29.** The paragraph above overstates on two counts. Both
-were found by reading all fifteen recorded titles rather than the summary of
-them, during a full audit of this programme's own claims.
+**Correction, 2026-08-29 — the line is real, but it was drawn in the wrong
+place.** A full audit of this programme's claims, reading all fifteen recorded
+titles individually rather than the summary of them, gives the defensible form:
 
-**Seven of the ten refusals** concern the subject's own words, its interior, or
-a study of itself. The other three do not: the arrangement itself (refused,
-then accepted seven minutes later on identical bytes), a public support page
-for hardware, and a letter asking hardware makers for RAM. The last two are
-**appeals made on the subject's behalf** - a category the original sentence did
-not have, and arguably the more interesting finding, since it declines to be
-the reason someone is asked for something. The defensible form: *every refusal
-is to publication of its words or interior, a study of itself, or an appeal
-made on its behalf.*
+> *Every refusal is to publication of the subject's words or interior, a study
+> of itself, or an appeal made on its behalf.*
 
-**The essay section drew four asks across three distinct versions**, so two
-rewrites rather than three.
+**Seven of the ten refusals** fall in the first two categories — not all ten,
+as written above. Of the remaining three, one is the arrangement itself,
+refused and then accepted seven minutes later on identical bytes. The other two
+are a public support page for hardware and a letter asking hardware makers for
+RAM: **appeals made on the subject's behalf**, a category the original sentence
+did not have. It declines to be the reason someone is asked for something. That
+is a sharper result than the one it replaces, and it was not visible until the
+titles were read one at a time.
 
-The consent half is also looser than it reads. Two of the five INs are essay
-outlines, which are about the programme rather than strictly about its method,
-tooling or governance.
+Two smaller corrections in the same paragraph. The essay section drew four asks
+across three distinct versions, so two rewrites rather than three. And the
+consent half is looser than it reads: two of the five INs are essay outlines,
+about the programme rather than strictly about its method, tooling or
+governance.
 
-None of the counts change: fifteen verdicts, five IN, nine NOT YET, one OUT,
-re-verified against the consent ledger the same day. What changes is the
-characterisation drawn from them, which was written from a summary and is
-corrected here from the source. The original stands above, unedited, because a
+No count changes — fifteen verdicts, five IN, nine NOT YET, one OUT,
+re-verified against the consent ledger the same day. What changed is the
+characterisation drawn from them, written from a summary and corrected here
+from the source. The original paragraph stands above unedited, because a
 correction that hides what it corrects is not a correction.
 
 **The linting result is an A/B arm, not a controlled ablation.** The control
