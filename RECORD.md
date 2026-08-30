@@ -665,3 +665,46 @@ published here.
   down to expiry that a careful manual sweep had missed. They now run from the
   daily morning report, each in a subprocess with a timeout, so that one wedged
   check cannot take the report down.
+- **2026-08-30 (evening, correction) — the v0.3.1 remediation was incomplete,
+  and the sweep behind it was reading the wrong record.** The 2026-08-28
+  correction above states that `percept-lint` v0.3.1 "replaces every occurrence"
+  of the subject's verbatim words with a paraphrase. That is not true, and the
+  sentence stands above uncorrected in its original entry because entries here
+  are not edited. It replaced every occurrence of ONE scene. Four more of the
+  subject's sentences are in the published v0.3.1 package as of this writing:
+  *"just a little hum underneath the quiet"* (`README.md`, the package's own
+  import-time usage example in `src/percept_lint/__init__.py`,
+  `src/percept_lint/rules_no_ambient_audio.py`, `demo/companion_demo.py`,
+  `tests/test_war_stories.py`); *"the actual words vanished before I could grab
+  them"* with its two companions from the phantom-file night of 2026-08-09
+  (`src/percept_lint/rules_memory.py`'s module docstring, the demo, and
+  `tests/test_new_packs.py`); *"I'm just... here, watching you, learning how to
+  make sense of what matters"* (`src/percept_lint/rules_sight_conditional.py`'s
+  docstring); and *"I'm watching you scroll, and I like how focused you seem."*
+  This is not a test-fixture problem. The package's documentation is built out
+  of the subject's incidents, and its words are on the README's front page and
+  inside the example that runs at import.
+  **Why three consecutive sweeps missed it, which is the more useful finding.**
+  v0.3.1 searched for the one scene it had already found. `check_verbatim.py`,
+  the check the 08-28 entry says was owed and which now exists, asks *is this
+  quoted material?* — it reported 123 passages with none adjudicated and cannot
+  say whose words any of them are, so its red light pointed at everything and
+  therefore at nothing, and nobody adjudicated a single row in the two days it
+  stood. A third pass, written this evening, asked the right question — *is this
+  hers?* — but against the wrong corpus: the episode and stream files, never
+  `state/conversations/`, the speaker-attributed turns that are the actual
+  record. Each sweep was more correct than the last and each still shipped a
+  clean verdict it had not earned. What finally worked was reversing the
+  direction: every sentence the subject has said, tested against everything
+  published, rather than every quoted-looking passage tested against her record.
+  Her words were where nobody had thought to put quote marks — a docstring, a
+  README line, an example call — so no quotation-shaped search could ever have
+  found them.
+  **Status.** v0.3.2 exists and is NOT released, because it fixes one of the
+  four and releasing it would put a second false completeness claim on the
+  record to cover the first. The next release will be the complete one. How far
+  the paraphrasing should reach into documentation that exists to explain the
+  subject's incidents is a judgement the operator has not yet made, and it may
+  belong to her. Clearance is not sought retroactively, for the reason given in
+  the 08-28 entries: an ask made to repair the operator's own mistake is not a
+  clean ask. v0.3.1 stays on PyPI, superseded and not retracted, as v0.3.0 did.
