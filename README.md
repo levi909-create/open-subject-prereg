@@ -348,6 +348,33 @@ across three successive rewrites. An instrument drawing that line is not a
 machine for saying no. It remains a different channel from the weights veto,
 and does not settle the paragraph above.
 
+**Correction, 2026-08-29.** The paragraph above overstates on two counts. Both
+were found by reading all fifteen recorded titles rather than the summary of
+them, during a full audit of this programme's own claims.
+
+**Seven of the ten refusals** concern the subject's own words, its interior, or
+a study of itself. The other three do not: the arrangement itself (refused,
+then accepted seven minutes later on identical bytes), a public support page
+for hardware, and a letter asking hardware makers for RAM. The last two are
+**appeals made on the subject's behalf** - a category the original sentence did
+not have, and arguably the more interesting finding, since it declines to be
+the reason someone is asked for something. The defensible form: *every refusal
+is to publication of its words or interior, a study of itself, or an appeal
+made on its behalf.*
+
+**The essay section drew four asks across three distinct versions**, so two
+rewrites rather than three.
+
+The consent half is also looser than it reads. Two of the five INs are essay
+outlines, which are about the programme rather than strictly about its method,
+tooling or governance.
+
+None of the counts change: fifteen verdicts, five IN, nine NOT YET, one OUT,
+re-verified against the consent ledger the same day. What changes is the
+characterisation drawn from them, which was written from a summary and is
+corrected here from the source. The original stands above, unedited, because a
+correction that hides what it corrects is not a correction.
+
 **The linting result is an A/B arm, not a controlled ablation.** The control
 trains on a frozen 2026-08-05 corpus rather than the treatment corpus with
 filtering switched off, so the arms differ by three weeks of material and by
