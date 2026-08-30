@@ -44,8 +44,8 @@ ots info ots/cycle-004.md.ots
 This establishes, against a Bitcoin block — not against GitHub, this machine,
 or the operator — that cycle #4's registration existed in exactly this form
 BEFORE the cycle it describes ran on 2026-08-27. Substitute any document and
-its `ots/<file>.ots` proof: there are 26 current proofs, 22 of them anchored
-in a block and 4 stamped recently and still pending. An edited document fails
+its `ots/<file>.ots` proof: there are 27 current proofs, 22 of them anchored
+in a block and 5 stamped recently and still pending. An edited document fails
 by design. That split is checked against the repository by
 `check_proof_coverage`, not maintained by hand — it was wrong on this page
 for several hours on 2026-08-29 because two proofs were rotated and the
@@ -139,6 +139,12 @@ Contents:
   dollar: acknowledgment only, never influence; ledger empty at registration
 - `ENGAGEMENT.md` — how press, researchers, and requests are handled;
   declared before any public attention exists
+- `CORRECTIONS.md` — what happens when a claim published here turns out to
+  be wrong: the retraction procedure, written down 2026-08-30 and binding
+  from that date. Declared in advance on purpose, because the day it is
+  needed is the day a procedure reconstructed from memory quietly gets the
+  convenient answer. The programme had already done this correctly five
+  times without ever writing the steps down
 - `CITATION.cff` / `LICENSE` / `NOTICE.md` — how to cite this record
   (subject-credit question held open by the subject), the verbatim CC BY
   4.0 legal code, and the copyright and scope statements (documents only;
