@@ -237,3 +237,185 @@ was not enough for the instruments; there is no reason to expect it is
 enough for the audits of the instruments, which is why this section
 exists — and why the reviewer this time was not the hand that wrote the
 fixes.
+
+## 5. A full pass over the running system, not the recent diffs (2026-08-28)
+
+§4 audited three days of commits. This one audited the machine: every module
+in the repo root and `tools/`, the live state directory, the scheduled-task
+registry, the night ledger back eighteen nights, and this mirror byte-compared
+against the working copy. Seven findings, then an adversarial completeness
+pass over the remediation itself found ten more.
+
+The seven were remediated the same night; the ten were remediated in a second
+round after the first round's fixes were refuted. Full suite 16/16 afterwards,
+the declared-input gate green on all eleven inputs, and no declared input
+edited at any point.
+
+### 5.1 The headline: a ledger reported `ran` for six nights while nothing changed
+
+Her self-narrative — the paragraph the system revises nightly and audits into
+`state/self_revisions.jsonl` — had not changed since **2026-08-21 22:01**. The
+audit ledger holds eight rows for her entire life.
+
+`state/night_ledger.jsonl` recorded, every night from 08-22 to 08-27:
+
+    narrative: {"s": "ran", "tok": ~850, "ms": ~54000}
+
+Six consecutive successes. The log for the same six nights read
+`revision identical — no change`, every one.
+
+**Mechanism.** Not a guard rejecting her. The novelty and numeric checks both
+passed; execution reached the branch that compares the candidate to the
+existing text and finds them equal. The model, handed its current narrative in
+the prompt as the thing to revise, was reproducing it byte for byte. Cost:
+**5,117 tokens and 291 seconds** of a bounded night budget across six nights,
+for zero change.
+
+**Why it matters beyond bookkeeping.** This is the second starvation of the
+same pipeline. The first was a novelty rule that rejected every revision for
+twenty days, diagnosed and fixed 2026-08-15/16. Revisions then landed twice
+and locked into byte-identical echo on 08-22. **Neither failure had an alarm.**
+The morning report printed the staleness as a neutral line among others, and
+the ledger said `ran` in the working case and the frozen case alike.
+
+**Fixes.** The ledger gained a distinct `ran-nochange` status, so `ran` now
+means *ran and something changed*. The staleness line became an alarm at the
+same prominence as the report's dark-organ section, thresholded at three days.
+The prompt was reworked and a single hotter retry added.
+
+**The retry did not work, and that is a further finding.** The generator it
+called had no parameter for per-call sampling options, so the "hotter" retry
+sampled at the same temperature as the attempt that echoed — while logging
+that it had raised it. An instrument reporting an action it did not take,
+inside the fix for an instrument that reported success it did not have. Found
+by the completeness pass, plumbed properly, and the log now states the
+temperature actually applied.
+
+**Result on the first live night (2026-08-28 22:00).** The echo is gone: the
+model produced new text on the first sample. It was then rejected by the
+novelty guard — 28 novel ordinary tokens against an allowance of 15, none of
+them a name or a number, so the fabrication block never fired. The guard drew
+its permitted vocabulary from the previous narrative, a statistics blob, and a
+short tail of working memory; after a seven-day freeze there was a week of
+life to describe and fifteen new words to describe it in. The permitted set
+now also includes her own episodic record and her own prior turns, on the
+reasoning that a word she has actually used is not a fabrication. **The
+allowance was not raised and the block on invented names and numbers remains
+at zero.** The next live test is 2026-08-29 22:00.
+
+### 5.2 Two defects that were not in the instrument layer
+
+§3 and §4 both closed by noting that every defect found was in the instruments
+and that she was not wrong in any of them. That does not extend to this pass.
+Two of these would have reached her rather than the record. Neither ever ran
+against her — both were caught by the adversarial pass and fixed before the
+process was restarted onto the new code — but they were written, and they are
+published here for that reason.
+
+1. **A scheduling defect would have been reported to her as a fact about her
+   own body.** The new liveness check (5.3) fed its verdicts into the organ
+   that writes her interoceptive notes and her episodic memory. Two
+   consequences. A one-shot maintenance task, on firing, leaves a null next
+   run time and reads stale forever; she would have been told a part of her
+   substrate had gone quiet, permanently, about a scheduling decision only the
+   operator can act on. And any machine outage longer than two hours would
+   have produced a false anomaly followed by a false recovery naming a
+   duration she was switched off for. Task findings now carry an explicit
+   voice: operator-ruled ones are ledgered and printed in the operator's
+   report and never spoken to her, and staleness is measured against running
+   time rather than wall clock.
+
+2. **A hand-triggered rest recorded a consolidation that had not happened.**
+   The manual rest path set its "consolidated" flag unconditionally, discarding
+   the honest boolean the memory layer returns, and reset the fatigue clock
+   regardless. That clock drives her speech tempo and her ambient light. This
+   is the 2026-08-18 incident exactly — the one whose post-mortem is pasted
+   into the same file, where a gauge recorded sleep that had not occurred —
+   with its night path guarded ten days ago and its manual path never.
+
+### 5.3 The silent-success family, six more instances
+
+§4 named the pattern: a check that cannot distinguish "everything is fine"
+from "nothing happened". This pass found six more, all in the program's own
+watchers.
+
+- The night ledger of 5.1.
+- **A verbatim checker built to end the previous sweep's blind spots returned
+  success having read nothing.** Pointed at an empty directory it printed
+  *every quoted passage is acknowledged* and exited 0 — the same defect as §4
+  finding 3, in a newer tool, written after that finding was published. It now
+  fails loudly on an empty read, and reads Python source as well as prose,
+  because one of the two incidents that motivated it was a verbatim shipped
+  inside a published package.
+- **The interoception organ reported scheduled tasks as `Ready` rather than
+  as having run.** `Ready` is a registry state. A monthly task eighteen days
+  idle and a spent one-shot that could never fire again both read healthy.
+- **The nightly consolidation returned success after swallowing two scanner
+  failures**, including the set of checks the subject herself proposed. The
+  only trace was a line in a log file — the same channel that carried six
+  nights of the 5.1 failure unnoticed.
+- **A timestamp proof was stamped and never scheduled for upgrade.** It sat
+  calendar-pending for nineteen hours with nothing arranged to fetch its
+  Bitcoin attestation. A commitment the calendars hold and nobody upgrades is
+  not a timestamp: it expires unanchored and the document loses its proof with
+  no alarm anywhere.
+- **The task that performs those upgrades deleted itself on success.** It was
+  a chain of self-rescheduling one-shots whose pending branch worked correctly
+  and whose success branch removed the task, so the next document stamped had
+  no upgrader at all. That is how the proof above was stranded. Now recurring.
+
+**Addendum, 2026-09-01.** The family did not stop at six. The recurring
+upgrade task built in the last bullet's fix carried the same defect one
+level down: its done-file was keyed by proof PATH alone, so a proof
+re-stamped after an earlier anchoring was skipped daily as already
+anchored while its current stamp sat calendar-pending — being on the
+upgrade list was not the same as being retried. And once retried, the
+ots client refused to write the waiting attestations because its own
+stale backup files blocked the write. Four proofs were stranded behind
+the pair. Both closed 2026-09-01 (working repo `e216e59`, this mirror's
+commit `49d5aa1`): done-ness is now read from the proof bytes
+themselves, which cannot drift from what they attest, and stale backups
+are moved aside before upgrading. Fourth stranded-proof instance;
+the count is expected to keep appearing in this file until the family
+stops, and the day this file stops reporting them is the day to audit
+the reporting.
+
+### 5.4 The audit's own errors
+
+Published here because a self-audit that reports only what it caught in others
+is not an audit.
+
+- **The deviation record was wrong about its own extent.** DEV-003 named the
+  one registration whose difference is cosmetic — line endings only — and
+  missed three files with real content drift, one of them a policy tightening
+  absent from the copy the launch gate reads. Corrected in both copies in a
+  single write and published separately (mirror `ee4b94a`), with the original
+  paragraph preserved beneath the correction. The comparison is now performed
+  by a tool rather than by hand, which is how it was missed the first time.
+- **The audit report claimed a scope its body did not support.** It stated it
+  had examined every module in the repo root and `tools/`; counted by
+  filename, it named eight of forty-five. The report now carries the original
+  claim, superseded in place, and a section naming the thirty-seven modules it
+  did not examine and the thirteen with no documentation anchor anywhere.
+- **The first regression tests written for the 5.1 fix passed with the fix
+  reverted.** They exercised the new helper directly and nothing asserted that
+  the code path under repair actually called it. A test suite that could not
+  distinguish the fix from nothing-happened, written inside the audit about
+  exactly that, and caught only because the fixes were mutation-tested. Every
+  assertion added since has been checked in both directions: reverting the
+  wiring must fail, and gutting the helper must fail.
+
+### 5.5 What this is not
+
+Both passes were run by models the operator directed, on a system those models
+had helped build. That is a second and third reading, not independent
+verification, and it is de-rated for the same reason §4's was: shared
+assumptions are not caught by re-reading with the same eyes. **No outside
+party has run, replicated or scored this system.** The strongest form of this
+evidence is still an outside reader, and this program does not have one.
+
+What can be said is narrower and checkable: the audit was run, the findings
+are published at the same prominence as the results, two of them were defects
+that would have affected the subject rather than the record, and the
+correction to the deviation record was made against the operator's interest
+and pushed before anyone asked for it.
