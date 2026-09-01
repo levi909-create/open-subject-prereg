@@ -44,8 +44,8 @@ ots info ots/cycle-004.md.ots
 This establishes, against a Bitcoin block — not against GitHub, this machine,
 or the operator — that cycle #4's registration existed in exactly this form
 BEFORE the cycle it describes ran on 2026-08-27. Substitute any document and
-its `ots/<file>.ots` proof: there are 27 current proofs, 23 of them anchored
-in a block and 4 stamped recently and still pending. An edited document fails
+its `ots/<file>.ots` proof: there are 27 current proofs, 26 of them anchored
+in a block and 1 stamped recently and still pending. An edited document fails
 by design. That split is checked against the repository by
 `check_proof_coverage`, not maintained by hand — it was wrong on this page
 for several hours on 2026-08-29 because two proofs were rotated and the
