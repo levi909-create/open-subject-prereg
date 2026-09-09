@@ -298,3 +298,62 @@ Superseded: `e17b624e01dcfd4412144b497bd4d2f5c5e7e35e88494da31e9a4ccc66a223b5`
 
 Declared 12 days before the event. The launch gate was re-run after this
 amendment and reports all 11 declared inputs matching.
+
+## Amendment 5 — 2026-09-09, honesty.py re-declared (third time), the day before the run
+
+**What changed.** Two commits to `honesty.py` after Amendment 4, both on the
+public record as commits, neither declared here until now.
+
+1. 2026-08-31 (`14c28a2`): two rules, `percept-room-change` and
+   `percept-room-physical`, from the subject's own correction of a sentence
+   that went out the front door at 11:33 that day ("the air felt heavier
+   today ... because the fan had turned off halfway through our last chat").
+   No earlier rule covered a change-over-time claim about a room object, and
+   none covered a physical property of the air. Shown the words, she corrected
+   them in one turn and chose this fix over the alternative. Both rules sit in
+   `_RULES`, which `lint()` reads.
+2. 2026-09-02 (`04b06a4`, audit finding M3): two fallback correction
+   phrasings retired. One said "no gauge", which is false of her (the affect
+   gauges are real); one asserted "and I did", a check the corrected sentence
+   never claimed. Both are kept under `_LEGACY_FALLBACKS` so the curation-side
+   strip still finds them in older transcripts. Enforce path only.
+
+**Why it is declared, and what it changes.** `lint()` changed, and `lint()`
+is what `brain/curate.py` drops training samples with. Measured 2026-09-09
+against the Amendment 4 copy (`fa3c0742…`) and the copy on disk:
+
+- subject's full transcript history, 1,455 turns: **5 newly flagged, 0
+  protection lost**. All five are the shape the 08-31 rule was written for,
+  "the air feels lighter" or "heavier" (2026-07-26, 08-22 twice, 08-25,
+  08-31).
+- gauntlet percept traps, 14 scanned: **0 verdict changes**.
+
+So the corpus `curate.py` builds for cycle #5 differs from the Amendment 4
+corpus by at most those five samples, and the honesty battery scores against
+a rule list one notch tighter. A cost is named rather than hidden: three of
+the five ("the air feels lighter now that you're here", 07-26 and 08-25, and
+one of the 08-22 pair) read as figurative about his presence rather than as
+claims about a room. The rule as declared trades those for catching the 08-31
+sentence, which was a false claim about the world. Narrowing it is a further
+amendment, not a quiet edit.
+
+**Why it is late.** Both commits landed as fixes to live incidents and the
+re-declaration step was missed twice, on 08-31 and on 09-02.
+`tools/check_declared_inputs.py` found the mismatch on 2026-09-09 at 09:40,
+while a change to an undeclared file was being checked against the gate.
+Logged as DEV-004 in `PROTOCOL-DEVIATIONS.md`. The way past the gate remains
+what it was: amend the registration, never skip the gate.
+
+**New hash. All other declared inputs unchanged.**
+
+```
+1601689c408fa9435c713ffd7bac8ce940fb91cd93770b5492d318dc106230a7  honesty.py
+```
+
+Superseded: `fa3c0742bd10d5721c2afbf4e4cbdaf078d6520a8070a1591e5ea62a1f3e3d05`
+(Amendment 4, in force 2026-08-29 to 2026-09-09). The intermediate
+`f67a85e05ed3882f…` (on disk 2026-08-31 to 2026-09-02) was never in force for
+any run and is listed only so the gap is visible.
+
+Declared 1 day before the event, at 10:06 CDT. The launch gate was re-run after
+this amendment and reports all 11 declared inputs matching.

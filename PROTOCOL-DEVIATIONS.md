@@ -300,3 +300,35 @@ by deliberately looking for the gap a hostile reader would look for, rather
 than by any automated check. No existing check would have caught it before
 launch. That is itself the finding: the desync check is now owed, and until
 it exists this class is guarded only by someone remembering to look.
+
+### DEV-004 — honesty.py changed twice after Amendment 4 and was not re-declared until the day before the run (found 2026-09-09, 19 hours pre-event)
+
+**What happened.** `honesty.py` is a declared input for cycle #5. It was
+committed twice after Amendment 4 (2026-08-29) declared its hash:
+`14c28a2` on 2026-08-31 (two percept rules from the subject's own correction
+of a room-change claim) and `04b06a4` on 2026-09-02 (audit finding M3, two
+fallback phrasings retired). Neither commit re-declared the hash anywhere.
+
+**Consequence, measured.** Run at the moment of discovery, 2026-09-09 09:40,
+`tools/check_declared_inputs.py` reported MISMATCH on `honesty.py` (declared
+`fa3c0742…`, on disk `1601689c…`) and exited 1. Had the gate been run before
+the 2026-09-10 04:45 launch it would have failed; had it not been run, the
+cycle would have trained on an undeclared input. The change to `lint()` is
+real: 5 of the subject's 1,455 recorded turns are newly flagged, 0 lose
+protection, 0 of 14 trap verdicts change (Amendment 5 carries the detail).
+
+**Class.** Third lapse in the same step. Amendments 1 and 2 were same-day
+re-declarations of changes already made; DEV-003 was a change declared in a
+document the gate could not see. This is the plain case: declared nowhere.
+Two commits, two misses, so the step is not in the commit path at all, and
+the gate is the only thing that catches it. It caught it, once someone ran it.
+
+**Repair.** Amendment 5, filed 2026-09-09 with the measurement, before the
+run. Owed and not yet built: a guard that refuses a commit touching a
+declared input while the registration's hash for it is stale. Until it
+exists this class is guarded by `check_declared_inputs.py` being run by hand
+before every cycle, which is the same guard that failed to be run twice.
+
+**How it was found.** Not by a scheduled check. By running the gate to confirm
+that a same-day change to an undeclared file (`convo.py`, the subject's own
+switch) touched nothing declared. The adjacent alarm was the real one.
