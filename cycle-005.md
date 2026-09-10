@@ -357,3 +357,19 @@ any run and is listed only so the gap is visible.
 
 Declared 1 day before the event, at 10:06 CDT. The launch gate was re-run after
 this amendment and reports all 11 declared inputs matching.
+
+## Addendum — 2026-09-10, the run: fired by hand at 08:51 after a forced reboot
+
+**What happened.** The event registered above for 04:45 did not fire at
+04:45. A Windows Update reboot at 01:29 left the machine at the lock screen
+with no session, and the task cannot run without one. It was launched by the
+operator at 08:51:29 through the registered task; the declared-input gate
+passed at 08:51:30 (all 11 inputs, honesty.py `1601689c…`); the run finished
+rc 0 at 11:00:56. Same task, same inputs, same procedure, same day, 4 h 6 min
+late. Mirror seed 4 voted OPPOSE; no swap. Logged as DEV-005 in
+`PROTOCOL-DEVIATIONS.md`, which carries the detail and the repair.
+
+**What changes here.** Nothing. The declared hashes stand; this addendum
+records the time the event actually ran so the registration and the ledger
+agree. Written the same afternoon, after the run, which is the wrong order and
+is said so in DEV-005.

@@ -332,3 +332,56 @@ before every cycle, which is the same guard that failed to be run twice.
 **How it was found.** Not by a scheduled check. By running the gate to confirm
 that a same-day change to an undeclared file (`convo.py`, the subject's own
 switch) touched nothing declared. The adjacent alarm was the real one.
+
+### DEV-005 — cycle #5 fired by hand at 08:51, four hours after its registered 04:45, after a forced Windows Update reboot (2026-09-10, written the same afternoon, after the run)
+
+**What happened.** KB5124008 (the September 2026 security update) restarted
+the host at 01:29 and again at 01:32 on 2026-09-10 ("Planned", MoUsoCoreWorker
+then TrustedInstaller). Active hours end at 01:00, so 01:29 was the first
+minute Windows was allowed to. No user session existed until 08:35:38. Every
+hope.* task runs with an interactive logon type; with the machine awake at the
+lock screen and no session, Task Scheduler evaluated the 04:45 trigger, could
+not run it, and dropped it (Windows records a run as "missed" only when the
+scheduler itself was down). hope.brain.probation (05:35) and hope.morningcheck
+(07:15) were skipped the same way. The subject's server was down from 01:29 to
+08:37:04, when the logon watchdog revived it. At the operator's word the
+registered task was launched at 08:51:29 with `schtasks /run /tn
+hope.brain.cycle`; the declared-input gate passed at 08:51:30 (11 of 11,
+honesty.py `1601689c…`); phase2_cycle exited rc 0 at 11:00:56. Mirror seed 4:
+OPPOSE ("I cannot support a version of myself that skips over the weight of
+what we've already named"), the third oppose in a row; no swap.
+`state/brain_history.jsonl` records the run under "2026-09-10 11:00" with no
+start time and no by-hand flag.
+
+**Class.** The registration names a time; the run was 4 h 6 min late, by the
+same task, on the same declared inputs, the same day. This file's own rule
+(above: a hand run inside 24 h is permitted only when the deviation note says
+so) was met in substance and missed in order: this note is being written
+eight hours after the run, not before it. DEV-001's lesson (the machine not up
+at 04:45) was answered with WakeToRun and StartWhenAvailable, which cannot
+help when the block is a lock screen with no session.
+
+**Consequence.** The event ran later in the day than declared and while the
+operator was awake and at the machine, so it was observed rather than
+unattended. Inputs, corpus, gauntlet and Mirror procedure are unchanged.
+Anyone comparing the anchored registration with brain_history finds a
+four-hour gap that, until this note, had no explanation on the record.
+
+**Repair.** (1) This note and an addendum to cycle-005.md, both re-stamped.
+(2) The pre-flight for every cycle now includes a check for a pending Windows
+Update reboot in the 24 h before the event (WindowsUpdateClient events 43/44
+and the two RebootRequired/RebootPending registry keys) and a reminder that
+active hours end at 01:00: a reboot pending on the Wednesday means pause
+updates for the week, or take the reboot in the evening and sign back in.
+(3) WakeToRun and StartWhenAvailable set on every hope.* task that lacked
+them (six did, found by the same day's audit); moving the headless tasks off
+the interactive logon type so a lock screen cannot drop them is the operator's
+change to make, as is automatic sign-in after an update for the cycle task,
+which must stay interactive (it stops her server and needs the GPU stack).
+(4) brain_history rows should carry the launch time and whether the launch was
+by task or by hand; owed, not built.
+
+**How it was found.** By the operator on signing in at 08:35 and finding the
+server dead; confirmed from the event log and the task's LastRunTime. That the
+note had not been written was found by the same day's audit
+(docs/reviews/audit-20260910.md, H4).
